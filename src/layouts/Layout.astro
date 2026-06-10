@@ -1,0 +1,179 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+  title = "Tommy Chen | Portfolio 2026 & Digital Store", 
+  description = "Tommy Chen's personal multi-functional portfolio and digital store. Freelance product design, frontend development, premium web templates, and micro design assistant services." 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-Hant">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="robots" content="index, follow" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="/images/og-image.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+	</head>
+	<body class="bg-dark text-white min-h-screen flex flex-col antialiased selection:bg-brand/30 selection:text-white">
+		
+		<!-- Sticky Glassmorphism Header -->
+		<header class="sticky top-0 z-50 w-full border-b border-dark-border bg-dark/70 backdrop-blur-md transition-all duration-300">
+			<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+				<!-- Logo -->
+				<a href="/" class="flex items-center space-x-3 group" id="nav-logo-link">
+					<div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand to-cyan-500 flex items-center justify-center font-bold text-white shadow-lg shadow-brand/20 group-hover:scale-105 transition-transform duration-300">
+						T
+					</div>
+					<span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-white to-muted group-hover:from-white group-hover:to-brand transition-all duration-300">
+						TOMMY<span class="text-brand">.</span>
+					</span>
+				</a>
+
+				<!-- Desktop Navigation -->
+				<nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-muted">
+					<a href="/" class="hover:text-white transition-colors duration-200" id="nav-home">首頁</a>
+					<a href="/portfolio" class="hover:text-white transition-colors duration-200" id="nav-portfolio">作品集</a>
+					<a href="/store" class="hover:text-white transition-colors duration-200" id="nav-store">商店</a>
+					<a href="/#contact" class="px-5 py-2.5 rounded-full bg-brand text-white hover:bg-brand-hover hover:scale-105 active:scale-95 shadow-lg shadow-brand/25 transition-all duration-300 text-xs font-semibold" id="nav-cta">
+						聯絡諮詢
+					</a>
+				</nav>
+
+				<!-- Mobile Menu Button -->
+				<button 
+					type="button" 
+					class="md:hidden p-2 rounded-lg text-muted hover:text-white hover:bg-dark-card focus:outline-none transition-colors duration-200" 
+					id="mobile-menu-btn" 
+					aria-label="Toggle Menu"
+				>
+					<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="hamburger-icon">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+					</svg>
+				</button>
+			</div>
+
+			<!-- Mobile Navigation Menu -->
+			<div class="hidden md:hidden border-b border-dark-border bg-dark-card/95 backdrop-blur-lg px-6 py-6 transition-all duration-300" id="mobile-menu">
+				<nav class="flex flex-col space-y-4 font-medium">
+					<a href="/" class="text-muted hover:text-white py-2 border-b border-dark-border/40 transition-colors" id="mobile-nav-home">首頁</a>
+					<a href="/portfolio" class="text-muted hover:text-white py-2 border-b border-dark-border/40 transition-colors" id="mobile-nav-portfolio">作品集</a>
+					<a href="/store" class="text-muted hover:text-white py-2 border-b border-dark-border/40 transition-colors" id="mobile-nav-store">商店</a>
+					<a href="/#contact" class="w-full text-center py-3 rounded-xl bg-brand text-white hover:bg-brand-hover shadow-lg shadow-brand/20 transition-all font-semibold text-sm" id="mobile-nav-cta">
+						聯絡諮詢
+					</a>
+				</nav>
+			</div>
+		</header>
+
+		<!-- Main Content Slot -->
+		<main class="flex-grow">
+			<slot />
+		</main>
+
+		<!-- Footer -->
+		<footer class="border-t border-dark-border bg-[#070708] py-16 text-muted text-sm">
+			<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+				<!-- Footer Brand Info -->
+				<div class="space-y-4 md:col-span-2">
+					<div class="flex items-center space-x-3">
+						<div class="w-8 h-8 rounded-lg bg-brand flex items-center justify-center font-bold text-white text-sm">
+							T
+						</div>
+						<span class="font-extrabold text-lg tracking-tight text-white">
+							TOMMY<span class="text-brand">.</span>
+						</span>
+					</div>
+					<p class="max-w-sm text-sm leading-relaxed">
+						專注於高轉化率產品設計與現代 Jamstack 前端技術的獨立開發者。提供企業與個人最高品質的數位解決方案。
+					</p>
+					<div class="flex space-x-4 pt-2">
+						<!-- Custom clean social icons -->
+						<a href="#" class="w-8 h-8 rounded-full border border-dark-border flex items-center justify-center hover:text-white hover:border-brand hover:bg-brand/10 transition-all duration-300" aria-label="Github">
+							GH
+						</a>
+						<a href="#" class="w-8 h-8 rounded-full border border-dark-border flex items-center justify-center hover:text-white hover:border-brand hover:bg-brand/10 transition-all duration-300" aria-label="Twitter">
+							TW
+						</a>
+						<a href="#" class="w-8 h-8 rounded-full border border-dark-border flex items-center justify-center hover:text-white hover:border-brand hover:bg-brand/10 transition-all duration-300" aria-label="LinkedIn">
+							LN
+						</a>
+					</div>
+				</div>
+
+				<!-- Quick Links -->
+				<div class="space-y-4">
+					<h3 class="text-white font-semibold text-base">網站導覽</h3>
+					<ul class="space-y-2 flex flex-col font-medium">
+						<li><a href="/" class="hover:text-white transition-colors duration-200">首頁</a></li>
+						<li><a href="/portfolio" class="hover:text-white transition-colors duration-200">作品集總覽</a></li>
+						<li><a href="/store" class="hover:text-white transition-colors duration-200">數位商店</a></li>
+					</ul>
+				</div>
+
+				<!-- Service Statement -->
+				<div class="space-y-4">
+					<h3 class="text-white font-semibold text-base">商務與服務</h3>
+					<ul class="space-y-2 flex flex-col font-medium">
+						<li><a href="/store#pricing" class="hover:text-white transition-colors">微型設計特助</a></li>
+						<li><a href="/#contact" class="hover:text-white transition-colors">客製專案諮詢</a></li>
+						<li><a href="#" class="hover:text-white transition-colors text-xs text-brand/80 font-semibold flex items-center">
+							<span>Secure Checkout by Stripe</span>
+							<span class="ml-1">↗</span>
+						</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-dark-border/40 flex flex-col md:flex-row items-center justify-between gap-4">
+				<p class="text-xs">
+					&copy; {new Date().getFullYear()} TOMMY. All rights reserved. 版權所有，翻印必究。
+				</p>
+				<p class="text-xs text-muted/60 flex items-center">
+					Crafted with Astro & Tailwind CSS by Antigravity AI
+				</p>
+			</div>
+		</footer>
+
+		<!-- Mobile Menu Toggle Script -->
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', () => {
+				const menuBtn = document.getElementById('mobile-menu-btn');
+				const menu = document.getElementById('mobile-menu');
+				const icon = document.getElementById('hamburger-icon');
+
+				if (menuBtn && menu) {
+					menuBtn.addEventListener('click', () => {
+						menu.classList.toggle('hidden');
+						// Toggle icon state if needed
+						if (menu.classList.contains('hidden')) {
+							icon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />`;
+						} else {
+							icon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />`;
+						}
+					});
+				}
+			});
+		</script>
+	</body>
+</html>

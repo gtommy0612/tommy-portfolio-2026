@@ -1,0 +1,417 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Tommy Chen | 個人多功能作品集網站" 
+  description="歡迎來到 Tommy 的作品集。我是一名專注於高轉化率產品設計與現代 Jamstack 前端技術的獨立開發者。在這裡探索我的精選作品、購買網頁模板或訂閱微型設計特助服務。"
+>
+  <!-- Hero Section with mesh gradient glow -->
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20 px-6">
+    <!-- Decorative background glow spheres -->
+    <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-brand/15 blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-10 right-1/4 translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] rounded-full bg-cyan-500/10 blur-[130px] pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[1px] bg-gradient-to-r from-transparent via-brand/10 to-transparent rotate-12 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto w-full relative z-10 flex flex-col items-center text-center">
+      <!-- Badge -->
+      <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-brand/10 border border-brand/20 text-brand text-xs font-semibold mb-8 animate-fade-in">
+        <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+        <span>2026 接案檔期與委託開放中</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
+        將設計美學與工程實力<br />
+        <span class="text-gradient font-black">融合為極致的數位體驗</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="max-w-2xl text-muted text-base md:text-xl mb-12 leading-relaxed font-medium">
+        我是 Tommy，專注於現代 <span class="text-white">Jamstack</span> 前端架構與 RWD 介面設計。捨棄繁雜冗贅的後台，為您的品牌提供光速載入與頂級視覺效果的客製化網頁。
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-5 mb-20">
+        <a 
+          href="/portfolio" 
+          class="px-8 py-4 rounded-full bg-brand text-white font-semibold shadow-lg shadow-brand/30 hover:bg-brand-hover hover:scale-105 active:scale-95 transition-all duration-300 group"
+          id="hero-portfolio-cta"
+        >
+          瀏覽精選作品
+          <span class="inline-block transform group-hover:translate-x-1 transition-transform duration-200 ml-1">→</span>
+        </a>
+        <a 
+          href="#contact" 
+          class="px-8 py-4 rounded-full bg-dark-card border border-dark-border text-white hover:text-white font-semibold hover:bg-[#1E1E24] hover:border-brand/40 hover:scale-105 active:scale-95 transition-all duration-300"
+          id="hero-contact-cta"
+        >
+          立即專案諮詢
+        </a>
+      </div>
+
+      <!-- Stats / Trust Indicators -->
+      <div class="w-full max-w-4xl grid grid-cols-2 md:grid-cols-4 gap-8 p-8 rounded-2xl bg-dark-card/40 border border-dark-border/50 backdrop-blur-sm">
+        <div class="text-center space-y-1">
+          <p class="text-3xl md:text-4xl font-extrabold text-white font-mono">5+</p>
+          <p class="text-xs text-muted font-semibold tracking-wider uppercase">設計與開發經驗</p>
+        </div>
+        <div class="text-center space-y-1">
+          <p class="text-3xl md:text-4xl font-extrabold text-white font-mono">40+</p>
+          <p class="text-xs text-muted font-semibold tracking-wider uppercase">實際上線專案</p>
+        </div>
+        <div class="text-center space-y-1">
+          <p class="text-3xl md:text-4xl font-extrabold text-white font-mono">99%</p>
+          <p class="text-xs text-muted font-semibold tracking-wider uppercase">客戶滿意好評</p>
+        </div>
+        <div class="text-center space-y-1">
+          <p class="text-3xl md:text-4xl font-extrabold text-white font-mono">&lt; 1.2s</p>
+          <p class="text-xs text-muted font-semibold tracking-wider uppercase">平均網頁載入速度</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Cards Section -->
+  <section class="py-24 px-6 relative border-t border-dark-border bg-dark/40">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-brand">服務範疇</h2>
+        <p class="text-3xl md:text-4xl font-extrabold text-white">用專業技術為您解決商務痛點</p>
+        <p class="text-muted font-medium">不只是漂亮的網頁，更為您規劃高轉化率的排版與穩定的底層架構。</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="p-8 rounded-2xl bg-dark-card/50 border border-dark-border/80 hover:border-brand/40 transition-all duration-300 glow-effect flex flex-col justify-between group">
+          <div class="space-y-5">
+            <div class="w-12 h-12 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center text-brand font-bold text-lg group-hover:scale-110 transition-transform">
+              UX
+            </div>
+            <h3 class="text-xl font-bold text-white">UI/UX 介面設計</h3>
+            <p class="text-muted text-sm leading-relaxed">
+              從使用者研究出發，規劃精確的互動流程與線框圖。提供精美、易用且高度契合品牌調性的 Figma 高保真介面設計。
+            </p>
+          </div>
+          <div class="pt-6">
+            <span class="text-xs text-brand font-semibold group-hover:underline flex items-center">
+              詳細設計規範 <span class="ml-1">→</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-8 rounded-2xl bg-dark-card/50 border border-dark-border/80 hover:border-brand/40 transition-all duration-300 glow-effect flex flex-col justify-between group">
+          <div class="space-y-5">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg group-hover:scale-110 transition-transform">
+              JS
+            </div>
+            <h3 class="text-xl font-bold text-white">Jamstack 網頁開發</h3>
+            <p class="text-muted text-sm leading-relaxed">
+              利用 Astro / React 等現代前端框架，建構極致載入效率與頂級 SEO 的靜態或混合式網頁。為您的產品提供完美的 RWD 排版。
+            </p>
+          </div>
+          <div class="pt-6">
+            <span class="text-xs text-cyan-400 font-semibold group-hover:underline flex items-center">
+              技術棧說明 <span class="ml-1">→</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="p-8 rounded-2xl bg-dark-card/50 border border-dark-border/80 hover:border-brand/40 transition-all duration-300 glow-effect flex flex-col justify-between group">
+          <div class="space-y-5">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-lg group-hover:scale-110 transition-transform">
+              $$
+            </div>
+            <h3 class="text-xl font-bold text-white">數位產品與金流整合</h3>
+            <p class="text-muted text-sm leading-relaxed">
+              免除複雜的後端開發與資料庫維護，一鍵無縫連結 Gumroad 數位商品及 Stripe 訂閱制金流，在短時間內完成您的商業闭環。
+            </p>
+          </div>
+          <div class="pt-6">
+            <span class="text-xs text-purple-400 font-semibold group-hover:underline flex items-center">
+              金流部署方案 <span class="ml-1">→</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Work Preview Section -->
+  <section class="py-24 px-6 relative border-t border-dark-border">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div class="space-y-4">
+          <h2 class="text-xs font-bold uppercase tracking-widest text-brand">精選案例</h2>
+          <p class="text-3xl md:text-4xl font-extrabold text-white">觀摩我的線上代表作</p>
+        </div>
+        <div>
+          <a 
+            href="/portfolio" 
+            class="inline-flex items-center text-sm font-semibold text-brand hover:text-brand-hover group"
+            id="featured-more-link"
+          >
+            <span>瀏覽所有作品</span>
+            <span class="ml-1 transform group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- Work Card 1 -->
+        <a href="/portfolio" class="group block space-y-6">
+          <div class="relative overflow-hidden rounded-2xl border border-dark-border bg-dark-card/40 aspect-video flex items-center justify-center shadow-lg group-hover:shadow-brand/5 transition-all duration-500">
+            <!-- Simulated premium web design graphic using pure styling and glassmorphism -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-brand/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <!-- Mock Web interface inside card -->
+            <div class="w-[85%] h-[80%] rounded-lg border border-dark-border bg-dark/80 p-4 shadow-2xl relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500">
+              <div class="flex items-center space-x-2 mb-4 pb-2 border-b border-dark-border">
+                <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                <div class="w-16 h-2 bg-dark-card rounded-md ml-4"></div>
+              </div>
+              <div class="space-y-3">
+                <div class="w-1/2 h-4 bg-gradient-to-r from-brand to-cyan-500 rounded-md"></div>
+                <div class="w-[90%] h-3 bg-dark-card rounded-sm"></div>
+                <div class="w-[80%] h-3 bg-dark-card rounded-sm"></div>
+                <div class="grid grid-cols-3 gap-2 pt-2">
+                  <div class="h-10 bg-dark-card/80 rounded-md border border-dark-border flex items-center justify-center text-[10px] text-brand font-bold font-mono">JS</div>
+                  <div class="h-10 bg-dark-card/80 rounded-md border border-dark-border flex items-center justify-center text-[10px] text-cyan-400 font-bold font-mono">CSS</div>
+                  <div class="h-10 bg-dark-card/80 rounded-md border border-dark-border flex items-center justify-center text-[10px] text-muted font-bold font-mono">MD</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <div class="flex items-center space-x-2 text-xs font-semibold text-brand">
+              <span>Web Development</span>
+              <span>•</span>
+              <span>SaaS Landing Page</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white group-hover:text-brand transition-colors flex items-center">
+              <span>NovaSaaS 雲端行銷落地頁</span>
+              <span class="inline-block ml-1 opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+            </h3>
+            <p class="text-muted text-sm leading-relaxed">
+              專為新創科技公司設計的高效能 Jamstack 落地頁，經 Lighthouse 實測速度指標高達 100 分。
+            </p>
+          </div>
+        </a>
+
+        <!-- Work Card 2 -->
+        <a href="/portfolio" class="group block space-y-6">
+          <div class="relative overflow-hidden rounded-2xl border border-dark-border bg-dark-card/40 aspect-video flex items-center justify-center shadow-lg group-hover:shadow-brand/5 transition-all duration-500">
+            <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <!-- Mock Graphic/Brand interface inside card -->
+            <div class="w-[85%] h-[80%] rounded-lg border border-dark-border bg-dark/80 p-4 shadow-2xl relative overflow-hidden flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-500">
+              <div class="absolute -top-10 -left-10 w-24 h-24 rounded-full bg-brand/20 blur-xl"></div>
+              <div class="absolute -bottom-10 -right-10 w-24 h-24 rounded-full bg-cyan-500/20 blur-xl"></div>
+              <div class="text-center space-y-3">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-brand to-cyan-400 mx-auto flex items-center justify-center text-xl font-black text-white shadow-lg">
+                  Ω
+                </div>
+                <div class="w-24 h-3 bg-dark-card rounded-md mx-auto"></div>
+                <div class="w-16 h-2 bg-dark-card rounded-md mx-auto"></div>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <div class="flex items-center space-x-2 text-xs font-semibold text-cyan-400">
+              <span>Graphic Design</span>
+              <span>•</span>
+              <span>Branding Identity</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors flex items-center">
+              <span>Omega 數位品牌視覺識別系統</span>
+              <span class="inline-block ml-1 opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+            </h3>
+            <p class="text-muted text-sm leading-relaxed">
+              為現代 Web3 金融平台規劃的全套視覺識別，包含 Logo、調色盤、字型系統與社群行銷素材規範。
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="py-24 px-6 relative border-t border-dark-border bg-dark/40" id="contact">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-brand/5 blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto relative z-10">
+      <div class="text-center mb-16 space-y-4">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-brand">聯絡諮詢</h2>
+        <p class="text-3xl md:text-4xl font-extrabold text-white">啟動您的專案委託</p>
+        <p class="text-muted max-w-lg mx-auto font-medium text-sm">
+          有具體需求，或是想要聊聊您的設計構想？請填寫下方表單，我將在收到訊息後的 24 小時內與您取得聯繫。
+        </p>
+      </div>
+
+      <!-- Contact Form Container -->
+      <div class="p-8 md:p-12 rounded-3xl bg-dark-card/60 border border-dark-border/80 backdrop-blur-md shadow-2xl relative">
+        <!-- Form Element -->
+        <form id="portfolio-contact-form" class="space-y-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Name Input -->
+            <div class="space-y-2">
+              <label for="contact-name" class="text-xs font-bold text-muted uppercase tracking-wider">您的姓名 / 稱呼 *</label>
+              <input 
+                type="text" 
+                id="contact-name" 
+                name="name" 
+                required 
+                placeholder="例如：陳先生" 
+                class="w-full px-5 py-4 rounded-xl bg-dark border border-dark-border focus:border-brand focus:outline-none text-white placeholder:text-muted/50 focus:ring-1 focus:ring-brand transition-all duration-300"
+              />
+            </div>
+
+            <!-- Email Input -->
+            <div class="space-y-2">
+              <label for="contact-email" class="text-xs font-bold text-muted uppercase tracking-wider">電子信箱 *</label>
+              <input 
+                type="email" 
+                id="contact-email" 
+                name="email" 
+                required 
+                placeholder="example@yourdomain.com" 
+                class="w-full px-5 py-4 rounded-xl bg-dark border border-dark-border focus:border-brand focus:outline-none text-white placeholder:text-muted/50 focus:ring-1 focus:ring-brand transition-all duration-300"
+              />
+            </div>
+          </div>
+
+          <!-- Project Type Dropdown -->
+          <div class="space-y-2">
+            <label for="contact-project-type" class="text-xs font-bold text-muted uppercase tracking-wider">諮詢專案類型</label>
+            <div class="relative">
+              <select 
+                id="contact-project-type" 
+                name="project_type"
+                class="w-full px-5 py-4 rounded-xl bg-dark border border-dark-border focus:border-brand focus:outline-none text-white appearance-none cursor-pointer focus:ring-1 focus:ring-brand transition-all duration-300"
+              >
+                <option value="web-dev">Jamstack 網頁開發（Astro / Tailwind）</option>
+                <option value="uiux-design">UI/UX 介面設計（Figma）</option>
+                <option value="full-package">品牌視覺與網站全包套方案</option>
+                <option value="micro-assistant">微型設計特助（訂閱制合作）</option>
+                <option value="other">其他商務合作諮詢</option>
+              </select>
+              <div class="absolute inset-y-0 right-5 flex items-center pointer-events-none text-muted">
+                <!-- Dropdown arrow SVG -->
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message Input -->
+          <div class="space-y-2">
+            <label for="contact-message" class="text-xs font-bold text-muted uppercase tracking-wider">專案細節與需求描述 *</label>
+            <textarea 
+              id="contact-message" 
+              name="message" 
+              rows="5" 
+              required 
+              placeholder="請簡述您的專案背景、預期目標以及預算時程..." 
+              class="w-full px-5 py-4 rounded-xl bg-dark border border-dark-border focus:border-brand focus:outline-none text-white placeholder:text-muted/50 focus:ring-1 focus:ring-brand transition-all duration-300"
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-2">
+            <button 
+              type="submit" 
+              id="contact-submit-btn" 
+              class="w-full md:w-auto px-8 py-4 rounded-xl bg-brand hover:bg-brand-hover text-white font-bold shadow-lg shadow-brand/20 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center space-x-2"
+            >
+              <span id="btn-text">送出諮詢表單</span>
+              <span id="btn-spinner" class="hidden w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+            </button>
+          </div>
+        </form>
+
+        <!-- Form Success State (Hidden by default) -->
+        <div id="contact-success-state" class="hidden absolute inset-0 bg-dark-card/95 backdrop-blur-md rounded-3xl flex flex-col items-center justify-center text-center p-8 space-y-6 animate-fade-in">
+          <div class="w-20 h-20 rounded-full bg-brand/10 border-2 border-brand flex items-center justify-center text-brand">
+            <!-- Checkmark SVG -->
+            <svg class="w-10 h-10 animate-scale-up" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-2xl font-bold text-white">表單傳送成功！</h3>
+            <p class="text-muted max-w-sm mx-auto text-sm leading-relaxed">
+              感謝您的諮詢，您的委託提案已成功傳入。我將在 24 小時內以電子信箱與您取得聯絡。
+            </p>
+          </div>
+          <button 
+            type="button" 
+            id="reset-form-btn" 
+            class="px-6 py-2.5 rounded-full border border-dark-border text-xs font-semibold text-white hover:border-brand/40 hover:bg-dark transition-all duration-300"
+          >
+            返回填寫
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CSS-only animations for transitions -->
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes scaleUp {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .animate-scale-up {
+      animation: scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+  </style>
+
+  <!-- Interactive script for mock submit -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('portfolio-contact-form');
+      const submitBtn = document.getElementById('contact-submit-btn');
+      const btnText = document.getElementById('btn-text');
+      const btnSpinner = document.getElementById('btn-spinner');
+      const successState = document.getElementById('contact-success-state');
+      const resetBtn = document.getElementById('reset-form-btn');
+
+      if (form && submitBtn && successState && resetBtn) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          
+          // Disable button and show loading spinner
+          submitBtn.disabled = true;
+          btnText.textContent = "傳送中...";
+          btnSpinner.classList.remove('hidden');
+
+          // Simulate API call (1.5 seconds)
+          setTimeout(() => {
+            // Hide spinner, show success state
+            btnSpinner.classList.add('hidden');
+            btnText.textContent = "送出諮詢表單";
+            submitBtn.disabled = false;
+            
+            // Show overlay success
+            successState.classList.remove('hidden');
+            form.reset();
+          }, 1500);
+        });
+
+        resetBtn.addEventListener('click', () => {
+          successState.classList.add('hidden');
+        });
+      }
+    });
+  </script>
+</Layout>
