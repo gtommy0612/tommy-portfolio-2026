@@ -45,24 +45,16 @@
     h5 { @apply text-[1rem]    font-semibold leading-[1.4]  tracking-normal mb-[0.6em]; }
     h6 { @apply text-[0.875rem] font-medium  leading-[1.4]  tracking-[0.005em] mb-[0.6em]; }
   }
+  
   </style>
 </head>
 
 <body class="bg-surface-muted text-text-primary font-sans antialiased">
-
-  <!-- <header class="sticky top-0 z-50 bg-surface-muted/80 backdrop-blur-md border-b border-border-default/5 py-4">
-    <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
-      <a href="index.html" class="font-bold text-[1.25rem] tracking-tight hover:text-text-secondary transition-colors">
-        ← Tommy Chi
-      </a>
-      <span class="text-caption font-semibold text-text-secondary uppercase tracking-widest">Case Study</span>
-    </div>
-  </header> -->
   <header
     class="sticky top-0 z-50 bg-surface-muted md:bg-surface-muted/80 backdrop-blur-md border-b border-border-default/10 py-2">
     <div class="max-w-[1400px] mx-auto px-4 md:px-10 flex items-center justify-between">
       <!-- Brand Logo / Name & Title -->
-      <a href="#" class="flex flex-col md:flex-row md:items-baseline md:gap-2 group focus:outline-none"
+      <a href="../index.html" class="flex flex-col md:flex-row md:items-baseline md:gap-2 group focus:outline-none"
         aria-label="Tommy Chi, Back to Top">
         <!-- 修正：加上 leading-none 防止行高撐大 header，並微調大小 -->
         <span
@@ -73,11 +65,11 @@
 
       <!-- Desktop Nav Menu -->
       <nav class="hidden md:flex items-center gap-2" aria-label="主要導覽">
-        <a href="#works"
+        <a href="../index.html#works"
           class="px-3 py-2 text-base border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors duration-300">Works</a>
-        <a href="#playground"
+        <a href="../index.html#playground"
           class="px-3 py-2 text-base border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors duration-300">Playground</a>
-        <a href="#about"
+        <a href="../about.html"
           class="px-3 py-2 text-base border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors duration-300">About</a>
         <a href="mailto:hi@tommychidesign.com"
           class="px-3 py-2 text-base border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors duration-300">
@@ -121,120 +113,160 @@
   
   <main id="home" class="flex-grow max-w-[1400px] mx-auto px-4 pt-20 md:px-10 w-full flex flex-col gap-3">
     
-    <section class="mb-12">
-      <span class="text-text-secondary font-medium tracking-wide block mb-3 text-lg">Firearm Safety System (FSS)</span>
-      <h1>Securing a $1.6M+ US Government Contract via AI-Augmented Agile Design</h1>
+    <!-- Project title -->
+    <section>
+      <span class="text-text-secondary font-medium tracking-wide block mb-3 text-lg pl-1">Firearm Safety System (FSS)</span>
+      <h1>Securing a $1.6M+ US Government Contract: Accelerating Complex Portal Design with AI Workflow</h1>
     </section>
 
-    <section class="grid grid-cols-2 md:grid-cols-4 gap-6 bg-white border border-border-default/5 rounded-2xl p-8 mb-16 shadow-sm">
+    <!-- Metrics -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white border border-border-default/5 rounded-2xl p-8 mb-4 shadow-sm">
       <div>
         <h5 class="text-text-secondary text-caption uppercase font-semibold tracking-wider mb-2">My Role</h5>
-        <p class="text-base font-medium m-0 p-0 text-text-primary">Lead Product Designer</p>
-        <span class="text-caption text-text-secondary block mt-1">UX/UI, System Architecture</span>
+        <p class="text-base font-medium m-0 p-0 text-text-primary">Product Designer & Project Manager</p>
+        <!-- <span class="text-caption text-text-secondary block mt-1">UX/UI, System Architecture</span> -->
       </div>
       <div>
         <h5 class="text-text-secondary text-caption uppercase font-semibold tracking-wider mb-2">Timeline</h5>
-        <p class="text-base font-medium m-0 p-0 text-text-primary">6 Months (2026)</p>
-        <span class="text-caption text-text-secondary block mt-1">Agile / Sprints</span>
-      </div>
-      <div>
-        <h5 class="text-text-secondary text-caption uppercase font-semibold tracking-wider mb-2">Platform & Tech</h5>
-        <p class="text-base font-medium m-0 p-0 text-text-primary">B2B SaaS / Web</p>
-        <span class="text-caption text-text-secondary block mt-1">Tailwind, React</span>
+        <p class="text-base font-medium m-0 p-0 text-text-primary">January 2026 - April 2026 (3 Months)</p>
+        <!-- <span class="text-caption text-text-secondary block mt-1">Agile / Sprints</span> -->
       </div>
       <div>
         <h5 class="text-text-secondary text-caption uppercase font-semibold tracking-wider mb-2">Core Impact</h5>
-        <p class="text-base font-bold m-0 p-0 text-emerald-600">+$1.6M Contract</p>
-        <span class="text-caption text-text-secondary block mt-1">100% WCAG Compliant</span>
+        <!-- <p class="text-base font-bold m-0 p-0 text-emerald-600">+$1.6M Contract -->
+          <ul class="list-disc list-inside">
+            <li>Secured $1.6M+ contract</li>
+            <li>60% faster proposal delivery</li>
+            <li>Built AI development workflows for the team</li>
+          </ul>
+        </p>
+        <!-- <span class="text-caption text-text-secondary block mt-1">100% WCAG Compliant</span> -->
       </div>
     </section>
 
-    <section class="w-full mb-24 overflow-hidden rounded-2xl bg-white shadow-sm border border-border-default/5">
+    <section class="w-full mb-4 overflow-hidden rounded-2xl bg-white shadow-sm border border-border-default/5">
       <div class="aspect-[16/9] w-full bg-slate-100 flex items-center justify-center text-text-secondary">
-        <span class="text-sm">[ 16:9 橫向大尺寸產品視覺主圖 ]</span>
+        <img src="https://picsum.photos/1200/800?grayscale" class="w-full h-full object-cover object-center" alt="">
+        <!-- <span class="text-sm">[ 16:9 橫向大尺寸產品視覺主圖 ]</span> -->
       </div>
     </section>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-      
-      <aside class="lg:col-span-1 lg:sticky lg:top-24 h-fit">
-        <div class="border-l-2 border-border-default pl-4 py-1">
-          <p class="text-lead font-medium text-text-primary leading-normal mb-0">
-            「挑戰不在於如何做出漂亮的介面，而在於如何在聯邦政府嚴格的隱私與無障礙標準下，進行高速的 AI 產品迭代。」
-          </p>
-        </div>
-      </aside>
+    <!-- <section id="section-bg" class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 relative items-start"> -->
+      <!-- <div class="lg:col-span-4 lg:sticky lg:top-36 group"> -->
+    <section class="mb-8">
+        <h2>Project Background</h2>
+        <p class="">FSS (Firearm Safety System) is an end-to-end US state-level firearm safety management system that connects Applicants, Sheriffs, Instructors, State Admin Users and Firearm Dealers. This project aimed to deliver a highly secure and compliant multi-platform system proposal by rapidly refactoring complex regulatory business logic.</p>
+    </section>
 
-      <div class="lg:col-span-2">
+      <section>
+        <h2>01. Situation & Task</h2>
+        <p>Our company faced a critical, high-stakes opportunity to bid on a US state government contract. However, we were given an extremely tight <strong>48-hour deadline</strong> to submit a comprehensive proposal. The challenge required quickly mastering unfamiliar firearm safety regulations and mapping out complex business logic that involved multiple interconnected user roles.</p>
         
-        <section>
-          <h2>01. The Challenge</h2>
-          <p>在這個專案中，我們面臨了雙重挑戰：一是在極短的時間內交付一套符合美國政府招標規格的 AI 多租戶平台（Multi-Tenant Platform），二是必須確保介面完全符合 WCAG 2.2 AA 的無障礙合規性。</p>
-          
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
-            <div class="p-5 bg-white rounded-xl border border-red-100">
-              <span class="text-xs font-bold uppercase text-red-500 tracking-wider">Pain Point</span>
-              <h4 class="mt-2 text-base font-bold">過往系統疊床架屋</h4>
-              <p class="text-sm text-text-tertiary mt-1 mb-0">舊系統因缺乏統一的 Design System，導致工程端重複開發，且完全無法通過無障礙審查。</p>
-            </div>
-            <div class="p-5 bg-white rounded-xl border border-emerald-100">
-              <span class="text-xs font-bold uppercase text-emerald-600 tracking-wider">The Goal</span>
-              <h4 class="mt-2 text-base font-bold">標準化與規模化</h4>
-              <p class="text-sm text-text-tertiary mt-1 mb-0">建立高擴展性的設計系統，前端效率需提升 30% 以上，並順利拿下政府百萬美金標案。</p>
-            </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
+          <div class="p-5 bg-white rounded-xl">
+            <h4 class="mt-2 font-bold">Business Goal</h4>
+            <p class="text-text-tertiary mt-1 mb-0">Conceptualize, design, and deliver a fully interactive, high-fidelity portal prototype within the 48-hour sprint to win the $1.6M+ government tender.</p>
+          </div>
+          <div class="p-5 bg-white rounded-xl">
+            <!-- <span class="text-xs font-bold uppercase text-emerald-600 tracking-wider">The Goal</span> -->
+            <h4 class="mt-2 font-bold">Design Goal</h4>
+            <p class="text-text-tertiary mt-1 mb-0">Synthesize fragmented regulatory requirements into a unified, clear Information Architecture (IA) and cross-platform UI flow that demonstrates both security and seamless usability.</p>
+          </div>
+        </div>
+      </section>
+
+      <section >
+        <h2>02. Action & Decisions</h2>
+        <!-- phase 1 -->
+        <h3>Phase 1: The 48-Hour Sprint — AI-Augmented Information Architecture</h3>
+        <section class="w-full mb-8 overflow-hidden rounded-2xl bg-white shadow-sm border border-border-default/5">
+          <div class="aspect-[16/9] w-full bg-slate-100 flex items-center justify-center text-text-secondary">
+            <span class="text-sm">[ 16:9 橫向大尺寸產品視覺主圖 ]</span>
           </div>
         </section>
-
-        <section>
-          <h2>02. AI-Augmented Process</h2>
-          <p>為了加快研究與迭代速度，我將 AI 工具融入日常的工作流（Workflow）。從早期的競爭者分析，到快速生成排版結構與檢驗程式碼，這讓我能留出更多時間處理深層的 UX 邏輯與利害關係人溝通。</p>
-          
-          <h3>用戶流程與系統架構</h3>
-          <p>我們將整個平台重構為模組化元件。以下是核心權限分流與功能映射圖：</p>
-          
-          <div class="bg-white rounded-xl border border-border-default/5 p-6 my-6 text-center text-sm text-text-secondary aspect-[4/3] flex items-center justify-center">
-            [ 使用 Figma/Framer 繪製的系統架構或 Flowchart 插圖 ]
+        <section class="mb-8">
+          <p>To overcome the severe time constraint, I pioneered an AI-driven UX workflow:
+          <ol class="list-decimal list-inside ">
+            <li>AI-Powered Synthesis: I fed hundreds of pages of raw state regulations and RFP requirements into NotebookLM. By leveraging semantic extraction, I instantly summarized core business rules and mapped out the initial Information Architecture (IA).</li>
+            <li>Multi-Role Flow Harmonization: Based on the AI-generated architecture, I quickly mapped out the UI flows for all 4 key personas (Applicants, Police, Instructors, and Vendors), defining clear data perimeters and access permissions.</li>
+          </ol>
+        </section>
+        
+        <!-- phase 2 -->
+        <h3>Phase 2: Rapid Prototyping — Component Reusability & Design System</h3>
+        <section class="w-full mb-8 overflow-hidden rounded-2xl bg-white shadow-sm border border-border-default/5">
+          <div class="aspect-[16/9] w-full bg-slate-100 flex items-center justify-center text-text-secondary">
+            <span class="text-sm">[ Design System Showcase ]</span>
           </div>
         </section>
-
-        <section>
-          <h2>03. Scalable Solutions</h2>
-          <p>我們基於 WCAG 2.2 AA 標準重塑了色彩標籤、焦點狀態（Focus States）與螢幕閱讀器（Screen Reader）支援。同時，利用語意化的 Token 確保系統隨時可抽換主題（Theme）。</p>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-8">
-            <div class="flex flex-col gap-2">
-              <div class="aspect-video bg-white border border-border-default/5 rounded-xl flex items-center justify-center text-xs text-text-secondary">[ 介面局部放大圖 1：高對比元件 ]</div>
-              <span class="text-sm font-semibold mt-1">WCAG 2.2 AA 導覽列</span>
-              <span class="text-xs text-text-secondary">確保所有按鈕與標籤對比度皆大於 4.5:1</span>
-            </div>
-            <div class="flex flex-col gap-2">
-              <div class="aspect-video bg-white border border-border-default/5 rounded-xl flex items-center justify-center text-xs text-text-secondary">[ 介面局部放大圖 2：多租戶切換 ]</div>
-              <span class="text-sm font-semibold mt-1">多租戶架構切換器</span>
-              <span class="text-xs text-text-secondary">供不同政府機關一鍵切換專屬儀表板</span>
-            </div>
-          </div>
+        <section class="mb-8">
+          <ol class="list-decimal list-inside ">
+            <li>Leveraging Existing Design System: To scale UI flows into high-fidelity screens within 12 hours, I utilized the company's established Figma design system built upon Blazor and Telerik UI standards.</li>
+            <li>Production-Ready Proposal: Deploying pre-built tokens and components ensured the final interactive prototype looked visually compelling and was highly feasible for engineering, resulting in a flawless bid presentation.AI-Powered Synthesis: I fed hundreds of pages of raw state regulations and RFP requirements into NotebookLM. By leveraging semantic extraction, I instantly summarized core business rules and mapped out the initial Information Architecture (IA).</li>
+          </ol>
         </section>
 
-        <section>
-          <h2>04. The Impact</h2>
-          <p>這次的重構不僅是一次視覺升級，更直接轉化為極高的商業與開發價值：</p>
-
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
-            <div class="p-6 bg-white border border-border-default/5 rounded-xl text-center">
-              <span class="text-[2.5rem] font-bold text-text-primary block leading-none mb-2">$1.6M</span>
-              <span class="text-xs text-text-secondary uppercase font-semibold tracking-wider">成功奪下政府標案</span>
-            </div>
-            <div class="p-6 bg-white border border-border-default/5 rounded-xl text-center">
-              <span class="text-[2.5rem] font-bold text-text-primary block leading-none mb-2">+30%</span>
-              <span class="text-xs text-text-secondary uppercase font-semibold tracking-wider">前端開發效率提升</span>
-            </div>
-            <div class="p-6 bg-white border border-border-default/5 rounded-xl text-center">
-              <span class="text-[2.5rem] font-bold text-emerald-600 block leading-none mb-2">100%</span>
-              <span class="text-xs text-text-secondary uppercase font-semibold tracking-wider">通過無障礙法規合規</span>
-            </div>
+        <!-- phase 3 -->
+        <h3>Phase 3: Post-Bid Deep Dive — Detailed Design & Engineering Handoff</h3>
+        <section class="w-full mb-8 overflow-hidden rounded-2xl bg-white shadow-sm border border-border-default/5">
+          <div class="aspect-[16/9] w-full bg-slate-100 flex items-center justify-center text-text-secondary">
+            <span class="text-sm">[ Handoff Interface ]</span>
           </div>
         </section>
+        <section class="mb-8">
+          <p>After successfully securing the contract, I transitioned into a dual Product Designer and PM role for a 3-month implementation cycle:
+          <ol class="list-decimal list-inside ">
+            <li>Fleshing Out Edge Cases: I expanded the prototype beyond the initial "Happy Path," systematically designing for edge cases and complex user interactions.</li>
+            <li>Single Source of Truth (SSOT): I synchronized Figma Variables and UI components directly with the frontend Blazor/Telerik framework, allowing developers to build with pre-validated blocks and cutting down cross-border communication overhead.</li>
+          </ol>
+        </section>
+      </section>
 
+      <section>
+        <h2>03. Result & Impact</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
+          <div class="p-6 bg-white border border-border-default/5 rounded-xl text-center">
+            <span class="text-text-tertiary font-bold block leading-none mb-2">Business Impact</span>
+            <span class="text-[2.5rem] font-bold text-text-primary block leading-none mb-2">$1.6M</span>
+            <span class=" text-text-secondary font-semibold tracking-wider">Successfully defeated tier-one competitors to win the $1.6M+ US state government contract.</span>
+          </div>
+          <div class="p-6 bg-white border border-border-default/5 rounded-xl text-center">
+            <span class="text-text-tertiary font-bold block leading-none mb-2">Proposal Delivery</span>
+            <span class="text-[2.5rem] font-bold text-text-primary block leading-none mb-2">+60%</span>
+            <span class=" text-text-secondary font-semibold tracking-wider">Cut proposal delivery time by 60% (from 5 to 2 days) through AI-driven workflow automation.</span>
+          </div>
+          <div class="p-6 bg-white border border-border-default/5 rounded-xl text-center">
+            <span class="text-text-tertiary font-bold block leading-none mb-2">AI Innovation</span>
+            <span class="text-[1.5rem] font-bold block leading-none mb-2">AI-driven development workflow </span>
+            <span class=" text-text-secondary font-semibold tracking-wider">Established a scalable AI workflow, turning optimized frameworks into team standards.</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>04. Reflection & Next Steps</h2>
+        <p>Under a critical 48-hour window, the ultimate trade-off was "depth vs. breadth." I strategically prioritized designing the complete Happy Path (the primary core user flows) while deliberately sidelining edge cases (e.g., an applicant cancelling mid-registration). This project taught me that senior leadership means knowing how to make pragmatic design compromises to meet pressing business milestones.</p>
+
+        <h3 class="mt-8">What I Would Do Differently</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
+          <div class="p-5 bg-white rounded-xl">
+            <h4 class="mt-2 font-bold">Earlier Cross-Functional Alignment</h4>
+            <p class="text-text-tertiary mt-1 mb-0">Establish direct data-sharing channels with the business development team from day one to ensure a unified, holistic understanding of complex client workflows across the entire team.</p>
+          </div>
+          <div class="p-5 bg-white rounded-xl ">
+            <h4 class="mt-2 font-bold">User-Centric Validation over Assumptions</h4>
+            <p class="text-text-tertiary mt-1 mb-0">Shift from relying on past project experiences to advocating for continuous user feedback loops, ensuring system logic is validated by real user behaviors rather than assumptions.</p>
+          </div>
+        </div>
+
+        <h3>Next Step</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
+          <div class="p-5 bg-white rounded-xl ">
+            <h4 class="mt-2 font-bold">Data-Driven Iteration</h4>
+            <p class="text-text-tertiary mt-1 mb-0">Launch targeted usability testing with key personas while implementing GA and Heatmaps to merge qualitative and quantitative insights for continuous product optimization.</p>
+          </div>
+        </div>
+      </section>
       </div>
     </div>
 
