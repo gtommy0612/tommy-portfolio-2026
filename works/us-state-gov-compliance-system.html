@@ -69,8 +69,8 @@
           class="px-3 py-2 text-base border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors duration-300">Works</a>
         <!-- <a href="/index.html#playground"
           class="px-3 py-2 text-base border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors duration-300">Playground</a> -->
-        <!-- <a href="/about.html"
-          class="px-3 py-2 text-base border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors duration-300">About</a> -->
+        <a href="/index.html#about"
+          class="px-3 py-2 text-base border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors duration-300">About</a>
         <a href="mailto:hi@tommychidesign.com"
           class="px-3 py-2 text-base border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors duration-300">
           Let's Talk <span aria-hidden="true">↗</span>
@@ -97,12 +97,12 @@
     <div id="mobile-menu"
     class="hidden md:hidden fixed left-0 right-0 top-[57px] bg-surface-muted px-4 py-6 flex flex-col gap-3 shadow-xl transition-all duration-300 z-40 h-[calc(100vh-57px)] overflow-y-auto">
       <nav class="flex flex-col gap-3" aria-label="行動版導覽">
-        <a href="/index.html#work"
+        <a href="/index.html#works"
           class="mobile-nav-link block text-center py-3 border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors">Works</a>
         <!-- <a href="#playground"
           class="mobile-nav-link block text-center py-3 border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors">Playground</a> -->  
-        <!-- <a href="#about"
-          class="mobile-nav-link block text-center py-3 border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors">About</a> -->
+        <a href="/index.html#about"
+          class="mobile-nav-link block text-center py-3 border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors">About</a>
         <a href="mailto:hi@tommychidesign.com"
           class="mobile-nav-link block text-center py-3 border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors">Let's Talk ↗</a>
         <a href="/assets/Resume_Tommy.pdf" target="_blank"
@@ -299,7 +299,35 @@
       </div>
     </Footer>
   </main>
+  
+  <!-- Interactivity mobileMenuBtn Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
+      function toggleMenu() {
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      }
+
+      mobileMenuBtn.addEventListener('click', toggleMenu);
+
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (!mobileMenu.classList.contains('hidden')) {
+            toggleMenu();
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
