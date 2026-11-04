@@ -3,9 +3,10 @@
 Calm surfaces, real work, one accent.
 
 This file is the source of truth for how every page looks.
-- Tokens are defined in [`assets/js/tailwind-config.js`](assets/js/tailwind-config.js).
+- Tokens are defined in [`assets/js/tailwind-config.js`](assets/js/tailwind-config.js), and mirrored as CSS variables at the top of [`assets/css/e3.css`](assets/css/e3.css). Change both together.
+- Component classes live in [`assets/css/e3.css`](assets/css/e3.css): plain CSS, because the Tailwind CDN can't `@apply` from a shared file.
 - Shared behaviour is in [`assets/js/site.js`](assets/js/site.js).
-- The reference implementation is [`index.html`](index.html).
+- Reference pages: [`index.html`](index.html) and the case study [`us-state-gov-ai-bid-prototype.html`](us-state-gov-ai-bid-prototype.html).
 - The exploration (boards E3 / E3 Cold grey and the two system boards) lives on the Claude Design canvas.
 
 ## Rules
@@ -88,7 +89,7 @@ Headlines use `text-wrap: balance`.
 - Content max width is 1200px with a 24px gutter (`px-6`).
 - Cards use `auto-fit` grids, so they collapse to one column without breakpoints.
 
-## Components (see `index.html` `<style type="text/tailwindcss">`)
+## Components (`assets/css/e3.css`)
 
 - **Pills**
   - `.pill` is 48px high, with 24px horizontal padding and weight 500.
@@ -128,6 +129,14 @@ Headlines use `text-wrap: balance`.
   - Each tag is a `surface` pill with 8px / 16px padding.
 - **Footer link**
   - `.flink` is `text-label` 500 with an arrow that nudges up and right on hover, and an underline on hover.
+- **Case study parts**
+  - `.cs-hero` is the title area on `surface`: a `.cap` eyebrow (project · type · year), `.cs-title` at clamp(36–64), and `.cs-facts`, a `<dl>` of role / timeline / impact with a rule above each. Impact numbers use `.proof`.
+  - `.cs-cover` is the 16:9 cover tile under the title.
+  - `.cs-section` spaces sections 144px apart. Numbered headings put the number in the quiet tone: `<h2 class="two-tone"><span>01</span> Problem &amp; task</h2>`.
+  - `.cs-sub` is a 24px subheading inside a section; `.prose` holds running text at 68ch, with `.lead-in` for list intros.
+  - `.cards` is an auto-fit grid of `.card` (surface, 28px radius, `label` title, `muted` text) or `.stat` (caption, accent number, `muted` text). Use `.stat-num.is-word` when the result is words, not a number.
+  - `.shot` is a screenshot tile, 16:9 or `.is-free` for its natural height; `.shots` stacks several. Screens blend into the grey with multiply.
+  - `.cs-next` ends the page: an "All work" grey pill and the next case study.
 - **Focus**
   - Every link and button shows a 2px `accent` outline, offset 4px, with 10px radius.
 
@@ -147,7 +156,7 @@ Headlines use `text-wrap: balance`.
 
 1. Load Geist, then the Tailwind CDN, then `assets/js/tailwind-config.js`.
 2. Use the token classes (`text-ink`, `text-muted`, `bg-surface`, `rounded-tile`, `text-label`, and so on). Never use hex.
-3. Copy the component classes from `index.html` while they're only used there. Move them to a shared stylesheet once a second page needs them.
+3. Link `assets/css/e3.css` after the config, and use its component classes. Copy the header and footer from a case study (marked `E3 HEADER` / `E3 FOOTER`).
 4. Add `<script src="assets/js/site.js"></script>` for the mobile menu and anchor glide. The markup hooks are `data-bar`, `data-menu-btn` and `#mobile-menu`.
 
-**Status.** `index.html` is fully on E3. The case studies, `about.html` and `services/` use the E3 tokens and font but keep their older layouts and outlined nav. Moving them to E3 components is the next step.
+**Status.** `index.html` and both case studies are fully on E3. `about.html`, `b2c-music-app-feature-design.html` (hidden) and `services/` use the E3 tokens and font but keep their older layouts and outlined nav.

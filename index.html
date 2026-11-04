@@ -18,73 +18,14 @@
   <script src="assets/js/tailwind-config.js"></script>
 
   <!-- E3 components. Tokens live in assets/js/tailwind-config.js; rules in DESIGN.md. -->
-  <style type="text/tailwindcss">
-  @layer base {
-    body { @apply bg-page text-ink font-sans text-body antialiased; }
-    ::selection { @apply bg-ink text-white; }
-    a:focus-visible, button:focus-visible, [tabindex]:focus-visible { @apply outline outline-2 outline-offset-4 outline-accent rounded-[10px]; }
-    h1, h2, h3 { @apply m-0; }
-  }
-  @layer components {
-    /* Nav bar: sticky, see-through with blur; turns solid while the mobile menu is open */
-    .bar { @apply sticky top-0 z-50; background: linear-gradient(180deg, rgb(244 244 244 / .1) 0%, rgb(244 244 244 / 0) 25%); -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); }
-    .bar.is-open { @apply bg-surface; }
-    .nav-link { @apply text-muted no-underline transition-colors hover:text-ink; }
-    .menu-btn { @apply inline-flex min-[721px]:hidden w-11 h-11 rounded-full bg-surface-2 text-ink items-center justify-center hover:bg-surface-3; }
-    .menu-btn svg { transition: transform .35s theme('transitionTimingFunction.out-expo'); }
-    .menu-btn[aria-expanded="true"] svg { transform: rotate(90deg); }
-    .menu-btn .i-close, .menu-btn[aria-expanded="true"] .i-menu { display: none; }
-    .menu-btn[aria-expanded="true"] .i-close { display: block; }
-
-    /* Full-screen mobile sheet */
-    .sheet { @apply absolute inset-x-0 top-16 bg-surface overflow-y-auto; height: calc(100svh - 4rem); overscroll-behavior: contain; animation: sheetIn .35s theme('transitionTimingFunction.out-expo'); }
-    .sheet[hidden] { display: none; }
-    .sheet-link { @apply flex items-center justify-between min-h-[76px] border-b border-hair text-[32px] font-semibold tracking-[-0.03em] no-underline; animation: linkIn .5s theme('transitionTimingFunction.out-expo') both; }
-    .sheet-link svg { @apply text-muted; }
-    .sheet-link:nth-child(2) { animation-delay: .04s; }
-    .sheet-link:nth-child(3) { animation-delay: .08s; }
-    .sheet-foot { @apply mt-auto pt-10 flex flex-col gap-4; animation: linkIn .5s .12s theme('transitionTimingFunction.out-expo') both; }
-    @media (min-width: 721px) { .sheet { display: none !important; } }
-
-    /* Pills */
-    .pill { @apply inline-flex items-center gap-2 min-h-12 px-6 rounded-full no-underline font-medium text-body transition-colors duration-200 ease-out-expo; }
-    .pill-ink { @apply bg-ink text-white hover:bg-ink-hover; }
-    .pill-white { @apply bg-white hover:bg-[#FCFCFC]; }
-    .pill-grey { @apply bg-surface-2 hover:bg-surface-3; }
-    .pill-sm { @apply min-h-10 px-4; }
-
-    /* Inline screen chip inside the headline */
-    .chip { @apply inline-block overflow-hidden bg-white; width: 1.42em; height: .84em; border-radius: .2em; vertical-align: -.05em; margin: 0 .04em; box-shadow: 0 0 0 1px rgb(29 29 31 / .08); }
-    .chip img { @apply block w-full h-full object-cover; }
-
-    /* Tiles and type */
-    .tile { @apply block relative overflow-hidden bg-surface rounded-tile; }
-    .lift { @apply absolute inset-0 block transition-transform duration-500 ease-out-expo; }
-    a.tile:hover .lift { transform: translateY(-6px); }
-    .two-tone { @apply font-semibold leading-[1.1] tracking-[-0.035em]; font-size: clamp(32px, 3.6vw, 48px); text-wrap: balance; }
-    .two-tone span { @apply text-quiet; }
-    .proof { @apply text-accent font-semibold; }
-    .flink { @apply inline-flex items-center gap-1.5 text-label font-medium no-underline underline-offset-[5px] decoration-[1.5px] hover:underline; }
-    .flink svg { @apply text-muted transition-transform duration-200 ease-out-expo; }
-    .flink:hover svg { @apply text-ink; transform: translate(2px, -2px); }
-    .xp li { @apply grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-x-6 gap-y-1 py-5 border-t border-hair last:border-b; }
-
-    @keyframes sheetIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes linkIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-    @media (prefers-reduced-motion: reduce) {
-      .sheet, .sheet-link, .sheet-foot { animation: none; }
-      .menu-btn svg, .lift, .pill { transition: none; }
-      a.tile:hover .lift { transform: none; }
-    }
-  }
-  </style>
+  <link rel="stylesheet" href="assets/css/e3.css">
 </head>
 
 <body>
   <header class="bar" data-bar>
-    <div class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between gap-4">
-      <a href="#" class="font-semibold text-[17px] tracking-[-0.02em] no-underline whitespace-nowrap" aria-label="Tommy Chi, back to top">Tommy Chi</a>
-      <nav class="hidden min-[721px]:flex items-center gap-7" aria-label="Main">
+    <div class="bar-in">
+      <a href="#" class="brand" aria-label="Tommy Chi, back to top">Tommy Chi</a>
+      <nav class="nav" aria-label="Main">
         <a href="#works" class="nav-link">Work</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#contact" class="nav-link">Contact</a>
@@ -96,13 +37,13 @@
       </button>
     </div>
     <div id="mobile-menu" class="sheet" hidden>
-      <nav class="max-w-[1200px] min-h-full mx-auto px-6 pt-4 flex flex-col" style="padding-bottom: calc(32px + env(safe-area-inset-bottom))" aria-label="Mobile">
+      <nav class="sheet-in" aria-label="Mobile">
         <a href="#works" class="sheet-link">Work <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a href="#about" class="sheet-link">About <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a href="#contact" class="sheet-link">Contact <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <div class="sheet-foot">
           <a href="assets/Resume_TommyChi.pdf" target="_blank" rel="noopener" class="pill pill-ink justify-center">Download resume</a>
-          <a href="mailto:gtommy0612@gmail.com" class="self-center text-muted no-underline">gtommy0612@gmail.com</a>
+          <a href="mailto:gtommy0612@gmail.com" class="sheet-mail">gtommy0612@gmail.com</a>
         </div>
       </nav>
     </div>
@@ -135,7 +76,7 @@
               <img src="assets/home/bid-application-card.png" alt="Application info card with status and next step, from the bid prototype" loading="lazy" class="absolute left-1/2 top-9 w-[62%] rounded-xl" style="transform: translateX(-50%) rotate(-2deg); box-shadow: 0 20px 40px -22px rgb(29 29 31 / .3)">
             </div>
             <div class="flex flex-col gap-1.5">
-              <h3 class="text-label">Prototypes that win contracts</h3>
+              <h3 class="label">Prototypes that win contracts</h3>
               <p class="text-muted">A 48-hour clickable prototype helped win a <strong class="proof">$1.6M+</strong> US state contract. AI reads the agency rules first; the workflow is now team SOP.</p>
             </div>
           </div>
@@ -144,7 +85,7 @@
               <img src="assets/home/records-button-states.png" alt="Button states from the design system: normal, hover, focus, disabled" loading="lazy" class="block w-full h-full object-cover mix-blend-multiply">
             </div>
             <div class="flex flex-col gap-1.5">
-              <h3 class="text-label">Design systems engineers build on</h3>
+              <h3 class="label">Design systems engineers build on</h3>
               <p class="text-muted">Tokens in Figma Variables, named the way engineers code them. Front-end build time <strong class="proof">−67%</strong>, reused across projects.</p>
             </div>
           </div>
@@ -153,7 +94,7 @@
               <img src="assets/home/records-contrast-check.png" alt="Color contrast check showing an 8.63 to 1 ratio" loading="lazy" class="block w-full h-full object-cover mix-blend-multiply">
             </div>
             <div class="flex flex-col gap-1.5">
-              <h3 class="text-label">Flows people finish</h3>
+              <h3 class="label">Flows people finish</h3>
               <p class="text-muted">A public records checkout rebuilt at <strong class="proof">100% WCAG 2.2 AA</strong>, ending duplicate payments and the refund work behind them.</p>
             </div>
           </div>
