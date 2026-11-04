@@ -11,10 +11,10 @@
   <link rel="alternate" hreflang="zh-Hant" href="/services/zh/">
   <link rel="alternate" hreflang="x-default" href="/services/">
 
-  <!-- Google Fonts - Inter -->
+  <!-- Google Fonts - Geist -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN + shared config -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -26,12 +26,15 @@
       scroll-padding-top: 4rem;
       scroll-behavior: smooth;
     }
+    /* E3 base: 16px body, accent focus ring */
+    body { @apply text-body; }
+    a:focus-visible, button:focus-visible, [tabindex]:focus-visible { @apply outline outline-2 outline-offset-4 outline-accent rounded-[10px]; }
     h1, h2, h3, h4, h5, h6 {
-      @apply text-[#1d1d1f] antialiased m-0 p-0;
+      @apply text-ink antialiased m-0 p-0;
     }
-    h1 { @apply text-[2rem]   font-bold    leading-[1.15] tracking-[-0.016em] mb-[0.5em]
+    h1 { @apply text-[2rem]   font-semibold    leading-[1.15] tracking-[-0.016em] mb-[0.5em]
                 lg:text-[4rem]    lg:leading-[1.08] lg:tracking-[-0.024em]; }
-    h2 { @apply text-[1.75rem] font-bold    leading-[1.2]  tracking-[-0.011em] mb-[0.5em]
+    h2 { @apply text-[1.75rem] font-semibold    leading-[1.2]  tracking-[-0.011em] mb-[0.5em]
                 lg:text-[2.5rem]  lg:leading-[1.12] lg:tracking-[-0.022em]; }
     h3 { @apply text-[1.5rem]  font-semibold leading-[1.25] tracking-[-0.007em] mb-[0.6em]
                 lg:text-[1.75rem] lg:leading-[1.18] lg:tracking-[-0.014em]; }
@@ -147,7 +150,7 @@
         <article class="bg-white rounded-lg p-6 md:p-8 flex flex-col gap-3 shadow-sm">
           <span class="text-caption font-semibold tracking-wider uppercase text-text-secondary">01 · 稽核與改版</span>
           <h3 class="text-[1.25rem] lg:text-[1.5rem] font-bold">UX 稽核與改版</h3>
-          <p class="text-text-tertiary text-[15px] leading-relaxed">
+          <p class="text-text-tertiary text-body leading-relaxed">
             以啟發式評估與任務流程分析檢視現有產品，依優先順序改版最關鍵的流程。常見成果：步驟更少、客服問題更少。
           </p>
           <p class="text-caption text-text-secondary">交付：稽核報告、改版流程、可點擊原型</p>
@@ -156,7 +159,7 @@
         <article class="bg-white rounded-lg p-6 md:p-8 flex flex-col gap-3 shadow-sm">
           <span class="text-caption font-semibold tracking-wider uppercase text-text-secondary">02 · 設計系統</span>
           <h3 class="text-[1.25rem] lg:text-[1.5rem] font-bold">設計系統 + WCAG 2.2 AA</h3>
-          <p class="text-text-tertiary text-[15px] leading-relaxed">
+          <p class="text-text-tertiary text-body leading-relaxed">
             在 Figma 建立 token、元件與文件，並與前端程式碼對齊。一開始就做好無障礙，而不是事後補救。
           </p>
           <p class="text-caption text-text-secondary">交付：Figma 元件庫、token 規格、無障礙檢核表</p>
@@ -165,7 +168,7 @@
         <article class="bg-white rounded-lg p-6 md:p-8 flex flex-col gap-3 shadow-sm">
           <span class="text-caption font-semibold tracking-wider uppercase text-text-secondary">03 · 原型</span>
           <h3 class="text-[1.25rem] lg:text-[1.5rem] font-bold">AI 加速原型</h3>
-          <p class="text-text-tertiary text-[15px] leading-relaxed">
+          <p class="text-text-tertiary text-body leading-relaxed">
             以天為單位完成高擬真、可點擊的原型，適合投標、募資簡報，或在開發前先找真實使用者驗證想法。
           </p>
           <p class="text-caption text-text-secondary">交付：互動原型、Demo 腳本、後續待辦清單</p>
@@ -174,7 +177,7 @@
         <article class="bg-white rounded-lg p-6 md:p-8 flex flex-col gap-3 shadow-sm">
           <span class="text-caption font-semibold tracking-wider uppercase text-text-secondary">04 · 顧問</span>
           <h3 class="text-[1.25rem] lg:text-[1.5rem] font-bold">產品與專案管理顧問</h3>
-          <p class="text-text-tertiary text-[15px] leading-relaxed">
+          <p class="text-text-tertiary text-body leading-relaxed">
             協助界定範疇、整理需求、對齊利害關係人。適合在特定期間需要一位懂設計的 PM 夥伴的團隊。
           </p>
           <p class="text-caption text-text-secondary">交付：PRD／User Story、產品路線圖、工作坊引導</p>
@@ -190,22 +193,22 @@
         <li class="flex flex-col gap-2 border-t border-border-default pt-4">
           <span class="text-caption font-semibold text-text-secondary">步驟 1</span>
           <h4 class="font-bold">需求探索</h4>
-          <p class="text-text-tertiary text-[15px] leading-relaxed">免費 30 分鐘線上會議，了解你的目標、使用者、限制與時程。</p>
+          <p class="text-text-tertiary text-body leading-relaxed">免費 30 分鐘線上會議，了解你的目標、使用者、限制與時程。</p>
         </li>
         <li class="flex flex-col gap-2 border-t border-border-default pt-4">
           <span class="text-caption font-semibold text-text-secondary">步驟 2</span>
           <h4 class="font-bold">提案與報價</h4>
-          <p class="text-text-tertiary text-[15px] leading-relaxed">數個工作天內提供範疇、交付項目、里程碑，以及固定或分階段報價。</p>
+          <p class="text-text-tertiary text-body leading-relaxed">數個工作天內提供範疇、交付項目、里程碑，以及固定或分階段報價。</p>
         </li>
         <li class="flex flex-col gap-2 border-t border-border-default pt-4">
           <span class="text-caption font-semibold text-text-secondary">步驟 3</span>
           <h4 class="font-bold">設計與迭代</h4>
-          <p class="text-text-tertiary text-[15px] leading-relaxed">每週同步進度，提供可直接點擊、留言的設計稿。</p>
+          <p class="text-text-tertiary text-body leading-relaxed">每週同步進度，提供可直接點擊、留言的設計稿。</p>
         </li>
         <li class="flex flex-col gap-2 border-t border-border-default pt-4">
           <span class="text-caption font-semibold text-text-secondary">步驟 4</span>
           <h4 class="font-bold">交付</h4>
-          <p class="text-text-tertiary text-[15px] leading-relaxed">提供工程可直接使用的規格與檔案，並當面導覽，讓團隊能順利接手。</p>
+          <p class="text-text-tertiary text-body leading-relaxed">提供工程可直接使用的規格與檔案，並當面導覽，讓團隊能順利接手。</p>
         </li>
       </ol>
     </section>

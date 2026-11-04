@@ -8,10 +8,10 @@
   <meta name="description"
     content="Tommy Chi is a Senior Product Designer & PMP® certified professional specializing in AI innovation, scalable design systems, WCAG 2.2 AA compliance, and business growth.">
 
-  <!-- Google Fonts - Inter -->
+  <!-- Google Fonts - Geist -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -23,14 +23,17 @@
       scroll-padding-top: 4rem; /* 依據你的導覽列高度調整 */
       scroll-behavior: smooth;
     }
-    /* 所有標題繼承 sans（Inter + Apple system stack），無需重複宣告 font-family */
+    /* 所有標題繼承 sans（Geist + Apple system stack），無需重複宣告 font-family */
+    /* E3 base: 16px body, accent focus ring */
+    body { @apply text-body; }
+    a:focus-visible, button:focus-visible, [tabindex]:focus-visible { @apply outline outline-2 outline-offset-4 outline-accent rounded-[10px]; }
     h1, h2, h3, h4, h5, h6 {
-      @apply text-[#1d1d1f] antialiased m-0 p-0;
+      @apply text-ink antialiased m-0 p-0;
     }
     /* Apple-style 響應式標題 scale */
-    h1 { @apply text-[2rem]   font-bold    leading-[1.15] tracking-[-0.016em] mb-[0.5em]
+    h1 { @apply text-[2rem]   font-semibold    leading-[1.15] tracking-[-0.016em] mb-[0.5em]
                 lg:text-[4rem]    lg:leading-[1.08] lg:tracking-[-0.024em]; }
-    h2 { @apply text-[1.75rem] font-bold    leading-[1.2]  tracking-[-0.011em] mb-[0.5em]
+    h2 { @apply text-[1.75rem] font-semibold    leading-[1.2]  tracking-[-0.011em] mb-[0.5em]
                 lg:text-[2.5rem]  lg:leading-[1.12] lg:tracking-[-0.022em]; }
     h3 { @apply text-[1.5rem]  font-semibold leading-[1.25] tracking-[-0.007em] mb-[0.6em]
                 lg:text-[1.75rem] lg:leading-[1.18] lg:tracking-[-0.014em]; }
@@ -153,9 +156,9 @@
           </h3>
 
           <div class="flex flex-wrap gap-1.5 mt-2">
-            <span class="px-4 py-2 font-medium rounded-full bg-[#e8e8ed] text-text-secondary border border-transparent">GovTech</span>
-            <span class="px-4 py-2 font-medium rounded-full bg-[#e8e8ed] text-text-secondary border border-transparent">Rapid Prototyping</span>
-            <span class="px-4 py-2 font-medium rounded-full bg-[#e8e8ed] text-text-secondary border border-transparent">AI-Augmented Design</span>
+            <span class="px-4 py-2 font-medium rounded-full bg-surface-2 text-text-secondary border border-transparent">GovTech</span>
+            <span class="px-4 py-2 font-medium rounded-full bg-surface-2 text-text-secondary border border-transparent">Rapid Prototyping</span>
+            <span class="px-4 py-2 font-medium rounded-full bg-surface-2 text-text-secondary border border-transparent">AI-Augmented Design</span>
           </div>
         </article>
         </a>
@@ -177,8 +180,8 @@
           </h3>
 
           <div class="flex flex-wrap gap-1.5 mt-2">
-            <span class="px-4 py-2 font-medium rounded-full bg-[#e8e8ed] text-text-secondary border border-transparent">Design System</span>
-            <span class="px-4 py-2 font-medium rounded-full bg-[#e8e8ed] text-text-secondary border border-transparent">WCAG 2.2 Compliance</span>
+            <span class="px-4 py-2 font-medium rounded-full bg-surface-2 text-text-secondary border border-transparent">Design System</span>
+            <span class="px-4 py-2 font-medium rounded-full bg-surface-2 text-text-secondary border border-transparent">WCAG 2.2 Compliance</span>
           </div>
         </article>
         </a>
@@ -200,8 +203,8 @@
           </h3>
 
           <div class="flex flex-wrap gap-1.5 mt-2">
-            <span class="px-4 py-2 font-medium rounded-full bg-[#e8e8ed] text-text-secondary border border-transparent">Competitive Analysis</span>
-            <span class="px-4 py-2 font-medium rounded-full bg-[#e8e8ed] text-text-secondary border border-transparent">B2C Mobile App</span>
+            <span class="px-4 py-2 font-medium rounded-full bg-surface-2 text-text-secondary border border-transparent">Competitive Analysis</span>
+            <span class="px-4 py-2 font-medium rounded-full bg-surface-2 text-text-secondary border border-transparent">B2C Mobile App</span>
           </div>
         </article> -->
 
@@ -226,7 +229,7 @@
               <h3 class="text-[1.25rem] font-bold text-border-default mt-1">Strategic Product Management</h3>
             </div>
             <!-- Body -->
-            <p class="text-text-tertiary text-[15px] leading-relaxed">
+            <p class="text-text-tertiary text-body leading-relaxed">
             Backed by a PMP® certification, I manage scope, align stakeholder goals, and drive product strategy. Experienced in Agile/Scrum, I keep cross-border remote product cycles lean, efficient, and sharply focused on business value.            </p>
           </div>
         </article>
@@ -240,7 +243,7 @@
               <h3 class="text-[1.25rem] font-bold text-border-default mt-1">AI-Powered Workflow</h3>
             </div>
             <!-- Body -->
-            <p class="text-text-tertiary text-[15px] leading-relaxed">
+            <p class="text-text-tertiary text-body leading-relaxed">
             I leverage AI tools to accelerate my design workflow, allowing more time for deep UX thinking. By blending data-driven insights with rapid iteration, I deliver high-quality, impactful designs that achieve both user satisfaction and business goals.            </p>
           </div>
         </article>
@@ -255,7 +258,7 @@
               <h3 class="text-[1.25rem] font-bold text-border-default mt-1">Tech-Fluent Collaboration</h3>
             </div>
             <!-- Body -->
-            <p class="text-text-tertiary text-[15px] leading-relaxed">
+            <p class="text-text-tertiary text-body leading-relaxed">
             With practical experience in HTML, CSS, and JavaScript, I bridge the gap between design and development. I evaluate technical feasibility early in the process, ensuring seamless engineering handoffs and pixel-perfect implementation.
             </p>
           </div>

@@ -9,7 +9,7 @@
     content="Redesigned a US public records search from 6 steps to 3 (-50%), reached 100% WCAG 2.2 AA compliance, and cut front-end development time by 67% (3 weeks to 1) with design tokens.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="assets/js/tailwind-config.js"></script>
   <style type="text/tailwindcss">
@@ -18,14 +18,17 @@
       scroll-padding-top: 4rem; /* 依據你的導覽列高度調整 */
       scroll-behavior: smooth;
     }
-    /* 所有標題繼承 sans（Inter + Apple system stack），無需重複宣告 font-family */
+    /* 所有標題繼承 sans（Geist + Apple system stack），無需重複宣告 font-family */
+    /* E3 base: 16px body, accent focus ring */
+    body { @apply text-body; }
+    a:focus-visible, button:focus-visible, [tabindex]:focus-visible { @apply outline outline-2 outline-offset-4 outline-accent rounded-[10px]; }
     h1, h2, h3, h4, h5, h6 {
-      @apply text-[#1d1d1f] antialiased m-0 p-0;
+      @apply text-ink antialiased m-0 p-0;
     }
     /* Apple-style 響應式標題 scale */
-    h1 { @apply text-[2rem]   font-bold    leading-[1.15] tracking-[-0.016em] mb-[0.5em]
+    h1 { @apply text-[2rem]   font-semibold    leading-[1.15] tracking-[-0.016em] mb-[0.5em]
                 lg:text-[4rem]    lg:leading-[1.08] lg:tracking-[-0.024em]; }
-    h2 { @apply text-[1.75rem] font-bold    leading-[1.2]  tracking-[-0.011em] mb-[0.5em]
+    h2 { @apply text-[1.75rem] font-semibold    leading-[1.2]  tracking-[-0.011em] mb-[0.5em]
                 lg:text-[2.5rem]  lg:leading-[1.12] lg:tracking-[-0.022em]; }
     h3 { @apply text-[1.5rem]  font-semibold leading-[1.25] tracking-[-0.007em] mb-[0.6em]
                 lg:text-[1.75rem] lg:leading-[1.18] lg:tracking-[-0.014em]; }

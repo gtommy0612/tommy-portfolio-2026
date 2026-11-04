@@ -11,10 +11,10 @@
   <link rel="alternate" hreflang="zh-Hant" href="/services/zh/">
   <link rel="alternate" hreflang="x-default" href="/services/">
 
-  <!-- Google Fonts - Inter -->
+  <!-- Google Fonts - Geist -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN + shared config -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -26,12 +26,15 @@
       scroll-padding-top: 4rem;
       scroll-behavior: smooth;
     }
+    /* E3 base: 16px body, accent focus ring */
+    body { @apply text-body; }
+    a:focus-visible, button:focus-visible, [tabindex]:focus-visible { @apply outline outline-2 outline-offset-4 outline-accent rounded-[10px]; }
     h1, h2, h3, h4, h5, h6 {
-      @apply text-[#1d1d1f] antialiased m-0 p-0;
+      @apply text-ink antialiased m-0 p-0;
     }
-    h1 { @apply text-[2rem]   font-bold    leading-[1.15] tracking-[-0.016em] mb-[0.5em]
+    h1 { @apply text-[2rem]   font-semibold    leading-[1.15] tracking-[-0.016em] mb-[0.5em]
                 lg:text-[4rem]    lg:leading-[1.08] lg:tracking-[-0.024em]; }
-    h2 { @apply text-[1.75rem] font-bold    leading-[1.2]  tracking-[-0.011em] mb-[0.5em]
+    h2 { @apply text-[1.75rem] font-semibold    leading-[1.2]  tracking-[-0.011em] mb-[0.5em]
                 lg:text-[2.5rem]  lg:leading-[1.12] lg:tracking-[-0.022em]; }
     h3 { @apply text-[1.5rem]  font-semibold leading-[1.25] tracking-[-0.007em] mb-[0.6em]
                 lg:text-[1.75rem] lg:leading-[1.18] lg:tracking-[-0.014em]; }
@@ -147,7 +150,7 @@
         <article class="bg-white rounded-lg p-6 md:p-8 flex flex-col gap-3 shadow-sm">
           <span class="text-caption font-semibold tracking-wider uppercase text-text-secondary">01 · Audit &amp; Redesign</span>
           <h3 class="text-[1.25rem] lg:text-[1.5rem] font-bold">UX Audit &amp; Redesign</h3>
-          <p class="text-text-tertiary text-[15px] leading-relaxed">
+          <p class="text-text-tertiary text-body leading-relaxed">
             A heuristic and task-flow review of your product, followed by a prioritized redesign of the flows that matter most. Typical result: fewer steps, fewer support tickets.
           </p>
           <p class="text-caption text-text-secondary">Deliverables: audit report, redesigned flows, clickable prototype</p>
@@ -156,7 +159,7 @@
         <article class="bg-white rounded-lg p-6 md:p-8 flex flex-col gap-3 shadow-sm">
           <span class="text-caption font-semibold tracking-wider uppercase text-text-secondary">02 · Design System</span>
           <h3 class="text-[1.25rem] lg:text-[1.5rem] font-bold">Design System + WCAG 2.2 AA</h3>
-          <p class="text-text-tertiary text-[15px] leading-relaxed">
+          <p class="text-text-tertiary text-body leading-relaxed">
             Tokens, components, and documentation in Figma, aligned with your front-end code — built accessible from the start rather than patched later.
           </p>
           <p class="text-caption text-text-secondary">Deliverables: Figma library, token spec, accessibility checklist</p>
@@ -165,7 +168,7 @@
         <article class="bg-white rounded-lg p-6 md:p-8 flex flex-col gap-3 shadow-sm">
           <span class="text-caption font-semibold tracking-wider uppercase text-text-secondary">03 · Prototype</span>
           <h3 class="text-[1.25rem] lg:text-[1.5rem] font-bold">AI-Accelerated Prototyping</h3>
-          <p class="text-text-tertiary text-[15px] leading-relaxed">
+          <p class="text-text-tertiary text-body leading-relaxed">
             High-fidelity, clickable prototypes in days, not weeks — for bids, investor demos, or validating an idea with real users before you build.
           </p>
           <p class="text-caption text-text-secondary">Deliverables: interactive prototype, demo script, next-step backlog</p>
@@ -174,7 +177,7 @@
         <article class="bg-white rounded-lg p-6 md:p-8 flex flex-col gap-3 shadow-sm">
           <span class="text-caption font-semibold tracking-wider uppercase text-text-secondary">04 · Consulting</span>
           <h3 class="text-[1.25rem] lg:text-[1.5rem] font-bold">Product &amp; PM Consulting</h3>
-          <p class="text-text-tertiary text-[15px] leading-relaxed">
+          <p class="text-text-tertiary text-body leading-relaxed">
             Scope definition, requirement synthesis, and stakeholder alignment for teams that need a design-minded PM partner for a defined period.
           </p>
           <p class="text-caption text-text-secondary">Deliverables: PRD / user stories, roadmap, workshop facilitation</p>
@@ -190,22 +193,22 @@
         <li class="flex flex-col gap-2 border-t border-border-default pt-4">
           <span class="text-caption font-semibold text-text-secondary">Step 1</span>
           <h4 class="font-bold">Discovery</h4>
-          <p class="text-text-tertiary text-[15px] leading-relaxed">A free 30-minute call to understand your goals, users, constraints, and timeline.</p>
+          <p class="text-text-tertiary text-body leading-relaxed">A free 30-minute call to understand your goals, users, constraints, and timeline.</p>
         </li>
         <li class="flex flex-col gap-2 border-t border-border-default pt-4">
           <span class="text-caption font-semibold text-text-secondary">Step 2</span>
           <h4 class="font-bold">Proposal &amp; quote</h4>
-          <p class="text-text-tertiary text-[15px] leading-relaxed">Within a few business days: scope, deliverables, milestones, and a fixed or phased price.</p>
+          <p class="text-text-tertiary text-body leading-relaxed">Within a few business days: scope, deliverables, milestones, and a fixed or phased price.</p>
         </li>
         <li class="flex flex-col gap-2 border-t border-border-default pt-4">
           <span class="text-caption font-semibold text-text-secondary">Step 3</span>
           <h4 class="font-bold">Design &amp; iterate</h4>
-          <p class="text-text-tertiary text-[15px] leading-relaxed">Weekly check-ins with work in progress you can click through and comment on.</p>
+          <p class="text-text-tertiary text-body leading-relaxed">Weekly check-ins with work in progress you can click through and comment on.</p>
         </li>
         <li class="flex flex-col gap-2 border-t border-border-default pt-4">
           <span class="text-caption font-semibold text-text-secondary">Step 4</span>
           <h4 class="font-bold">Handoff</h4>
-          <p class="text-text-tertiary text-[15px] leading-relaxed">Developer-ready specs and files, plus a walkthrough so your team can carry it forward.</p>
+          <p class="text-text-tertiary text-body leading-relaxed">Developer-ready specs and files, plus a walkthrough so your team can carry it forward.</p>
         </li>
       </ol>
     </section>

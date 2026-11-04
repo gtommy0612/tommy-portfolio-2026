@@ -31,7 +31,7 @@ The services pages reuse the case-study pages as proof — they link to `../us-s
 
 - Use **relative** paths for links and images (`assets/...`, `../assets/...` from `services/`), so pages work both on the host and locally.
 - Image filenames: lowercase, hyphenated, no spaces.
-- Design tokens (colors, font sizes, radii, spacing) live in `assets/js/tailwind-config.js`. Each page keeps its own `<style type="text/tailwindcss">` block because the Tailwind CDN needs it inline.
+- **Design system: read [DESIGN.md](DESIGN.md) before any UI change.** Design tokens (colors, font sizes, radii, spacing) live in `assets/js/tailwind-config.js`; shared menu and scroll behaviour in `assets/js/site.js`. Each page keeps its own `<style type="text/tailwindcss">` block because the Tailwind CDN needs it inline.
 - A future Chinese portfolio can live under `/zh/` without changing existing URLs.
 
 ## Local preview
