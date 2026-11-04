@@ -1,29 +1,17 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OFFGRID Feature Design | Tommy Chi</title>
+  <meta name="description"
+    content="Competitor analysis first: dating and member rewards features for OFFGRID, a B2C music-social app, earning 2 consecutive feature commissions.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'] },
-          colors: {
-            border: { default: '#1b1c1e' },
-            text: { primary: '#1d1d1f', secondary: '#86868b', tertiary: '#515154' },
-            surface: { muted: '#f5f5f7' },
-          },
-          borderRadius: { 'xs': '50px', 'sm': '80px' }
-        }
-      }
-    }
-  </script>
+  <script src="assets/js/tailwind-config.js"></script>
   <style type="text/tailwindcss">
   @layer base {
     html {
@@ -163,7 +151,7 @@
     <!-- TODO: add screens (competitor matrix, dating flow, rewards flow) -->
 <section class="mt-32 pt-12 border-t border-border-default/10 flex justify-between items-center">
       <a href="index.html" class="text-text-secondary hover:text-text-primary transition-colors">← Back to Portfolio</a>
-      <a href="works/us-state-gov-ai-bid-prototype.html" class="group flex flex-col items-end">
+      <a href="us-state-gov-ai-bid-prototype.html" class="group flex flex-col items-end">
         <span class="text-caption text-text-secondary">Next Project →</span>
         <span class="font-bold text-lg text-text-primary group-hover:text-text-secondary transition-colors">Winning a $1.6M+ US State Government Bid: AI-Accelerated Prototyping in 48 Hours</span>
       </a>
@@ -199,7 +187,10 @@
           <a href="https://www.behance.net/godiswonderful" target="_blank" rel="noopener noreferrer"
             class="hover:text-text-secondary transition-colors">Behance ↗</a>
         </div>
-        <span class="mt-10">© Tommy Chi Design 2026</span>
+        <div class="mt-10 flex flex-wrap items-baseline justify-between gap-3">
+          <span>© Tommy Chi Design 2026</span>
+          <a href="services/" target="_blank" rel="noopener" class="text-caption text-text-secondary hover:text-border-default transition-colors">Freelance / 接案合作 ↗</a>
+        </div>
 
       </div>
     </Footer>

@@ -1,29 +1,17 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Public Records Verification Platform | Tommy Chi</title>
+  <meta name="description"
+    content="Redesigned a US public records search from 6 steps to 3 (-50%), reached 100% WCAG 2.2 AA compliance, and cut front-end development time by 67% (3 weeks to 1) with design tokens.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'] },
-          colors: {
-            border: { default: '#1b1c1e' },
-            text: { primary: '#1d1d1f', secondary: '#86868b', tertiary: '#515154' },
-            surface: { muted: '#f5f5f7' },
-          },
-          borderRadius: { 'xs': '50px', 'sm': '80px' }
-        }
-      }
-    }
-  </script>
+  <script src="assets/js/tailwind-config.js"></script>
   <style type="text/tailwindcss">
   @layer base {
     html {
@@ -146,7 +134,7 @@
 
     <section class="w-full mb-4 overflow-hidden rounded-2xl bg-white shadow-sm border border-border-default/5">
       <div class="aspect-[16/9] w-full bg-slate-100 flex items-center justify-center text-text-secondary">
-        <img src="/assets/us-state-gov-public-records-redesign/cover.png" class="w-full h-full object-cover object-center bg-white" alt="">
+        <img src="assets/us-state-gov-public-records-redesign/cover.png" class="w-full h-full object-cover object-center bg-white" alt="">
         <!-- <span class="text-sm">[ 16:9 橫向大尺寸產品視覺主圖 ]</span> -->
       </div>
     </section>
@@ -200,9 +188,9 @@
         <!-- phase 1 -->
         <h3>Action A: Simplifying the Core Flow That Caused Duplicate Payments</h3>
         <section class="w-full mb-8 overflow-hidden flex flex-col gap-8">
-          <img src="/assets/us-state-gov-public-records-redesign/signup-flow.png" alt="signup" class=" rounded-2xl">
-          <img src="/assets/us-state-gov-public-records-redesign/checkout.png" alt="checkout" class=" rounded-2xl">
-          <img src="/assets/us-state-gov-public-records-redesign/dashboard.png" alt="dashboard" class=" rounded-2xl">
+          <img src="assets/us-state-gov-public-records-redesign/signup-flow.png" alt="signup" class=" rounded-2xl">
+          <img src="assets/us-state-gov-public-records-redesign/checkout.png" alt="checkout" class=" rounded-2xl">
+          <img src="assets/us-state-gov-public-records-redesign/dashboard.png" alt="dashboard" class=" rounded-2xl">
         </section>
         <section class="mb-8">
           <p>Research & Information Architecture (IA):</p>
@@ -229,7 +217,7 @@
         <h3>Action B: Rebuilding Components on a WCAG 2.2 AA Design System</h3>
         <section class="w-full mb-8 overflow-hidden rounded-2xl bg-white shadow-sm border border-border-default/5">
           <div class="aspect-[16/9] w-full bg-slate-100 flex items-center justify-center text-text-secondary">
-            <img src="/assets/us-state-gov-public-records-redesign/RWD & WCAG design system.png" alt="">
+            <img src="assets/us-state-gov-public-records-redesign/rwd-wcag-design-system.png" alt="">
           </div>
         </section>
         <section class="mb-8">
@@ -348,7 +336,10 @@
           <a href="https://www.behance.net/godiswonderful" target="_blank" rel="noopener noreferrer"
             class="hover:text-text-secondary transition-colors">Behance ↗</a>
         </div>
-        <span class="mt-10">© Tommy Chi Design 2026</span>
+        <div class="mt-10 flex flex-wrap items-baseline justify-between gap-3">
+          <span>© Tommy Chi Design 2026</span>
+          <a href="services/" target="_blank" rel="noopener" class="text-caption text-text-secondary hover:text-border-default transition-colors">Freelance / 接案合作 ↗</a>
+        </div>
 
       </div>
     </Footer>

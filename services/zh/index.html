@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tommy Chi | UX 與設計系統接案服務</title>
+  <meta name="description"
+    content="Tommy Chi 的 UX 與設計系統接案服務：UX 稽核與改版、符合 WCAG 2.2 AA 的設計系統、AI 加速原型，以及 B2B SaaS 與政府入口網站的產品顧問。">
+  <link rel="alternate" hreflang="en" href="/services/">
+  <link rel="alternate" hreflang="zh-Hant" href="/services/zh/">
+  <link rel="alternate" hreflang="x-default" href="/services/">
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN + shared config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../../assets/js/tailwind-config.js"></script>
+
+  <style type="text/tailwindcss">
+  @layer base {
+    html {
+      scroll-padding-top: 4rem;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      @apply text-[#1d1d1f] antialiased m-0 p-0;
+    }
+    h1 { @apply text-[2rem]   font-bold    leading-[1.15] tracking-[-0.016em] mb-[0.5em]
+                lg:text-[4rem]    lg:leading-[1.08] lg:tracking-[-0.024em]; }
+    h2 { @apply text-[1.75rem] font-bold    leading-[1.2]  tracking-[-0.011em] mb-[0.5em]
+                lg:text-[2.5rem]  lg:leading-[1.12] lg:tracking-[-0.022em]; }
+    h3 { @apply text-[1.5rem]  font-semibold leading-[1.25] tracking-[-0.007em] mb-[0.6em]
+                lg:text-[1.75rem] lg:leading-[1.18] lg:tracking-[-0.014em]; }
+    h4 { @apply text-[1.25rem] font-semibold leading-[1.3]  tracking-[-0.007em] mb-[0.5em]; }
+    h5 { @apply text-[1rem]    font-semibold leading-[1.4]  tracking-normal mb-[0.6em]; }
+    h6 { @apply text-[0.875rem] font-medium  leading-[1.4]  tracking-[0.005em] mb-[0.6em]; }
+  }
+  </style>
+</head>
+
+<body
+  class="bg-surface-muted text-border-default font-sans antialiased selection:bg-text-secondary selection:text-white min-h-screen flex flex-col">
+  <header
+    class="sticky top-0 z-50 bg-surface-muted md:bg-surface-muted/80 backdrop-blur-md border-b border-border-default/10 py-2">
+    <div class="max-w-[1400px] mx-auto px-4 md:px-10 flex items-center justify-between">
+      <a href="./" class="flex flex-col md:flex-row md:items-baseline md:gap-2 group focus:outline-none"
+        aria-label="Tommy Chi 接案服務，回到頂端">
+        <span
+          class="font-bold text-[1.5rem] leading-none tracking-tight text-border-default transition-colors group-hover:text-text-secondary">
+          Tommy Chi
+        </span>
+        <span class="hidden md:inline text-caption text-text-secondary">設計接案服務</span>
+      </a>
+
+      <div class="flex items-center gap-2">
+        <!-- Desktop Nav Menu -->
+        <nav class="hidden md:flex items-center gap-2" aria-label="主要導覽">
+          <a href="#services"
+            class="px-3 py-2 text-base border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors duration-300">服務項目</a>
+          <a href="#process"
+            class="px-3 py-2 text-base border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors duration-300">合作流程</a>
+          <a href="#work"
+            class="px-3 py-2 text-base border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors duration-300">案例</a>
+          <a href="#contact"
+            class="px-3 py-2 text-base bg-border-default text-white border border-border-default rounded-xs hover:bg-text-secondary hover:border-text-secondary transition-colors duration-300">聯絡</a>
+        </nav>
+
+        <!-- Language switch -->
+        <div class="flex items-center text-caption font-semibold border border-border-default/20 rounded-xs overflow-hidden"
+          aria-label="語言">
+          <a href="../" hreflang="en" lang="en" class="px-3 py-2 hover:bg-border-default/5 transition-colors">EN</a>
+          <span class="px-3 py-2 bg-border-default text-white" aria-current="true">中文</span>
+        </div>
+
+        <!-- Mobile Nav Toggle Button -->
+        <button id="mobile-menu-btn"
+          class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg focus:outline-none hover:bg-border-default/5"
+          aria-expanded="false" aria-controls="mobile-menu" aria-label="切換選單">
+          <svg id="menu-icon" class="w-6 h-6 text-border-default" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 text-border-default hidden" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Menu Panel -->
+    <div id="mobile-menu"
+      class="hidden md:hidden fixed left-0 right-0 top-[57px] bg-surface-muted px-4 py-6 flex flex-col gap-3 shadow-xl transition-all duration-300 z-40 h-[calc(100vh-57px)] overflow-y-auto">
+      <nav class="flex flex-col gap-3" aria-label="行動版導覽">
+        <a href="#services"
+          class="mobile-nav-link block text-center py-3 border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors">服務項目</a>
+        <a href="#process"
+          class="mobile-nav-link block text-center py-3 border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors">合作流程</a>
+        <a href="#work"
+          class="mobile-nav-link block text-center py-3 border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors">案例</a>
+        <a href="#faq"
+          class="mobile-nav-link block text-center py-3 border border-border-default rounded-xs hover:bg-border-default hover:text-white transition-colors">常見問題</a>
+        <a href="https://cal.com/tommychi" target="_blank" rel="noopener noreferrer"
+          class="mobile-nav-link block text-center py-3 bg-border-default text-white rounded-xs hover:bg-text-secondary transition-colors font-medium">預約 30 分鐘諮詢 ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="flex-grow max-w-[1400px] mx-auto px-4 md:px-10 w-full flex flex-col gap-3">
+
+    <!-- Hero -->
+    <section class="pt-10 pb-10 md:pt-20 md:pb-20 flex flex-col gap-4">
+      <span class="text-caption font-semibold tracking-wider uppercase text-text-secondary">目前可承接專案</span>
+      <h1 class="font-semibold leading-tight max-w-[1000px] text-border-default">
+        為複雜的 B2B SaaS 與政府入口網站，打造好用的 UX 與設計系統。
+      </h1>
+      <h3 class="font-medium text-text-tertiary max-w-[760px]">
+        把繁瑣、受法規規範的流程，整理成清楚好用的產品：符合 WCAG 2.2 AA 無障礙標準、工程團隊能直接接手，並用 AI 加速原型快速驗證想法。
+      </h3>
+      <div class="flex flex-col sm:flex-row gap-2 mt-2">
+        <a href="https://cal.com/tommychi" target="_blank" rel="noopener noreferrer"
+          class="px-6 py-3 font-semibold bg-border-default text-white border border-border-default rounded-xs hover:bg-text-secondary hover:border-text-secondary text-center transition-all duration-300 shadow-sm hover:shadow-md">
+          預約 30 分鐘諮詢 ↗
+        </a>
+        <a href="mailto:gtommy0612@gmail.com?subject=%E5%B0%88%E6%A1%88%E8%AB%AE%E8%A9%A2"
+          class="px-6 py-3 font-semibold border border-border-default rounded-xs hover:bg-border-default hover:text-white text-center transition-all duration-300">
+          Email 聯絡
+        </a>
+      </div>
+      <ul class="flex flex-wrap gap-x-6 gap-y-2 mt-6 text-text-tertiary">
+        <li>✓ 5 年企業級 UX 經驗</li>
+        <li>✓ PMP® 專案管理認證</li>
+        <li>✓ WCAG 2.2 AA 無障礙專長</li>
+        <li>✓ 中英雙語溝通</li>
+      </ul>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-10 flex flex-col gap-6">
+      <h2 class="font-medium tracking-tight text-border-default">服務項目</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <article class="bg-white rounded-lg p-6 md:p-8 flex flex-col gap-3 shadow-sm">
+          <span class="text-caption font-semibold tracking-wider uppercase text-text-secondary">01 · 稽核與改版</span>
+          <h3 class="text-[1.25rem] lg:text-[1.5rem] font-bold">UX 稽核與改版</h3>
+          <p class="text-text-tertiary text-[15px] leading-relaxed">
+            以啟發式評估與任務流程分析檢視現有產品，依優先順序改版最關鍵的流程。常見成果：步驟更少、客服問題更少。
+          </p>
+          <p class="text-caption text-text-secondary">交付：稽核報告、改版流程、可點擊原型</p>
+        </article>
+
+        <article class="bg-white rounded-lg p-6 md:p-8 flex flex-col gap-3 shadow-sm">
+          <span class="text-caption font-semibold tracking-wider uppercase text-text-secondary">02 · 設計系統</span>
+          <h3 class="text-[1.25rem] lg:text-[1.5rem] font-bold">設計系統 + WCAG 2.2 AA</h3>
+          <p class="text-text-tertiary text-[15px] leading-relaxed">
+            在 Figma 建立 token、元件與文件，並與前端程式碼對齊。一開始就做好無障礙，而不是事後補救。
+          </p>
+          <p class="text-caption text-text-secondary">交付：Figma 元件庫、token 規格、無障礙檢核表</p>
+        </article>
+
+        <article class="bg-white rounded-lg p-6 md:p-8 flex flex-col gap-3 shadow-sm">
+          <span class="text-caption font-semibold tracking-wider uppercase text-text-secondary">03 · 原型</span>
+          <h3 class="text-[1.25rem] lg:text-[1.5rem] font-bold">AI 加速原型</h3>
+          <p class="text-text-tertiary text-[15px] leading-relaxed">
+            以天為單位完成高擬真、可點擊的原型，適合投標、募資簡報，或在開發前先找真實使用者驗證想法。
+          </p>
+          <p class="text-caption text-text-secondary">交付：互動原型、Demo 腳本、後續待辦清單</p>
+        </article>
+
+        <article class="bg-white rounded-lg p-6 md:p-8 flex flex-col gap-3 shadow-sm">
+          <span class="text-caption font-semibold tracking-wider uppercase text-text-secondary">04 · 顧問</span>
+          <h3 class="text-[1.25rem] lg:text-[1.5rem] font-bold">產品與專案管理顧問</h3>
+          <p class="text-text-tertiary text-[15px] leading-relaxed">
+            協助界定範疇、整理需求、對齊利害關係人。適合在特定期間需要一位懂設計的 PM 夥伴的團隊。
+          </p>
+          <p class="text-caption text-text-secondary">交付：PRD／User Story、產品路線圖、工作坊引導</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="py-10 flex flex-col gap-6">
+      <h2 class="font-medium tracking-tight text-border-default">合作流程</h2>
+      <ol class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <li class="flex flex-col gap-2 border-t border-border-default pt-4">
+          <span class="text-caption font-semibold text-text-secondary">步驟 1</span>
+          <h4 class="font-bold">需求探索</h4>
+          <p class="text-text-tertiary text-[15px] leading-relaxed">免費 30 分鐘線上會議，了解你的目標、使用者、限制與時程。</p>
+        </li>
+        <li class="flex flex-col gap-2 border-t border-border-default pt-4">
+          <span class="text-caption font-semibold text-text-secondary">步驟 2</span>
+          <h4 class="font-bold">提案與報價</h4>
+          <p class="text-text-tertiary text-[15px] leading-relaxed">數個工作天內提供範疇、交付項目、里程碑，以及固定或分階段報價。</p>
+        </li>
+        <li class="flex flex-col gap-2 border-t border-border-default pt-4">
+          <span class="text-caption font-semibold text-text-secondary">步驟 3</span>
+          <h4 class="font-bold">設計與迭代</h4>
+          <p class="text-text-tertiary text-[15px] leading-relaxed">每週同步進度，提供可直接點擊、留言的設計稿。</p>
+        </li>
+        <li class="flex flex-col gap-2 border-t border-border-default pt-4">
+          <span class="text-caption font-semibold text-text-secondary">步驟 4</span>
+          <h4 class="font-bold">交付</h4>
+          <p class="text-text-tertiary text-[15px] leading-relaxed">提供工程可直接使用的規格與檔案，並當面導覽，讓團隊能順利接手。</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Selected work -->
+    <section id="work" class="py-10 flex flex-col gap-5">
+      <h2 class="font-medium tracking-tight text-border-default">精選案例</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+
+        <a href="../../us-state-gov-ai-bid-prototype.html">
+          <article class="group flex flex-col gap-2">
+            <div class="aspect-video w-full overflow-hidden rounded-lg bg-white flex items-center justify-center relative">
+              <img src="../../assets/us-state-gov-ai-bid-prototype/cover.png" alt="AI-Augmented Bid Prototype">
+              <div class="absolute inset-0 bg-border-default/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="flex justify-between items-baseline mt-1 font-medium tracking-wide text-text-tertiary">
+              <span>美國州政府專案 — 投標原型</span>
+              <span>2026</span>
+            </div>
+            <h3 class="font-bold text-border-default group-hover:text-text-secondary transition-colors mt-0.5 leading-snug">
+              48 小時 AI 加速原型，協助拿下 160 萬美元以上的美國州政府標案
+            </h3>
+          </article>
+        </a>
+
+        <a href="../../us-state-gov-public-records-redesign.html">
+          <article class="group flex flex-col gap-2">
+            <div class="aspect-video w-full overflow-hidden rounded-lg bg-white flex items-center justify-center relative">
+              <img src="../../assets/us-state-gov-public-records-redesign/cover.png" alt="Public Records System Redesign">
+              <div class="absolute inset-0 bg-border-default/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="flex justify-between items-baseline mt-1 font-medium tracking-wide text-text-tertiary">
+              <span>美國州政府專案 — 公共紀錄系統</span>
+              <span>2025</span>
+            </div>
+            <h3 class="font-bold text-border-default group-hover:text-text-secondary transition-colors mt-0.5 leading-snug">
+              美國公共紀錄查詢改版：6 步驟縮減為 3 步驟，100% 符合 WCAG 2.2 AA
+            </h3>
+          </article>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-10 flex flex-col gap-5">
+      <h2 class="font-medium tracking-tight text-border-default">常見問題</h2>
+      <div class="flex flex-col divide-y divide-border-default/10 border-y border-border-default/10">
+        <details class="group py-5">
+          <summary class="flex justify-between items-center cursor-pointer list-none font-semibold text-[1.125rem]">
+            一般專案需要多久？
+            <span class="text-text-secondary transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-text-tertiary leading-relaxed max-w-[760px]">
+            聚焦的原型約 1–2 週；UX 稽核與核心流程改版通常 4–8 週；設計系統則視元件數量而定。確切時程會寫在提案中。
+          </p>
+        </details>
+        <details class="group py-5">
+          <summary class="flex justify-between items-center cursor-pointer list-none font-semibold text-[1.125rem]">
+            怎麼報價？
+            <span class="text-text-secondary transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-text-tertiary leading-relaxed max-w-[760px]">
+            多數專案採分階段固定報價，事前確認。長期支援可採月費顧問方式。 <!-- TODO(Tommy): add price range, 例如「專案起價約新台幣 XX,XXX 元」 --><span class="text-text-secondary">［價格區間待補］</span>
+          </p>
+        </details>
+        <details class="group py-5">
+          <summary class="flex justify-between items-center cursor-pointer list-none font-semibold text-[1.125rem]">
+            可以遠端合作嗎？
+            <span class="text-text-secondary transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-text-tertiary leading-relaxed max-w-[760px]">
+            可以。我在台灣（GMT+8），日常就與美國團隊遠端合作，以非同步更新為主，每週安排固定時段線上討論。
+          </p>
+        </details>
+        <details class="group py-5">
+          <summary class="flex justify-between items-center cursor-pointer list-none font-semibold text-[1.125rem]">
+            可以和我們現有的工程團隊合作嗎？
+            <span class="text-text-secondary transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-text-tertiary leading-relaxed max-w-[760px]">
+            這是最常見的合作方式。我自己會寫 HTML/CSS/JS，規格與 token 會對應你們前端實際的架構。
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <footer id="contact" class="py-6 flex flex-col gap-5 mt-16 md:gap-6">
+      <div class="bg-white rounded-lg p-6 md:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-sm">
+        <div>
+          <h2 class="font-medium">有專案想聊聊嗎？</h2>
+          <h4 class="font-normal text-text-tertiary mb-0">告訴我你的需求，我會在兩個工作天內回覆。</h4>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-2 shrink-0">
+          <a href="https://cal.com/tommychi" target="_blank" rel="noopener noreferrer"
+            class="px-6 py-3 font-semibold bg-border-default text-white border border-border-default rounded-xs hover:bg-text-secondary hover:border-text-secondary text-center transition-all duration-300">
+            預約 30 分鐘諮詢 ↗
+          </a>
+          <a href="mailto:gtommy0612@gmail.com?subject=%E5%B0%88%E6%A1%88%E8%AB%AE%E8%A9%A2"
+            class="px-6 py-3 font-semibold border border-border-default rounded-xs hover:bg-border-default hover:text-white text-center transition-all duration-300">
+            Email 聯絡
+          </a>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 flex-wrap justify-start text-[1.25rem]">
+        <a href="https://linkedin.com/in/tommychi" target="_blank" rel="noopener noreferrer"
+          class="hover:text-text-secondary transition-colors">LinkedIn ↗</a>
+        <a href="https://www.behance.net/godiswonderful" target="_blank" rel="noopener noreferrer"
+          class="hover:text-text-secondary transition-colors">Behance ↗</a>
+        <a href="../../index.html" class="hover:text-text-secondary transition-colors">作品集 ↗</a>
+      </div>
+      <span class="mt-10">© Tommy Chi Design 2026</span>
+    </footer>
+  </main>
+
+  <!-- Interactivity mobileMenuBtn Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function toggleMenu() {
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      }
+
+      mobileMenuBtn.addEventListener('click', toggleMenu);
+
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (!mobileMenu.classList.contains('hidden')) {
+            toggleMenu();
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

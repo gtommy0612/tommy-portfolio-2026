@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
@@ -15,43 +15,7 @@
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Helvetica Neue', 'sans-serif'],
-          },
-          colors: {
-            border: { default: '#1b1c1e' },
-            text: {
-              primary: '#1d1d1f', /* Apple 主文字深灰 */
-              secondary: '#86868b', /* Apple 次要文字中灰 */
-              tertiary: '#515154', /* Apple 第三層文字 */
-            },
-            // surface: { muted: '#f7f5f3' },
-            surface: { muted: '#f5f5f7' },
-          },
-          /* 語意化 fontSize token，直接用於 class（text-body / text-caption 等） */
-          fontSize: {
-            'caption': ['13px', { lineHeight: '1.38', letterSpacing: '0em' }],
-            'body': ['17px', { lineHeight: '1.52', letterSpacing: '-0.01em' }],
-            'lead': ['21px', { lineHeight: '1.48', letterSpacing: '-0.015em' }],
-          },
-          borderRadius: {
-            'xs': '50px',
-            'sm': '80px',
-          },
-          /* 語意化間距 token，不 override Tailwind 預設，改用專屬 key */
-          spacing: {
-            'section-sm': '40px',
-            'section': '80px',
-            'section-lg': '108px',
-          },
-        }
-      }
-    }
-  </script>
+  <script src="assets/js/tailwind-config.js"></script>
 
   <style type="text/tailwindcss">
   @layer base {
@@ -250,7 +214,7 @@
       <!-- Top Side: Title -->
       <h2 class="font-medium tracking-tight text-border-default">About Me</h2>
       <h4 class="font-normal">
-      I'm a Product Designer with close to 5 years of experience turning ambiguous, highly regulated problems into clear, high-impact systems — from a $1.6M+ U.S. state government bid prototype delivered within 48 hours, to a public records system rebuilt for 100% WCAG 2.2 AA compliance. 
+      I'm a Senior Product Designer with 5 years of experience turning ambiguous, highly regulated problems into clear, high-impact systems — from a $1.6M+ U.S. state government bid prototype delivered within 48 hours, to a public records system rebuilt for 100% WCAG 2.2 AA compliance. 
       <br><br>At an enterprise software company, I lead end-to-end design — research, information architecture, high-fidelity prototyping — bridging U.S. stakeholders and engineering teams to ship WCAG 2.2 AA-compliant products under tight deadlines.
       </h4>
       
@@ -338,7 +302,10 @@
           <a href="https://www.behance.net/godiswonderful" target="_blank" rel="noopener noreferrer"
             class="hover:text-text-secondary transition-colors">Behance ↗</a>
         </div>
-        <span class="mt-10">© Tommy Chi Design 2026</span>
+        <div class="mt-10 flex flex-wrap items-baseline justify-between gap-3">
+          <span>© Tommy Chi Design 2026</span>
+          <a href="services/" target="_blank" rel="noopener" class="text-caption text-text-secondary hover:text-border-default transition-colors">Freelance / 接案合作 ↗</a>
+        </div>
 
       </div>
     </Footer>
