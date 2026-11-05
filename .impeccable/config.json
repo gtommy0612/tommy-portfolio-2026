@@ -26,6 +26,15 @@
         ],
         "createdAt": "2026-11-05T03:23:16.229Z",
         "reason": "Claude: static scan misses the inline clamp(32px,5vw,48px) padding on the insight .card; rendered scan at 127.0.0.1:8000 reports no cramped padding."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "_logo-explore.html"
+        ],
+        "createdAt": "2026-11-05T07:13:27.445Z",
+        "reason": "Claude: temporary logo comparison page, deleted once a logo is chosen; not shipped UI"
       }
     ]
   }
