@@ -16,6 +16,9 @@ Static HTML + Tailwind CSS (CDN). No build step.
 │  └─ zh/index.html                            # Freelance services page (繁體中文)
 └─ assets/
    ├─ js/tailwind-config.js                    # Shared Tailwind theme, loaded by every page
+   ├─ js/layout.js                             # Shared E3 header + footer (<site-header>, <site-footer>)
+   ├─ js/site.js                               # Mobile menu + anchor glide
+   ├─ css/e3.css                               # E3 component classes
    ├─ Resume_TommyChi.pdf                      # URL is shared — keep this path
    └─ <case-study-slug>/                       # Images per case study
 ```
