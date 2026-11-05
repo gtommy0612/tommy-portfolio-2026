@@ -122,6 +122,15 @@ a.tile:hover .lift { transform: translateY(-6px); }
 .prose li::marker { color: var(--muted); }
 .prose .lead-in { margin: 24px 0 8px; font-weight: 600; }
 
+/* Decision block: label column + answer, hairline rows. Stacks on narrow screens. */
+.decide { margin: 32px 0 0; max-width: 820px; }
+.decide > div { display: grid; grid-template-columns: 120px 1fr; gap: 4px 24px; padding: 16px 0; border-top: 1px solid var(--hair); }
+.decide > div:last-child { border-bottom: 1px solid var(--hair); }
+.decide dt { font-size: 14px; font-weight: 500; line-height: 1.6; color: var(--muted); }
+.decide dd { margin: 0; }
+.decide strong { font-weight: 600; }
+@media (max-width: 640px) { .decide > div { grid-template-columns: 1fr; } }
+
 .cards { margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px; }
 .card { background: var(--surface); border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 8px; }
 .card p { margin: 0; color: var(--muted); }

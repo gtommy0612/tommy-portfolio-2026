@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/favicon-192.png">
   <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
   <meta name="description"
-    content="Helped win a $1.6M+ US state government contract with a high-fidelity interactive prototype delivered within 48 hours. Using Claude cut concept time by 60% (5 days to 2), and the workflow became team SOP.">
+    content="Helped win a $1.6M+ contract with a new US state agency by delivering a clickable prototype within 48 hours. Building it with Claude cut concept time by 60% (5 days to 2) against our last comparable bid.">
 
   <!-- Google Fonts - Geist -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,175 +19,240 @@
   <!-- Tailwind CSS CDN + E3 tokens and components (see DESIGN.md) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="assets/js/tailwind-config.js"></script>
-  <script src="assets/js/analytics.js" defer></script>
   <link rel="stylesheet" href="assets/css/e3.css">
   <script src="assets/js/layout.js"></script>
+  <script src="assets/js/analytics.js" defer></script>
 </head>
 
 <body>
   <site-header></site-header>
 
   <main id="top">
-    <!-- Title and facts -->
-    <div class="cs-hero">
+    <!-- ============ LAYER 1: the 30-second read ============ -->
+    <!-- Title on white, then full-bleed cover, then one Summary block. -->
+    <div class="cs-hero" style="background: var(--page)">
       <div class="wrap">
         <p class="cap">U.S. State Government Project · Bid Prototype · 2026</p>
-        <h1 class="cs-title">Winning a $1.6M+ US State Government Bid: AI-Accelerated Prototyping in 48 Hours</h1>
-        <dl class="cs-facts">
-          <div>
-            <dt class="cap">My role</dt>
-            <dd>Product Designer &amp; PM — delivered the high-fidelity interactive prototype within 48 hours, then carried the design into delivery with engineering and US-based stakeholders.</dd>
+        <h1 class="cs-title">Winning a $1.6M+ State Contract with a Clickable Prototype Built in 48 Hours</h1>
+      </div>
+    </div>
+
+    <!-- PLACEHOLDER hero: swap for a real composite of prototype screens (2880 x 1620), record its source in assets/home/SOURCES.md -->
+    <div style="background: var(--surface-3); min-height: clamp(320px, 52vw, 720px); display: flex; align-items: center; justify-content: center; padding: 48px 24px; position: relative">
+      <div style="width: 100%; max-width: 1100px">
+        <div class="grid gap-3 grid-cols-2 md:grid-cols-4" style="min-height: clamp(200px, 26vw, 380px)" aria-hidden="true">
+          <div style="background: var(--page); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+            <span class="cap">Applicant</span>
+            <span style="display: block; height: 10px; width: 70%; border-radius: 999px; background: var(--surface-2)"></span>
+            <span style="display: block; height: 10px; width: 45%; border-radius: 999px; background: var(--surface-2)"></span>
+            <span style="display: block; flex: 1; min-height: 64px; border-radius: 10px; background: var(--surface)"></span>
           </div>
-          <div>
-            <dt class="cap">Timeline</dt>
-            <dd>January 2026 – April 2026<br><span class="muted">3 months: 48-hour rapid bid sprint + 11-week system deepening &amp; delivery</span></dd>
+          <div style="background: var(--page); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+            <span class="cap">Sheriff</span>
+            <span style="display: block; height: 10px; width: 70%; border-radius: 999px; background: var(--surface-2)"></span>
+            <span style="display: block; height: 10px; width: 45%; border-radius: 999px; background: var(--surface-2)"></span>
+            <span style="display: block; flex: 1; min-height: 64px; border-radius: 10px; background: var(--surface)"></span>
           </div>
-          <div>
-            <dt class="cap">Core impact</dt>
-            <dd>
-              <ul>
-                <li>Won a <strong class="proof">$1.6M+</strong> US state government contract by delivering a high-fidelity interactive prototype within 48 hours</li>
-                <li><strong class="proof">−60%</strong> concept time (5 days → 2 days) using Claude to analyze government business documents and generate UI</li>
-                <li>Workflow became team SOP; design tokens reused across later bids</li>
-              </ul>
-            </dd>
+          <div style="background: var(--page); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+            <span class="cap">Instructor</span>
+            <span style="display: block; height: 10px; width: 70%; border-radius: 999px; background: var(--surface-2)"></span>
+            <span style="display: block; height: 10px; width: 45%; border-radius: 999px; background: var(--surface-2)"></span>
+            <span style="display: block; flex: 1; min-height: 64px; border-radius: 10px; background: var(--surface)"></span>
           </div>
-        </dl>
+          <div style="background: var(--page); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+            <span class="cap">Dealer</span>
+            <span style="display: block; height: 10px; width: 70%; border-radius: 999px; background: var(--surface-2)"></span>
+            <span style="display: block; height: 10px; width: 45%; border-radius: 999px; background: var(--surface-2)"></span>
+            <span style="display: block; flex: 1; min-height: 64px; border-radius: 10px; background: var(--surface)"></span>
+          </div>
+        </div>
+        <p class="cap" style="margin-top: 20px; text-align: center">Placeholder hero image · real composite of prototype screens goes here · 2880 × 1620</p>
       </div>
     </div>
 
     <div class="wrap">
-      <div class="tile cs-cover">
-        <img src="assets/us-state-gov-ai-bid-prototype/cover.png" alt="The state agency portal prototype: application detail screen with status and next step">
-      </div>
+      <!-- Summary: lead, outcome numbers, facts in one row -->
+      <section class="pt-section" aria-labelledby="summary-h">
+        <h2 id="summary-h" class="two-tone">Summary</h2>
+        <p class="mt-6 text-lead text-muted" style="max-width: 56ch">A new state agency, a five-party permit process none of us knew, and 48 hours' notice. Our last bid of similar size took five days of static Figma screens, and we lost it. This time I sent the agency a prototype they could click through.</p>
 
-      <section class="cs-section" aria-labelledby="summary-h" style="padding-top: 96px">
-        <h2 id="summary-h" class="two-tone">Case summary</h2>
-        <div class="cards">
-          <div class="card">
-            <h3 class="label">Problem</h3>
-            <p>Extremely tight bid deadline in an unfamiliar government domain, with no time for traditional discovery.</p>
-          </div>
-          <div class="card">
-            <h3 class="label">Decision</h3>
-            <p>Fed government business documents to AI to generate an operable prototype grounded in existing business logic, then built it through design system → design tokens → interactive HTML prototype, because evaluators trust what they can click through.</p>
-          </div>
-          <div class="card">
-            <h3 class="label">Result</h3>
-            <p>Won a $1.6M+ contract; high-fidelity UI prototype delivered within 48 hours; concept time 5 days → 2 days (-60%); workflow adopted as team SOP, tokens reused across later bids.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="cs-section" aria-labelledby="background-h">
-        <h2 id="background-h" class="two-tone">Project background</h2>
-        <div class="prose">
-          <p>A multi-role US state government portal connecting several user groups through regulated business workflows. The bid called for a convincing, interactive proposal built on regulatory business logic the team had never worked with before.</p>
-        </div>
-      </section>
-
-      <section class="cs-section" aria-labelledby="problem-h">
-        <h2 id="problem-h" class="two-tone"><span>01</span> Problem &amp; task</h2>
-        <div class="prose">
-          <p>The team had an extremely tight <strong>48-hour deadline</strong> to submit a bid for a US state government contract, in a government domain none of us knew. There was no time for traditional discovery such as stakeholder interviews and process audits, yet the proposal still had to map complex business logic across multiple interconnected user roles.</p>
-        </div>
-        <div class="cards">
-          <div class="card">
-            <h3 class="label">Business goal</h3>
-            <p>Conceptualize, design, and deliver a fully interactive, high-fidelity prototype within 48 hours to win the $1.6M+ government contract.</p>
-          </div>
-          <div class="card">
-            <h3 class="label">Design goal</h3>
-            <p>Turn fragmented government business documents into a clear Information Architecture (IA) and UI flows that stay faithful to the existing business logic.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="cs-section" aria-labelledby="action-h">
-        <h2 id="action-h" class="two-tone"><span>02</span> Action &amp; decisions</h2>
-
-        <h3 class="cs-sub">Phase 1: AI-Augmented Concept &amp; Information Architecture</h3>
-        <figure class="tile shot">
-          <img src="assets/us-state-gov-ai-bid-prototype/phase01.png" alt="Phase 1 pipeline: raw agency files, AI extraction, rule verification, then screens for each user role" loading="lazy">
-        </figure>
-        <div class="prose">
-          <p>With no time for traditional discovery, I built the concept on AI analysis of the source material:</p>
-          <ol>
-            <li>AI-Powered Analysis: I fed government business documents into Claude to extract the business rules, then had it generate UI grounded in that existing business logic. Concept time dropped from 5 days to 2 (-60%).</li>
-            <li>Multi-Role Flow Mapping: I mapped the UI flows for every user role, defining clear data perimeters and access permissions.</li>
-          </ol>
-        </div>
-
-        <h3 class="cs-sub">Phase 2: Design System → Design Tokens → Interactive HTML Prototype</h3>
-        <figure class="tile shot">
-          <img src="assets/us-state-gov-ai-bid-prototype/phase02.png" alt="Phase 2: design tokens in Figma Variables applied to high-fidelity prototype screens" loading="lazy">
-        </figure>
-        <div class="prose">
-          <ol>
-            <li>Design Tokens: I structured design tokens in Figma Variables on top of the design system, so the AI-generated flows could scale into consistent high-fidelity screens quickly.</li>
-            <li>Interactive HTML Prototype: Evaluators trust what they can click through, so I delivered the result as an interactive HTML prototype instead of static screens, within the 48-hour window.</li>
-          </ol>
-        </div>
-
-        <h3 class="cs-sub">Phase 3: Post-Bid Deep Dive — Detailed Design &amp; Engineering Handoff</h3>
-        <figure class="tile shot">
-          <img src="assets/us-state-gov-ai-bid-prototype/phase03.png" alt="Phase 3: detailed screens with edge cases and engineering handoff notes" loading="lazy">
-        </figure>
-        <div class="prose">
-          <p>After successfully securing the contract, I transitioned into a dual Product Designer and PM role for the implementation cycle:</p>
-          <ol>
-            <li>Fleshing Out Edge Cases: I expanded the prototype beyond the initial "Happy Path," systematically designing for edge cases and complex user interactions.</li>
-            <li>Single Source of Truth (SSOT): I aligned Figma Variables precisely with engineering's variable naming conventions, so developers could build from pre-validated blocks, and the tokens became reusable across later projects.</li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="cs-section" aria-labelledby="result-h">
-        <h2 id="result-h" class="two-tone"><span>03</span> Result &amp; impact</h2>
+        <!-- Outcome numbers: shown once here; section 05 adds how they were measured -->
         <div class="cards">
           <div class="stat">
-            <span class="cap">Business impact</span>
+            <span class="cap">Contract won</span>
             <span class="stat-num">$1.6M+</span>
-            <p>Won a $1.6M+ US state government contract by delivering a high-fidelity interactive prototype within 48 hours.</p>
+            <p>A first contract with a new state agency.</p>
+          </div>
+          <div class="stat">
+            <span class="cap">Prototype delivered in</span>
+            <span class="stat-num">48h</span>
+            <p>Clickable HTML covering all four outside roles, not static screens.</p>
           </div>
           <div class="stat">
             <span class="cap">Concept time</span>
             <span class="stat-num">−60%</span>
-            <p>Used Claude to analyze government business documents and generate UI grounded in existing business logic, cutting concept time from 5 days to 2.</p>
+            <p>5 days → 2, compared with our last bid of similar size.</p>
           </div>
-          <div class="stat">
-            <span class="cap">AI workflow</span>
-            <span class="stat-num is-word">Adopted as team SOP</span>
-            <p>The AI-assisted workflow became team SOP, and the design tokens were reused across later bids.</p>
+        </div>
+
+        <dl class="cs-facts" style="margin-top: 48px; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr))">
+          <div>
+            <dt class="cap">My role</dt>
+            <dd>Product Designer &amp; Taiwan-side PM<br><span class="muted">Designed and built the prototype, confirmed the business rules with our US PM, agreed scope with leadership.</span></dd>
+          </div>
+          <div>
+            <dt class="cap">Timeline</dt>
+            <dd>January 2026 – April 2026<br><span class="muted">48-hour bid, then 11 weeks of design and build after the win. Now live.</span></dd>
+          </div>
+          <div>
+            <dt class="cap">Team</dt>
+            <dd>Engineers (3) · Project managers (2) · Product designer (1) · Customer service (1)</dd>
+          </div>
+          <div>
+            <dt class="cap">Constraints</dt>
+            <dd>48 hours · new client · unfamiliar regulated domain · PDFs only, no access to users</dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- Design highlights -->
+      <section class="pt-section" aria-labelledby="highlights-h">
+        <h2 id="highlights-h" class="two-tone">Design highlights</h2>
+
+        <figure class="mt-10">
+          <!-- PLACEHOLDER video: replace with <video autoplay muted loop playsinline poster="...cover.png"> plus a pause button; show the poster only under prefers-reduced-motion -->
+          <div class="tile cs-cover" style="margin-top: 0">
+            <img src="assets/us-state-gov-ai-bid-prototype/cover.png" alt="Applicant view of the permit portal prototype: application status, PDF download and the applicant's next step">
+            <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px">
+              <span style="width: 72px; height: 72px; border-radius: 999px; background: var(--ink); color: var(--page); display: flex; align-items: center; justify-content: center" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="pill pill-grey" style="pointer-events: none">Placeholder · prototype walkthrough video, 10–20s</span>
+            </div>
+          </div>
+          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">One application, five parties.</span> <span class="muted">The applicant's flow passes through three outside offices. One application page shows where it stands, what happens next and which documents to download.</span></figcaption>
+        </figure>
+
+        <div class="mt-10 grid gap-10 md:grid-cols-2 md:gap-4">
+          <figure>
+            <div class="tile shot" style="margin-top: 0">
+              <img src="assets/us-state-gov-ai-bid-prototype/phase02.png" alt="Colour tokens and button states taken from the existing design system" loading="lazy">
+            </div>
+            <figcaption class="mt-4"><span class="font-semibold">Our own design system, as tokens.</span> <span class="muted">Claude turned the system we had already shipped into tokens, so 48 hours of generated screens still looked like one product.</span></figcaption>
+          </figure>
+          <figure>
+            <div class="tile shot" style="margin-top: 0">
+              <img src="assets/us-state-gov-ai-bid-prototype/phase03.png" alt="Sheriff review screen annotated with field rules for engineering" loading="lazy">
+            </div>
+            <figcaption class="mt-4"><span class="font-semibold">From bid to build.</span> <span class="muted">After the win, the same screens carried field rules for engineering: what's read-only, what's auto-filled, when a button turns on.</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ LAYER 2: for readers who want the process ============ -->
+      <div id="process" style="margin-top: 144px; border-top: 1px solid var(--hair)"></div>
+
+      <section class="cs-section" style="padding-top: 96px" aria-labelledby="stakes-h">
+        <h2 id="stakes-h" class="two-tone"><span>01</span> Challenge</h2>
+        <div class="prose">
+          <p><strong>A first contract with a new state agency, and a way into its other departments.</strong> I heard about the bid with the deadline already close. The agency sent PDFs and asked for a design proposal. Nobody on the team had worked in this domain.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3 class="label">Time</h3>
+            <p>48 hours to submit. Our last comparable bid took 5 days of concept work.</p>
+          </div>
+          <div class="card">
+            <h3 class="label">Five parties, in order</h3>
+            <p>An applicant passes a sheriff's check, then a required course, then buys from a dealer, while the agency oversees and reviews.</p>
+          </div>
+          <div class="card">
+            <h3 class="label">No discovery</h3>
+            <p>No interviews, no process audit. The business rules existed only in the documents.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="insight-h">
+        <h2 id="insight-h" class="two-tone"><span>02</span> The approach</h2>
+        <div class="card mt-10" style="padding: clamp(32px, 5vw, 48px)">
+          <p class="two-tone" style="color: var(--ink); max-width: 24ch">Make the proposal the first draft of the product.</p>
+          <p class="mt-4" style="max-width: 60ch">A design proposal usually stops mattering once the bid is decided. I wanted ours to keep working: a file the agency could click through to see what we understood, and the starting point we would build from if we won.</p>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="decisions-h">
+        <h2 id="decisions-h" class="two-tone"><span>03</span> Key decisions</h2>
+
+        <h3 class="cs-sub">Decision 1: Map how the five parties connect before drawing any screen</h3>
+        <figure>
+          <div class="tile shot">
+            <!-- TODO (Tommy): swap for the role-relationship map you kept, with agency names removed -->
+            <img src="assets/us-state-gov-ai-bid-prototype/phase01.png" alt="Pipeline from agency files through AI extraction and rule checking to screens for applicant, sheriff, instructor, state admin and dealer" loading="lazy">
+          </div>
+          <figcaption class="mt-4 muted">Agency files → Claude → rules → screens for each role. In the bid, rules were checked against the documents only. Checking them with the agency came after the win.</figcaption>
+        </figure>
+        <dl class="decide">
+          <div><dt>Problem</dt><dd>Five parties act in a fixed order, and the rules for that order existed only in PDFs.</dd></div>
+          <div><dt>I chose</dt><dd><strong>Lay out how the roles relate and the applicant's full path first, then split it into each role's screens.</strong></dd></div>
+          <div><dt>Instead of</dt><dd>Drawing each role's screens straight from the documents.</dd></div>
+          <div><dt>Why</dt><dd>One step depends on another. After the sheriff approves, the applicant takes a basic or an extended course, depending on the training history they gave when they applied.</dd></div>
+        </dl>
+
+        <h3 class="cs-sub">Decision 2: Send clickable HTML, not static Figma screens</h3>
+        <!-- TODO (Tommy): a 10–20s screen recording of the prototype (applicant submits → sheriff approves → next step updates) would go here -->
+        <dl class="decide">
+          <div><dt>Problem</dt><dd>A design proposal for a domain we had just met, due in 48 hours.</dd></div>
+          <div><dt>I chose</dt><dd><strong>A clickable HTML prototype built with Claude Code, on tokens generated from our existing design system.</strong></dd></div>
+          <div><dt>Instead of</dt><dd>Static Figma screens. Our last comparable bid took 5 days that way, and we lost it.</dd></div>
+          <div><dt>Why</dt><dd>A working file shows the client what we understood, and it is something we can build from if we win. The company also wanted to adopt an AI development workflow.</dd></div>
+          <div><dt>Trade-off</dt><dd>Happy path only, for every outside role from applicant to dealer. Left out: the sheriff withdrawing an approval, the agency's review of training records, reports and settings. I agreed that scope with our US PM and leadership before building.</dd></div>
+        </dl>
+
+        <h3 class="cs-sub">Decision 3: Give the applicant one page that answers "where am I?"</h3>
+        <div class="mt-10 grid gap-10 md:grid-cols-2 md:gap-12 md:items-center">
+          <div class="tile shot is-free" style="margin-top: 0">
+            <img src="assets/home/bid-application-card.png" alt="Application summary card: status, PDF download and the applicant's next step" loading="lazy">
+          </div>
+          <dl class="decide" style="margin-top: 0">
+            <div><dt>Problem</dt><dd>An applicant waits on three offices they never see.</dd></div>
+            <div><dt>I chose</dt><dd><strong>Make the application itself the map: review results, course records, downloadable proof and the next step on one page.</strong></dd></div>
+            <div><dt>Why</dt><dd>Wherever the application is, the applicant can see who has it and what they need to do next.</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="wrong-h">
+        <h2 id="wrong-h" class="two-tone"><span>04</span> What the prototype got wrong</h2>
+        <div class="prose">
+          <p><strong>I assumed a reviewed application locks.</strong> It seemed safe: the training history was part of the application, and the sheriff had already approved it.</p>
+          <p>When we started building, the agency told us otherwise. Personal details lock after review, but the training section stays editable. In the interface the fix was small, a change in which fields are read-only. But it was exactly the kind of rule I couldn't confirm in 48 hours, and the prototype gave the agency something concrete to correct.</p>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="result-h">
+        <h2 id="result-h" class="two-tone"><span>05</span> Result</h2>
+        <div class="cards">
+          <div class="card">
+            <h3 class="label">Won, and shipped</h3>
+            <p>The $1.6M+ contract was awarded. After 11 weeks of design and build, the portal is live.</p>
+          </div>
+          <div class="card">
+            <h3 class="label">How −60% was measured</h3>
+            <p>Against our last bid of similar size: 5 days of Figma concept work then, 2 days here.</p>
+          </div>
+          <div class="card">
+            <h3 class="label">Built from the same tokens</h3>
+            <p>Engineers built from the tokens behind the prototype, so the bid's screens became the starting point for delivery.</p>
           </div>
         </div>
       </section>
 
       <section class="cs-section" aria-labelledby="reflect-h">
-        <h2 id="reflect-h" class="two-tone"><span>04</span> Reflection &amp; next steps</h2>
+        <h2 id="reflect-h" class="two-tone"><span>06</span> Reflection</h2>
         <div class="prose">
-          <p>Under a critical 48-hour window, the ultimate trade-off was "depth vs. breadth." I strategically prioritized designing the complete Happy Path (the primary core user flows) while deliberately sidelining edge cases (e.g., an applicant cancelling mid-registration). This project taught me that senior leadership means knowing how to make pragmatic design compromises to meet pressing business milestones.</p>
-        </div>
-
-        <h3 class="cs-sub">What I would do differently</h3>
-        <div class="cards">
-          <div class="card">
-            <h4 class="label">Earlier Cross-Functional Alignment</h4>
-            <p>Establish direct data-sharing channels with the business development team from day one to ensure a unified, holistic understanding of complex client workflows across the entire team.</p>
-          </div>
-          <div class="card">
-            <h4 class="label">User-Centric Validation over Assumptions</h4>
-            <p>Shift from relying on past project experiences to advocating for continuous user feedback loops, ensuring system logic is validated by real user behaviors rather than assumptions.</p>
-          </div>
-        </div>
-
-        <h3 class="cs-sub">Next step</h3>
-        <div class="cards">
-          <div class="card">
-            <h4 class="label">Data-Driven Iteration</h4>
-            <p>Launch targeted usability testing with key personas while implementing GA and Heatmaps to merge qualitative and quantitative insights for continuous product optimization.</p>
-          </div>
-          <div aria-hidden="true"></div>
+          <p><strong>Speed moved the risk. It didn't remove it.</strong> AI got me from documents to a working prototype in two days, but some of the rules in it were guesses, and nobody could tell which. The training-record rule was one of them.</p>
+          <p>Next time I'd send an assumption list with the prototype: the rules we weren't sure of, written as questions for the agency. Our guesses would become questions for the client before kickoff, not surprises during the build.</p>
         </div>
       </section>
 

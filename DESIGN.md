@@ -135,6 +135,7 @@ Headlines use `text-wrap: balance`.
   - `.cs-section` spaces sections 144px apart. Numbered headings put the number in the quiet tone: `<h2 class="two-tone"><span>01</span> Problem &amp; task</h2>`.
   - `.cs-sub` is a 24px subheading inside a section; `.prose` holds running text at 68ch, with `.lead-in` for list intros.
   - `.cards` is an auto-fit grid of `.card` (surface, 28px radius, `label` title, `muted` text) or `.stat` (caption, accent number, `muted` text). Use `.stat-num.is-word` when the result is words, not a number.
+  - `.decide` is a `<dl>` for one design decision: rows of a `muted` 14px label (Problem, I chose, Instead of, Why, Trade-off) and the answer, with hairlines between rows. Bold the choice. Labels stack above answers below 640px.
   - `.shot` is a screenshot tile, 16:9 or `.is-free` for its natural height; `.shots` stacks several. Screens blend into the grey with multiply.
   - `.cs-next` ends the page: an "All work" grey pill and the next case study.
 - **Focus**
