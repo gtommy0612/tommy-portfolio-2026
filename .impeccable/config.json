@@ -8,6 +8,24 @@
         "value": "geist",
         "createdAt": "2026-11-04T17:37:24.582Z",
         "reason": "Geist is the font in the E3 design the user picked and approved in the plan for this branch"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "us-state-gov-ai-bid-prototype-v2.html"
+        ],
+        "createdAt": "2026-11-05T03:22:04.810Z",
+        "reason": "Claude: only hit is .two-tone span section number (quiet #86868B) at 32–48px semibold; large text needs 3:1, measured 3.6:1. Same pattern as the shipped original page."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "us-state-gov-ai-bid-prototype-v2.html"
+        ],
+        "createdAt": "2026-11-05T03:23:16.229Z",
+        "reason": "Claude: static scan misses the inline clamp(32px,5vw,48px) padding on the insight .card; rendered scan at 127.0.0.1:8000 reports no cramped padding."
       }
     ]
   }

@@ -16,6 +16,7 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="assets/js/tailwind-config.js"></script>
+  <script src="assets/js/analytics.js" defer></script>
 
   <!-- E3 components. Tokens live in assets/js/tailwind-config.js; rules in DESIGN.md. -->
   <link rel="stylesheet" href="assets/css/e3.css">
@@ -28,9 +29,15 @@
   <main id="home">
     <!-- Hero: fills the first screen -->
     <div class="-mt-16 pt-16 px-6 bg-surface flex items-center justify-center" style="min-height: clamp(600px, 100svh, 960px)">
-      <section aria-labelledby="intro-h" class="max-w-[1200px] flex flex-col items-center text-center gap-6 pt-12 pb-16">
-        <h1 id="intro-h" class="font-semibold leading-[1.06] tracking-[-0.04em] max-w-[20ch]" style="font-size: clamp(42px, 5.4vw, 76px); text-wrap: balance">
-          Senior Product Designer <span class="chip" aria-hidden="true"><img src="assets/us-state-gov-ai-bid-prototype/cover.png" alt="" style="object-position: 0 0"></span> for complex, regulated <span class="chip" aria-hidden="true"><img src="assets/us-state-gov-public-records-redesign/cover.png" alt="" style="mix-blend-mode: multiply; transform: scale(1.5)"></span> products.
+      <section data-section="hero" aria-labelledby="intro-h" class="max-w-[1200px] flex flex-col items-center text-center gap-6 pt-12 pb-16">
+        <h1 id="intro-h" class="font-semibold leading-[1.06] tracking-[-0.04em] max-w-[20ch]" style="font-size: clamp(28px, max(min(calc((100vw - 48px) / 11), 42px), 5.4vw), 76px); text-wrap: balance">
+          Senior Product Designer<br>
+          <!-- Inline work chips hidden for now. Restore by moving back into the line:
+          <span class="chip" aria-hidden="true"><img src="assets/us-state-gov-ai-bid-prototype/cover.png" alt="" style="object-position: 0 0"></span>
+          <span class="chip" aria-hidden="true"><img src="assets/us-state-gov-public-records-redesign/cover.png" alt="" style="mix-blend-mode: multiply; transform: scale(1.5)"></span>
+          -->
+          for complex,<br>
+          regulated products.
         </h1>
         <p class="text-lead text-muted max-w-[50ch]" style="text-wrap: balance">I turn government rules and enterprise data into interfaces people can finish, then hand engineering a system they can build fast.</p>
         <div class="flex flex-wrap justify-center gap-3 pt-2">
