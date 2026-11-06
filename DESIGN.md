@@ -160,4 +160,4 @@ Headlines use `text-wrap: balance`.
 3. Link `assets/css/e3.css` after the config, then `<script src="assets/js/layout.js"></script>` (in `<head>`, no `defer`). Use its component classes. Put `<site-header></site-header>` at the top of `<body>` and `<site-footer></site-footer>` after `<main>`; add `home` to the header on `index.html` so its anchors stay in-page. Edit nav and footer content only in `layout.js`.
 4. Add `<script src="assets/js/site.js"></script>` for the mobile menu and anchor glide. The markup hooks are `data-bar`, `data-menu-btn` and `#mobile-menu`.
 
-**Status.** `index.html` and both case studies are fully on E3. `about.html`, `b2c-music-app-feature-design.html` (hidden) and `services/` use the E3 tokens and font but keep their older layouts and outlined nav.
+**Status.** `index.html` and both case studies are fully on E3. `about.html` and `services/` use the E3 tokens and font but keep their older layouts and outlined nav.

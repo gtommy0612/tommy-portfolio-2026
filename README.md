@@ -10,7 +10,6 @@ Static HTML + Tailwind CSS (CDN). No build step.
 ├─ about.html                                  # Draft, not linked from nav
 ├─ us-state-gov-public-records-redesign.html   # Case study (URL is shared — don't rename)
 ├─ us-state-gov-ai-bid-prototype.html          # Case study (URL is shared — don't rename)
-├─ b2c-music-app-feature-design.html           # Case study, hidden from home for now
 ├─ services/
 │  ├─ index.html                               # Freelance services page (EN)
 │  └─ zh/index.html                            # Freelance services page (繁體中文)

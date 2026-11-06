@@ -30,7 +30,7 @@ Remote work between Taiwan and US stakeholders (Logikco, Feb 2023–present). Do
 
 - Stack: static HTML + Tailwind (CDN + `assets/js/tailwind-config.js`). Keep it.
 - Homepage copy stays English; Chinese lives only in `services/zh/`.
-- Homepage shows two case studies: AI bid prototype (2026) and public records redesign (2025). The OFFGRID project stays hidden.
+- Homepage shows two case studies: AI bid prototype (2026) and public records redesign (2025). Client work under NDA (the music-app contract) is not shown anywhere on the site.
 - Contact: gtommy0612@gmail.com, LinkedIn /in/tommychi, Behance godiswonderful, resume PDF at `assets/Resume_TommyChi.pdf`.
 
 ## Brand Commitments
@@ -41,7 +41,7 @@ Name "Tommy Chi" / "Tommy Chi Design". No logo or mark exists. Voice: direct, me
 
 - `assets/Resume_TommyChi.md` / `.pdf`: all metrics above.
 - Case study pages and imagery in `assets/us-state-gov-ai-bid-prototype/` and `assets/us-state-gov-public-records-redesign/`.
-- Also true: 10+ partner MOUs and NT$1.25M initial revenue at K-Show (WormHole Tech); nomination for Taiwan Robotic Intelligent Systems Excellence Award; 2 consecutive OFFGRID commissions (project itself hidden).
+- Also true: 10+ partner MOUs and NT$1.25M initial revenue at K-Show (WormHole Tech); nomination for Taiwan Robotic Intelligent Systems Excellence Award.
 - Absent, never fabricate: testimonials, client logos, headshot, awards beyond the nomination, writing/articles.
 
 ## Product Principles
