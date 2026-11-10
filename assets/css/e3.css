@@ -137,13 +137,38 @@ a.tile:hover .lift { transform: translateY(-6px); }
 
 .stat { background: var(--surface); border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 12px; }
 .stat-num { font-size: clamp(40px, 4.4vw, 56px); font-weight: 600; line-height: 1; letter-spacing: -.04em; color: var(--accent); }
-.stat-num.is-word { font-size: clamp(28px, 2.6vw, 32px); line-height: 1.1; letter-spacing: -.03em; }
+.stat-num.is-word { font-size: clamp(40px, 4.4vw, 50px); line-height: 1.05; letter-spacing: -.04em; }
 .stat p { margin: 0; color: var(--muted); }
 
 .shot { margin: 32px 0 0; aspect-ratio: 16 / 9; }
 .shot img { mix-blend-mode: multiply; }
 .shot.is-free { aspect-ratio: auto; }
 .shot.is-free img { height: auto; }
+.shot.is-raw img { mix-blend-mode: normal; }
+.shot.is-raw::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 1px var(--hair); pointer-events: none; }
+
+/* Back to top: fixed bottom-right, shows after one screen of scroll (site.js). */
+.to-top { position: fixed; right: 24px; bottom: 24px; z-index: 40; width: 48px; height: 48px; border: 0; padding: 0; border-radius: 999px; background: var(--ink); color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 6px 20px rgb(29 29 31 / .18); opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity .3s var(--ease), transform .3s var(--ease), visibility .3s, background-color .2s var(--ease); }
+.to-top.is-on { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { background: var(--ink-hover); }
+.to-top:focus-visible { border-radius: 999px; }
+@media (max-width: 720px) { .to-top { right: 16px; bottom: 16px; } }
+@media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }
+
+/* Image zoom: case-study images open full screen on a dark veil; click outside, the close button or Esc closes (site.js). */
+.zoomable { cursor: zoom-in; }
+.zoomable:focus-visible { outline-offset: -4px; }
+.zoom { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 72px 24px 24px; border: 0; background: transparent; display: none; align-items: center; justify-content: center; overflow: hidden; }
+.zoom[open] { display: flex; animation: e3ZoomFade .25s var(--ease); }
+.zoom::backdrop { background: rgb(0 0 0 / .82); animation: e3ZoomFade .25s var(--ease); }
+.zoom img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; border-radius: 12px; background: #FFFFFF; cursor: default; animation: e3ZoomIn .3s var(--ease); }
+.zoom-close { position: fixed; top: 16px; right: 16px; width: 48px; height: 48px; border: 0; padding: 0; border-radius: 999px; background: rgb(255 255 255 / .14); color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: background-color .2s var(--ease); }
+.zoom-close:hover { background: rgb(255 255 255 / .26); }
+.zoom-close:focus-visible { outline-color: #FFFFFF; border-radius: 999px; }
+@keyframes e3ZoomFade { from { opacity: 0; } }
+@keyframes e3ZoomIn { from { opacity: 0; transform: scale(.96); } }
+@media (max-width: 720px) { .zoom { padding: 72px 12px 12px; } .zoom img { border-radius: 8px; } }
+@media (prefers-reduced-motion: reduce) { .zoom[open], .zoom::backdrop, .zoom img { animation: none; } }
 .shots { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
 .shots .shot { margin: 0; }
 

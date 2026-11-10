@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Public Records Verification Platform | Tommy Chi</title>
+  <title>State Records Portal Redesign | Tommy Chi</title>
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/favicon-192.png">
   <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
   <meta name="description"
-    content="Redesigned a US public records search from 6 steps to 3 (-50%), reached 100% WCAG 2.2 AA compliance, and cut front-end development time by 67% (3 weeks to 1) with design tokens.">
+    content="Rebuilt an old US state records portal: checkout from 6 pages to 3, WCAG 2.2 AA passed client acceptance, and login front-end build time cut from 3 weeks to 1.">
+  <meta name="robots" content="noindex">
 
   <!-- Google Fonts - Geist -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,187 +29,244 @@
   <site-header></site-header>
 
   <main id="top">
-    <!-- Title and facts -->
-    <div class="cs-hero">
+    <!-- ============ LAYER 1: the 30-second read ============ -->
+    <div class="cs-hero" style="background: var(--page)">
       <div class="wrap">
-        <p class="cap">U.S. State Government Project · Public Records System · 2025</p>
-        <h1 class="cs-title">Redesigning a US Public Records Search: 6 → 3 Steps, 100% WCAG 2.2 AA</h1>
-        <dl class="cs-facts">
-          <div>
-            <dt class="cap">My role</dt>
-            <dd>Product Designer &amp; PM — led the end-to-end UI/UX redesign, defined the WCAG standard, and built the design system, coordinating closely with front-end engineering to keep design tokens and components aligned.</dd>
-          </div>
-          <div>
-            <dt class="cap">Timeline</dt>
-            <dd>September 2024 – January 2025<br><span class="muted">4 months</span></dd>
-          </div>
-          <div>
-            <dt class="cap">Core impact</dt>
-            <dd>
-              <ul>
-                <li><strong class="proof">50%</strong> reduction in core search flow steps (6 → 3), resolving duplicate payments and associated refund workloads</li>
-                <li><strong class="proof">100% WCAG 2.2 AA</strong> compliance, removing legal compliance risk</li>
-                <li><strong class="proof">−67%</strong> front-end dev time per feature module (3 weeks → 1 week) via a design system and tokens</li>
-              </ul>
-            </dd>
-          </div>
-        </dl>
+        <p class="cap">U.S. State Government Project · Public Records Portal · 2024–2025</p>
+        <h1 class="cs-title">Modernizing a State Records Portal: WCAG 2.2 AA and Checkout from 6 Pages to 3</h1>
       </div>
     </div>
 
+    <!-- Full-bleed cover band, as on the AI bid case study -->
+    <div style="background: var(--surface-3); min-height: clamp(320px, 52vw, 720px); display: flex; align-items: center; justify-content: center; padding: 48px 24px">
+      <img data-zoom src="assets/us-state-gov-public-records-redesign/cover.png" alt="The redesigned records portal dashboard on laptop and phone: pre-paid balance, search buttons, weekly chart and report list" style="display: block; width: 100%; max-width: 1100px; height: auto">
+    </div>
+
     <div class="wrap">
-      <div class="tile cs-cover">
-        <img src="assets/us-state-gov-public-records-redesign/cover.png" alt="The redesigned public records portal dashboard on laptop and phone" style="mix-blend-mode: multiply">
-      </div>
 
-      <section class="cs-section" aria-labelledby="summary-h" style="padding-top: 96px">
-        <h2 id="summary-h" class="two-tone">Case summary</h2>
-        <div class="cards">
-          <div class="card">
-            <h3 class="label">Problem</h3>
-            <p>Legacy system failed WCAG 2.2 AA, and a complex flow caused duplicate payments and heavy refund workload for staff.</p>
-          </div>
-          <div class="card">
-            <h3 class="label">Decision</h3>
-            <p>Simplified the core flow first since it caused the duplicate payments, then rebuilt components to WCAG standards and created a design system for front-end reuse.</p>
-          </div>
-          <div class="card">
-            <h3 class="label">Result</h3>
-            <p>Core search flow 6 → 3 steps (-50%); 100% WCAG 2.2 AA compliance; front-end dev time for the same feature module 3 weeks → 1 week (-67%).</p>
-          </div>
-        </div>
-      </section>
+      <!-- ============ LAYER 1: the 30-second read ============ -->
 
-      <section class="cs-section" aria-labelledby="background-h">
-        <h2 id="background-h" class="two-tone">Project background</h2>
-        <div class="prose">
-          <p>A US public records system used by both the general public and government agencies. I led the redesign of a legacy system whose complex search flow caused duplicate payments and a heavy refund workload, whose layouts broke on mobile and tablet, and which did not meet WCAG 2.2 AA.</p>
-        </div>
-      </section>
+      <section class="pt-section" aria-labelledby="overview-h">
+        <h2 id="overview-h" class="two-tone"><span>01</span> Overview</h2>
+        <p class="mt-6 text-lead text-muted" style="max-width: 56ch">An existing client's old records portal had to meet WCAG 2.2 AA. Compliance was the brief; I proposed also fixing how hard its main tasks were to use. I redesigned the core flows, and the release passed the client's WCAG 2.2 AA acceptance.</p>
 
-      <section class="cs-section" aria-labelledby="problem-h">
-        <h2 id="problem-h" class="two-tone"><span>01</span> Pain points &amp; challenges</h2>
-        <div class="cards">
-          <div class="card">
-            <h3 class="label">WCAG Compliance</h3>
-            <p>The legacy system failed to meet WCAG 2.2 AA accessibility standards, featuring insufficient color contrast, small typography, and unclear interactive component states.</p>
-          </div>
-          <div class="card">
-            <h3 class="label">Broken Responsive Layout</h3>
-            <p>Inconsistent cross-device experience, with UI components breaking severely on mobile and tablet devices.</p>
-          </div>
-          <div class="card">
-            <h3 class="label">Complex Flow Causing Duplicate Payments</h3>
-            <p>A cumbersome 6-step search process led users to pay twice, creating a heavy refund workload for administrative staff.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="cs-section" aria-labelledby="action-h">
-        <h2 id="action-h" class="two-tone"><span>02</span> Action &amp; decisions</h2>
-
-        <h3 class="cs-sub">Action A: Simplifying the Core Flow That Caused Duplicate Payments</h3>
-        <div class="shots">
-          <figure class="tile shot is-free"><img src="assets/us-state-gov-public-records-redesign/signup-flow.png" alt="Redesigned account sign-up flow" loading="lazy"></figure>
-          <figure class="tile shot is-free"><img src="assets/us-state-gov-public-records-redesign/checkout.png" alt="Simplified record search and checkout screens" loading="lazy"></figure>
-          <figure class="tile shot is-free"><img src="assets/us-state-gov-public-records-redesign/dashboard.png" alt="Redesigned administrative dashboard" loading="lazy"></figure>
-        </div>
-        <div class="prose">
-          <p class="lead-in">Research &amp; Information Architecture (IA):</p>
-          <ol>
-            <li>Audited existing user flows, UI screens, and UX bottlenecks to eliminate redundant steps.</li>
-            <li>Restructured the account registration and record search flows, cutting the core search flow from 6 steps to 3.</li>
-          </ol>
-          <p class="lead-in">Dashboard Redesign &amp; Visual Hierarchy:</p>
-          <ol>
-            <li>Redesigned the administrative Dashboard, resolving fragmented data cards and unstructured metrics by establishing a clear visual hierarchy.</li>
-          </ol>
-          <p class="lead-in">Responsive UI Design &amp; Flow Execution:</p>
-          <ol>
-            <li>Applied the newly built Design System to output screen layouts based on synthesized UI flows.</li>
-            <li>Guaranteed 100% RWD responsiveness across all viewports for a seamless cross-device experience.</li>
-          </ol>
-        </div>
-
-        <h3 class="cs-sub">Action B: Rebuilding Components on a WCAG 2.2 AA Design System</h3>
-        <figure class="tile shot is-free">
-          <img src="assets/us-state-gov-public-records-redesign/rwd-wcag-design-system.png" alt="WCAG 2.2 AA design system: contrast checks, type scale and component states" loading="lazy">
-        </figure>
-        <div class="prose">
-          <p class="lead-in">Accessibility Standards &amp; Componentization:</p>
-          <ol>
-            <li>Defined design guidelines aligned with WCAG 2.2 AA compliance, optimizing color contrast, font scale hierarchy, and component visual feedback.</li>
-            <li>Built a unified component library and Design System on top of Telerik UI Library to enforce visual and interaction consistency across all modules.</li>
-          </ol>
-          <p class="lead-in">Design-to-Dev Alignment:</p>
-          <ol>
-            <li>Structured design tokens in Figma Variables and aligned them precisely with engineering's variable naming conventions, standardizing interaction details (e.g., Focus/Active states) and cutting front-end development time per feature module from 3 weeks to 1.</li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="cs-section" aria-labelledby="result-h">
-        <h2 id="result-h" class="two-tone"><span>03</span> Result &amp; impact</h2>
+        <!-- Headline numbers: UX, compliance, delivery. 07 Outcome gives every result per challenge -->
         <div class="cards">
           <div class="stat">
-            <span class="cap">Search flow steps</span>
-            <span class="stat-num">−50%</span>
-            <p>Core search flow cut from 6 steps to 3, removing the root cause of duplicate payments and refund workload.</p>
+            <span class="cap">Search to report</span>
+            <span class="stat-num">6 → 3</span>
+            <p>Pages from entering a person's details to downloading the report.</p>
           </div>
           <div class="stat">
-            <span class="cap">Accessibility compliance</span>
-            <span class="stat-num">100%</span>
-            <p>Met all WCAG 2.2 AA color contrast and accessibility standards, delivering an inclusive experience for diverse user groups.</p>
+            <span class="cap">Accessibility</span>
+            <span class="stat-num is-word">WCAG 2.2 AA</span>
+            <p>Passed the client's acceptance review.</p>
           </div>
           <div class="stat">
-            <span class="cap">Front-end dev time</span>
+            <span class="cap">Front-end build, login module</span>
             <span class="stat-num">−67%</span>
-            <p>Front-end development time for the same feature module cut from 3 weeks to 1 week, by aligning Figma Variables (design tokens) with engineering naming conventions.</p>
+            <p>3 weeks on past projects without a component library → 1 week here.</p>
+          </div>
+        </div>
+
+        <dl class="cs-facts" style="margin-top: 48px; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr))">
+          <div>
+            <dt class="cap">My role</dt>
+            <dd>Product Designer &amp; Taiwan-side PM<br><span class="muted">Audited the legacy system, redesigned flows and layouts, and tracked development through testing and delivery.</span></dd>
+          </div>
+          <div>
+            <dt class="cap">Timeline</dt>
+            <dd>September 2024 – January 2025<br><span class="muted">Design and development. Launched in 2026 on the client's schedule.</span></dd>
+          </div>
+          <div>
+            <dt class="cap">Team</dt>
+            <dd>Project managers (2) · Engineers (3) · Product designer (1)</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="cs-section" aria-labelledby="challenge-h">
+        <h2 id="challenge-h" class="two-tone"><span>02</span> Challenge</h2>
+        <div class="prose">
+          <p><strong>The client asked for compliance. I proposed making the portal easier to use as well.</strong> A long-standing client's old portal had to meet an accessibility law. The public uses it to run checks on a person by name and identity details, account holders run batch searches, and agency staff manage it.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3 class="label">Meet WCAG 2.2 AA</h3>
+            <p>The client's brief, required by law. The legacy components, colours and layouts did not meet it.</p>
+          </div>
+          <div class="card">
+            <h3 class="label">Improve the overall UX</h3>
+            <p>Not in the brief; I proposed it. The old system's three main tasks were hard to use: searching and paying, signing up, and the account dashboard.</p>
           </div>
         </div>
       </section>
 
-      <section class="cs-section" aria-labelledby="reflect-h">
-        <h2 id="reflect-h" class="two-tone"><span>04</span> Reflection &amp; next steps</h2>
-        <div class="prose">
-          <p>Demonstrating a senior product design mindset through strategic trade-offs under constraints and data-backed plans for future iterations.</p>
-        </div>
+      <section class="cs-section" aria-labelledby="solution-h">
+        <h2 id="solution-h" class="two-tone"><span>03</span> Solution</h2>
 
-        <h3 class="cs-sub">Strategic Trade-off: Design System vs. Custom Components</h3>
-        <div class="prose">
-          <p>To balance strict cross-device responsiveness with WCAG 2.2 compliance under timeline constraints, I strategically leveraged Telerik's out-of-the-box UI framework. While trading off a minor degree of custom visual branding, combined with token alignment it cut front-end implementation time per feature module by 67%.</p>
-        </div>
+        <!-- PLACEHOLDER (Tommy): checkout walkthrough video, 10–20s (details → checkout → download).
+             When it's ready, swap this tile for <video autoplay muted loop playsinline poster="assets/us-state-gov-public-records-redesign/name-search-poster.png">
+             plus a pause button, and show the poster only under prefers-reduced-motion. -->
+        <figure class="mt-10">
+          <div class="tile shot is-free is-raw" style="margin-top: 0">
+            <img data-no-zoom src="assets/us-state-gov-public-records-redesign/name-search-poster.png" width="2000" height="1119" alt="Name Search, the first of three pages: first name, last name and date of birth required, with optional Social Security and IDT numbers, and Reset and Continue buttons">
+            <div style="position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 16px; text-align: center">
+              <span style="width: 72px; height: 72px; border-radius: 999px; background: var(--ink); color: var(--page); display: flex; align-items: center; justify-content: center; opacity: .9" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="pill pill-grey" style="pointer-events: none">Walkthrough video coming soon · not playable yet</span>
+            </div>
+          </div>
+          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">Check who you're paying for, while you pay.</span> <span class="muted">Three pages from details to report. On checkout, the person's details sit beside the payment form, with the amount filled in.</span></figcaption>
+        </figure>
 
-        <h3 class="cs-sub">What I would do differently</h3>
+        <!-- After screens only, full width. Before/after comparisons live under 05 Design -->
+        <figure class="mt-16">
+          <div class="tile shot is-free is-raw" style="margin-top: 0">
+            <img src="assets/us-state-gov-public-records-redesign/signup-mfa.webp" width="2000" height="1104" alt="Sign-up step 2 of 5, multi-factor authentication: email verification selected by default, Microsoft Authenticator as an option with download QR codes, and Previous and Next buttons" loading="lazy">
+          </div>
+          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">Errors at the step, not at the end.</span> <span class="muted">Five steps with progress shown, each checking its fields before Next.</span></figcaption>
+        </figure>
+
+        <figure class="mt-16">
+          <div class="tile shot is-free is-raw" style="margin-top: 0">
+            <img src="assets/us-state-gov-public-records-redesign/dashboard-after.webp" width="2000" height="1303" alt="Account dashboard: pre-paid balance top left, search buttons, three totals, a chart of the week's searches and refunds, and one report list with Paid, Unpaid and Unfinished Batch tabs" loading="lazy">
+          </div>
+          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">One list for every report.</span> <span class="muted">A weekly chart, and every search record in one list marked by status.</span></figcaption>
+        </figure>
+
+        <figure class="mt-16">
+          <div class="tile shot is-free" style="margin-top: 0">
+            <img src="assets/us-state-gov-public-records-redesign/rwd-wcag-design-system.png" alt="Design rules: 8.63:1 colour contrast, button states including focus, and an input error with a text message" loading="lazy">
+          </div>
+          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">WCAG 2.2 AA, on every screen size.</span> <span class="muted">Contrast, focus and error rules, with a layout for phones.</span></figcaption>
+        </figure>
+      </section>
+
+      <!-- ============ LAYER 2: for readers who want the process ============ -->
+      <div id="process"></div>
+
+      <section class="cs-section" aria-labelledby="research-h">
+        <h2 id="research-h" class="two-tone"><span>04</span> Research</h2>
+        <div class="prose">
+          <p><strong>For the UX, I used the old portal the way its users do.</strong> On the old system's staging, I ran each main task end to end: searching for a person and paying for the report, signing up for an account, and working from the account dashboard. I took a screenshot of every screen along the way and marked where a task slowed down, repeated itself or failed without explanation.</p>
+          <p><strong>For accessibility, I checked the old screens against the standard.</strong> I scanned them with Lighthouse and Accessibility Insights, checked by hand the WCAG 2.2 AA criteria those tools can't test, and opened them on a phone, where they had no responsive layout.</p>
+          <p>Together these defined four problems to solve.</p>
+        </div>
+        <!-- TODO (Tommy): one de-identified marked-up screenshot from the walkthrough would show the method -->
+        <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr))">
+          <div class="card">
+            <h3 class="label">1 · Paying took six pages</h3>
+            <p>Details, a confirmation page, payment method, amount (plus security code for cards), where to send the result, then download. The confirmation page repeated what people had just typed.</p>
+          </div>
+          <div class="card">
+            <h3 class="label">2 · Sign-up errors came at the end</h3>
+            <p>People could jump between tabs freely. Missing fields only showed up on submit, without saying which tab or field.</p>
+          </div>
+          <div class="card">
+            <h3 class="label">3 · The dashboard had no clear order</h3>
+            <p>Balance, reports and batches all sat on one page, but the information had no clear order.</p>
+          </div>
+          <div class="card">
+            <h3 class="label">4 · Screens failed AA and didn't fit phones</h3>
+            <p>The legacy components and colours failed WCAG 2.2 AA, and the layouts didn't adapt to phone screens.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="design-h">
+        <h2 id="design-h" class="two-tone"><span>05</span> Design</h2>
+
+        <h3 class="cs-sub">Key decision 1: Fold confirmation, payment and delivery into one checkout page</h3>
+        <!-- TODO (Tommy): a 6-page vs 3-page flow diagram (de-identified) would prove this decision -->
+        <dl class="decide">
+          <div><dt>Problem 1</dt><dd>Six pages from a person's details to the report, with a confirmation page that repeated the details.</dd></div>
+          <div><dt>What I changed</dt><dd><strong>Three pages: details, one checkout page, download.</strong> On checkout, the person's details sit beside the payment form, the amount fills in automatically, and sending the result is optional on the same page.</dd></div>
+          <div><dt>Why this way</dt><dd>With the details right next to payment, people check who they're paying for while they pay. A separate confirmation page no longer adds anything.</dd></div>
+          <div><dt>Trade-off</dt><dd>Removing a confirmation step from a paid search. I agreed it with my manager before designing it out.</dd></div>
+        </dl>
+        <figure class="mt-10">
+          <div class="tile shot is-free is-raw" style="margin-top: 0">
+            <img src="assets/us-state-gov-public-records-redesign/checkout-before-after.webp" width="2000" height="1360" alt="Checkout before and after. Before: a confirmation page that repeats the person's details, then a separate payment page with Go Back and three card options. After: one Checkout Confirmation page with user and billing details, card payment, an optional emailed report, and a transaction summary beside the Submit button" loading="lazy">
+          </div>
+          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">Two pages became one.</span> <span class="muted">The old confirmation and payment pages, folded into one checkout with the person's details beside payment.</span></figcaption>
+        </figure>
+
+        <h3 class="cs-sub">Key decision 2: Turn sign-up tabs into steps that check themselves</h3>
+        <dl class="decide">
+          <div><dt>Problem 2</dt><dd>Errors only appeared on submit, and people had to hunt for the tab that caused them.</dd></div>
+          <div><dt>What I changed</dt><dd><strong>Five linear steps with progress shown, and each step checks its required fields before Next.</strong> Multi-factor setup comes right after login details.</dd></div>
+          <div><dt>Why this way</dt><dd>Steps guide people in order and show what's still left to fill in. An error shows up on the step that caused it, not at the end.</dd></div>
+          <div><dt>Trade-off</dt><dd>Email is the default verification method and a device is optional. My manager made that call: many existing account holders had no device set up or weren't used to binding one.</dd></div>
+        </dl>
+        <figure class="mt-10">
+          <div class="tile shot is-free is-raw" style="margin-top: 0">
+            <img src="assets/us-state-gov-public-records-redesign/signup-before-after.png" width="2000" height="1125" alt="Sign-up before and after. Before: grey tabs for login, address, payment, preferences and agency that people could jump between, with Submit at the bottom. After: a five-step progress bar on step 3, account address, with Previous and Next" loading="lazy">
+          </div>
+          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">From tabs to steps.</span> <span class="muted">The old tabs let people skip ahead and only flagged errors on Submit. Each new step checks its own fields.</span></figcaption>
+        </figure>
+
+        <h3 class="cs-sub">Key decision 3: Put the dashboard in a clear order</h3>
+        <dl class="decide">
+          <div><dt>Problem 3</dt><dd>Balance, reports and batches all sat on one page with no clear order.</dd></div>
+          <div><dt>What I changed</dt><dd><strong>A chart of the past week's searches and refunds, and one list for every search record, marked by status: paid, unpaid or unfinished.</strong> The balance sits top left.</dd></div>
+          <div><dt>Why this way</dt><dd>The records were all the same kind of data, split across separate panels. One list with status labels puts them in one place, and the chart shows the week at a glance.</dd></div>
+          <!-- TODO (Tommy): add a "Trade-off" row once confirmed -->
+        </dl>
+        <figure class="mt-10">
+          <div class="tile shot is-free is-raw" style="margin-top: 0">
+            <img src="assets/us-state-gov-public-records-redesign/dashboard-before-after.webp" width="2000" height="1125" alt="Account dashboard before and after. Before: separate grey panels for unpaid batch reports, unfinished batches, batch reports and individual reports, most reading No records found. After: balance top left, search buttons, three totals, a weekly chart, and one report list with Paid, Unpaid and Unfinished Batch tabs" loading="lazy">
+          </div>
+          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">From separate panels to one list.</span> <span class="muted">Five report panels, most of them empty, became one list with status tabs and a chart for the week.</span></figcaption>
+        </figure>
+
+        <h3 class="cs-sub">Key decision 4: Let Telerik cover the components, and design the layouts around them</h3>
+        <dl class="decide">
+          <div><dt>Problem 4</dt><dd>Legacy components and colours failed WCAG 2.2 AA, and the layouts didn't adapt to phones, on a stack that was already set.</dd></div>
+          <div><dt>What I changed</dt><dd><strong>Swap in Telerik's components, which already meet AA, then design the layouts, colours and how each screen displays on a phone.</strong></dd></div>
+          <div><dt>Why this way</dt><dd>The components came accessible. Contrast, hierarchy and the mobile layout still had to be designed.</dd></div>
+          <div><dt>Trade-off</dt><dd>As PM I put flows and functions meeting the requirements first. Some pixel-level details, like alignment, shipped looser than the design.</dd></div>
+        </dl>
+      </section>
+
+      <section class="cs-section" aria-labelledby="validate-h">
+        <h2 id="validate-h" class="two-tone"><span>06</span> Validation</h2>
         <div class="cards">
           <div class="card">
-            <h4 class="label">Define Analytics Tracking Early</h4>
-            <p>Establish a GA4/GTM Event Tagging Plan right at the Wireframe stage. Tracking button clicks and core conversion drops from Day 1 avoids retroactive tagging post-launch.</p>
+            <h3 class="label">Accessibility, checked three ways</h3>
+            <p>Lighthouse and Accessibility Insights flagged automated issues during the build. I checked the criteria tools can't test by hand. The client then ran its WCAG 2.2 AA acceptance, and it passed.</p>
           </div>
           <div class="card">
-            <h4 class="label">Establish Edge-Case Hand-off Checklists</h4>
-            <p>Formulate a default Edge-Case Checklist for engineering hand-off, explicitly marking scenarios out-of-scope for the current sprint to ensure transparency.</p>
+            <h3 class="label">No usability test</h3>
+            <p>No existing users tried the new screens before launch. Anything that only shows up in everyday use could surface only after release.</p>
           </div>
         </div>
+        <h3 class="cs-sub">What that gap missed</h3>
+        <div class="prose">
+          <p><strong>The old components couldn't stay, so we replaced them first. I didn't account for how people were used to operating specific ones.</strong> The date-of-birth field moved to Telerik's date picker, which already met WCAG 2.2 AA.</p>
+          <p>After launch, the client told us entering a date of birth with it was hard to use. We changed the field to plain typed input. The component passed every accessibility check and still didn't fit the way people entered that field.</p>
+        </div>
+        <!-- TODO (Tommy): before/after of the date-of-birth field, de-identified -->
+      </section>
 
-        <h3 class="cs-sub">Next steps</h3>
-        <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr))">
-          <div class="card">
-            <h4 class="label">Optimize Flow around Refund Rates</h4>
-            <p>Use Refund Rate as the primary metric to evaluate search optimization. Combine GA4 data with Heatmaps to continuously monitor user behaviors for A/B testing iterations.</p>
-          </div>
-          <div class="card">
-            <h4 class="label">Refine Core Interactive Components</h4>
-            <p>Customize default UI library elements (e.g., Datetime Picker) to better align interaction patterns with user mental models.</p>
-          </div>
-          <div class="card">
-            <h4 class="label">Automate CI/CD Accessibility Audits</h4>
-            <p>Integrate automated WCAG testing tools (such as axe-core) into the CI/CD pipeline to maintain continuous compliance across product updates.</p>
-          </div>
-          <div class="card">
-            <h4 class="label">Standardize Multi-Timezone Data Consistency</h4>
-            <p>Unify timestamp display logic between frontend UI and backend PDF reports to ensure a seamless experience for multi-regional and cross-timezone users.</p>
-          </div>
+      <section class="cs-section" aria-labelledby="outcome-h">
+        <h2 id="outcome-h" class="two-tone"><span>07</span> Outcome</h2>
+        <div class="prose">
+          <p><strong>The portal launched in 2026, mostly as designed.</strong> Some styling details came out looser than the design. The only interface issue raised after launch was the date-of-birth field.</p>
+        </div>
+        <dl class="decide">
+          <div><dt>Search and pay</dt><dd><strong>6 → 3 pages</strong> from entering a person's details to downloading the report.</dd></div>
+          <div><dt>Sign-up</dt><dd><strong>Errors show on the step that caused them,</strong> not after submitting the whole form.</dd></div>
+          <div><dt>Dashboard</dt><dd><strong>One list for every search record,</strong> marked by status, with a chart of the past week.</dd></div>
+          <div><dt>Accessibility</dt><dd><strong>Passed the client's WCAG 2.2 AA acceptance,</strong> the requirement in the brief.</dd></div>
+          <div><dt>Delivery</dt><dd><strong>−67% front-end build time</strong> for the login module: 1 week, against 3 weeks on past projects that had no component library.</dd></div>
+        </dl>
+        <h3 class="cs-sub">Reflection</h3>
+        <div class="prose">
+          <p><strong>A compliant component can still break a habit.</strong> People who had used the old system for years had a way of filling in each field. Swapping in a library default fixed accessibility and, for the date of birth, broke that habit.</p>
+          <p>My walkthrough showed me how the old system behaved, not how its regular users had learned to work with it. Acceptance confirmed the release met the requirements, not that it fit those habits.</p>
+          <p><strong>Next time, I'll run a usability test before launch.</strong> When I replace a legacy component, I'll weigh how people used the old one alongside the standard, and put the changed screens in front of a few existing users. That is the step that could have caught the date-of-birth issue before release.</p>
         </div>
       </section>
 
@@ -219,13 +277,17 @@
         </a>
         <a href="us-state-gov-ai-bid-prototype.html" class="cs-next-card">
           <span class="cap">Next case study →</span>
-          <span class="label">Winning a $1.6M+ US State Government Bid: AI-Accelerated Prototyping in 48 Hours</span>
+          <span class="label">Winning a $1.6M+ State Contract with a Clickable Prototype Built in 48 Hours</span>
         </a>
       </nav>
     </div>
   </main>
 
   <site-footer></site-footer>
+
+  <button type="button" class="to-top" data-to-top aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
 
   <script src="assets/js/site.js"></script>
 </body>

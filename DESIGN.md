@@ -134,9 +134,11 @@ Headlines use `text-wrap: balance`.
   - `.cs-cover` is the 16:9 cover tile under the title.
   - `.cs-section` spaces sections 144px apart. Numbered headings put the number in the quiet tone: `<h2 class="two-tone"><span>01</span> Problem &amp; task</h2>`.
   - `.cs-sub` is a 24px subheading inside a section; `.prose` holds running text at 68ch, with `.lead-in` for list intros.
-  - `.cards` is an auto-fit grid of `.card` (surface, 28px radius, `label` title, `muted` text) or `.stat` (caption, accent number, `muted` text). Use `.stat-num.is-word` when the result is words, not a number.
-  - `.decide` is a `<dl>` for one design decision: rows of a `muted` 14px label (Problem, I chose, Instead of, Why, Trade-off) and the answer, with hairlines between rows. Bold the choice. Labels stack above answers below 640px.
-  - `.shot` is a screenshot tile, 16:9 or `.is-free` for its natural height; `.shots` stacks several. Screens blend into the grey with multiply.
+  - `.cards` is an auto-fit grid of `.card` (surface, 28px radius, `label` title, `muted` text) or `.stat` (caption, accent number, `muted` text). Use `.stat-num.is-word` (clamp(40–50)) when the result is words, not a number.
+  - `.decide` is a `<dl>` for one design decision: rows of a `muted` 14px label (Problem N, What I changed, Instead of, Why this way, Trade-off) and the answer, with hairlines between rows. Bold the choice. Labels stack above answers below 640px.
+  - `.shot` is a screenshot tile, 16:9 or `.is-free` for its natural height; `.shots` stacks several. Screens blend into the grey with multiply; add `.is-raw` for a full-bleed screenshot or composite that should keep its own white (it gets a `hair` edge instead).
+  - `.to-top` is the back-to-top button: a 48px `ink` circle fixed bottom-right (24px in, 16px on phones). Add `<button class="to-top" data-to-top aria-label="Back to top">` before `site.js` on long pages; it appears after one screen of scroll.
+  - Image zoom: on case-study pages every `figure img` (plus any `img[data-zoom]`) opens full screen in a `<dialog class="zoom">` on an 82% black veil; click outside, the close button or Esc returns to the page. Mark `data-no-zoom` on images under an overlay, such as video posters. Linked images never zoom.
   - `.cs-next` ends the page: an "All work" grey pill and the next case study.
 - **Focus**
   - Every link and button shows a 2px `accent` outline, offset 4px, with 10px radius.

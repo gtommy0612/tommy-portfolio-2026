@@ -29,7 +29,6 @@
 
   <main id="top">
     <!-- ============ LAYER 1: the 30-second read ============ -->
-    <!-- Title on white, then full-bleed cover, then one Summary block. -->
     <div class="cs-hero" style="background: var(--page)">
       <div class="wrap">
         <p class="cap">U.S. State Government Project · Bid Prototype · 2026</p>
@@ -71,12 +70,14 @@
     </div>
 
     <div class="wrap">
-      <!-- Summary: lead, outcome numbers, facts in one row -->
-      <section class="pt-section" aria-labelledby="summary-h">
-        <h2 id="summary-h" class="two-tone">Summary</h2>
+
+      <!-- ============ LAYER 1: the 30-second read ============ -->
+
+      <section class="pt-section" aria-labelledby="overview-h">
+        <h2 id="overview-h" class="two-tone"><span>01</span> Overview</h2>
         <p class="mt-6 text-lead text-muted" style="max-width: 56ch">A new state agency, a five-party permit process none of us knew, and 48 hours' notice. Our last bid of similar size took five days of static Figma screens, and we lost it. This time I sent the agency a prototype they could click through.</p>
 
-        <!-- Outcome numbers: shown once here; section 05 adds how they were measured -->
+        <!-- Headline numbers: business result, delivery speed, AI workflow. 07 Outcome gives every result -->
         <div class="cards">
           <div class="stat">
             <span class="cap">Contract won</span>
@@ -108,21 +109,33 @@
             <dt class="cap">Team</dt>
             <dd>Engineers (3) · Project managers (2) · Product designer (1) · Customer service (1)</dd>
           </div>
-          <div>
-            <dt class="cap">Constraints</dt>
-            <dd>48 hours · new client · unfamiliar regulated domain · PDFs only, no access to users</dd>
-          </div>
         </dl>
       </section>
 
-      <!-- Design highlights -->
-      <section class="pt-section" aria-labelledby="highlights-h">
-        <h2 id="highlights-h" class="two-tone">Design highlights</h2>
+      <section class="cs-section" aria-labelledby="challenge-h">
+        <h2 id="challenge-h" class="two-tone"><span>02</span> Challenge</h2>
+        <div class="prose">
+          <p><strong>The agency asked for a design proposal. I wanted ours to be the first draft of the product.</strong> A first contract with a new state agency, and a way into its other departments. I heard about the bid with the deadline already close. The agency sent PDFs, and nobody on the team had worked in this domain.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3 class="label">Send a design proposal in 48 hours</h3>
+            <p>The agency's brief. It had to show we understood a five-party permit process we had only read about.</p>
+          </div>
+          <div class="card">
+            <h3 class="label">Make it something we could build from</h3>
+            <p>Not in the brief; my own aim. A design proposal usually stops mattering once the bid is decided. I wanted a file the agency could click through, and the starting point for delivery if we won.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="solution-h">
+        <h2 id="solution-h" class="two-tone"><span>03</span> Solution</h2>
 
         <figure class="mt-10">
           <!-- PLACEHOLDER video: replace with <video autoplay muted loop playsinline poster="...cover.png"> plus a pause button; show the poster only under prefers-reduced-motion -->
           <div class="tile cs-cover" style="margin-top: 0">
-            <img src="assets/us-state-gov-ai-bid-prototype/cover.png" alt="Applicant view of the permit portal prototype: application status, PDF download and the applicant's next step">
+            <img data-no-zoom src="assets/us-state-gov-ai-bid-prototype/cover.png" alt="Applicant view of the permit portal prototype: application status, PDF download and the applicant's next step">
             <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px">
               <span style="width: 72px; height: 72px; border-radius: 999px; background: var(--ink); color: var(--page); display: flex; align-items: center; justify-content: center" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -150,41 +163,13 @@
       </section>
 
       <!-- ============ LAYER 2: for readers who want the process ============ -->
-      <div id="process" style="margin-top: 144px; border-top: 1px solid var(--hair)"></div>
+      <div id="process"></div>
 
-      <section class="cs-section" style="padding-top: 96px" aria-labelledby="stakes-h">
-        <h2 id="stakes-h" class="two-tone"><span>01</span> Challenge</h2>
+      <section class="cs-section" aria-labelledby="research-h">
+        <h2 id="research-h" class="two-tone"><span>04</span> Research</h2>
         <div class="prose">
-          <p><strong>A first contract with a new state agency, and a way into its other departments.</strong> I heard about the bid with the deadline already close. The agency sent PDFs and asked for a design proposal. Nobody on the team had worked in this domain.</p>
+          <p><strong>No interviews and no process audit: the business rules existed only in the agency's documents.</strong> Claude pulled the roles and rules out of the PDFs. I checked what it produced against the documents myself before drawing any screen.</p>
         </div>
-        <div class="cards">
-          <div class="card">
-            <h3 class="label">Time</h3>
-            <p>48 hours to submit. Our last comparable bid took 5 days of concept work.</p>
-          </div>
-          <div class="card">
-            <h3 class="label">Five parties, in order</h3>
-            <p>An applicant passes a sheriff's check, then a required course, then buys from a dealer, while the agency oversees and reviews.</p>
-          </div>
-          <div class="card">
-            <h3 class="label">No discovery</h3>
-            <p>No interviews, no process audit. The business rules existed only in the documents.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="cs-section" aria-labelledby="insight-h">
-        <h2 id="insight-h" class="two-tone"><span>02</span> The approach</h2>
-        <div class="card mt-10" style="padding: clamp(32px, 5vw, 48px)">
-          <p class="two-tone" style="color: var(--ink); max-width: 24ch">Make the proposal the first draft of the product.</p>
-          <p class="mt-4" style="max-width: 60ch">A design proposal usually stops mattering once the bid is decided. I wanted ours to keep working: a file the agency could click through to see what we understood, and the starting point we would build from if we won.</p>
-        </div>
-      </section>
-
-      <section class="cs-section" aria-labelledby="decisions-h">
-        <h2 id="decisions-h" class="two-tone"><span>03</span> Key decisions</h2>
-
-        <h3 class="cs-sub">Decision 1: Map how the five parties connect before drawing any screen</h3>
         <figure>
           <div class="tile shot">
             <!-- TODO (Tommy): swap for the role-relationship map you kept, with agency names removed -->
@@ -192,67 +177,96 @@
           </div>
           <figcaption class="mt-4 muted">Agency files → Claude → rules → screens for each role. In the bid, rules were checked against the documents only. Checking them with the agency came after the win.</figcaption>
         </figure>
+        <div class="prose mt-10">
+          <p>Reading the documents this way defined three problems to solve.</p>
+        </div>
+        <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr))">
+          <div class="card">
+            <h3 class="label">1 · Five parties act in a fixed order</h3>
+            <p>An applicant passes a sheriff's check, then a required course, then buys from a dealer, while the agency oversees and reviews. The rules for that order were spread across PDFs.</p>
+          </div>
+          <div class="card">
+            <h3 class="label">2 · Static screens took 5 days and lost</h3>
+            <p>Our last bid of similar size was 5 days of Figma concept work, and we didn't win it. This one was due in 48 hours.</p>
+          </div>
+          <div class="card">
+            <h3 class="label">3 · Applicants wait on offices they never see</h3>
+            <p>An application passes through three outside offices, and the applicant has to work out where it is and what to do next.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="design-h">
+        <h2 id="design-h" class="two-tone"><span>05</span> Design</h2>
+
+        <h3 class="cs-sub">Key decision 1: Map how the five parties connect before drawing any screen</h3>
         <dl class="decide">
-          <div><dt>Problem</dt><dd>Five parties act in a fixed order, and the rules for that order existed only in PDFs.</dd></div>
-          <div><dt>I chose</dt><dd><strong>Lay out how the roles relate and the applicant's full path first, then split it into each role's screens.</strong></dd></div>
+          <div><dt>Problem 1</dt><dd>Five parties act in a fixed order, and the rules for that order existed only in PDFs.</dd></div>
+          <div><dt>What I changed</dt><dd><strong>Lay out how the roles relate and the applicant's full path first, then split it into each role's screens.</strong> Only once the role map and the order held up did I plan each role's detailed flow.</dd></div>
           <div><dt>Instead of</dt><dd>Drawing each role's screens straight from the documents.</dd></div>
-          <div><dt>Why</dt><dd>One step depends on another. After the sheriff approves, the applicant takes a basic or an extended course, depending on the training history they gave when they applied.</dd></div>
+          <div><dt>Why this way</dt><dd>One step depends on another. After the sheriff approves, the applicant takes a basic or an extended course, depending on the training history they gave when they applied.</dd></div>
+          <!-- TODO (Tommy): add a "Trade-off" row once confirmed -->
         </dl>
 
-        <h3 class="cs-sub">Decision 2: Send clickable HTML, not static Figma screens</h3>
+        <h3 class="cs-sub">Key decision 2: Send clickable HTML, not static Figma screens</h3>
         <!-- TODO (Tommy): a 10–20s screen recording of the prototype (applicant submits → sheriff approves → next step updates) would go here -->
         <dl class="decide">
-          <div><dt>Problem</dt><dd>A design proposal for a domain we had just met, due in 48 hours.</dd></div>
-          <div><dt>I chose</dt><dd><strong>A clickable HTML prototype built with Claude Code, on tokens generated from our existing design system.</strong></dd></div>
-          <div><dt>Instead of</dt><dd>Static Figma screens. Our last comparable bid took 5 days that way, and we lost it.</dd></div>
-          <div><dt>Why</dt><dd>A working file shows the client what we understood, and it is something we can build from if we win. The company also wanted to adopt an AI development workflow.</dd></div>
+          <div><dt>Problem 2</dt><dd>Static screens took 5 days last time and didn't win. This proposal, for a domain we had just met, was due in 48 hours.</dd></div>
+          <div><dt>What I changed</dt><dd><strong>A clickable HTML prototype built with Claude Code from my flows, on tokens generated from our existing design system.</strong></dd></div>
+          <div><dt>Why this way</dt><dd>A working file shows the client what we understood, and it is something we can build from if we win. The company also wanted to adopt an AI development workflow.</dd></div>
           <div><dt>Trade-off</dt><dd>Happy path only, for every outside role from applicant to dealer. Left out: the sheriff withdrawing an approval, the agency's review of training records, reports and settings. I agreed that scope with our US PM and leadership before building.</dd></div>
         </dl>
 
-        <h3 class="cs-sub">Decision 3: Give the applicant one page that answers "where am I?"</h3>
+        <h3 class="cs-sub">Key decision 3: Give the applicant one page that answers "where am I?"</h3>
         <div class="mt-10 grid gap-10 md:grid-cols-2 md:gap-12 md:items-center">
           <div class="tile shot is-free" style="margin-top: 0">
             <img src="assets/home/bid-application-card.png" alt="Application summary card: status, PDF download and the applicant's next step" loading="lazy">
           </div>
           <dl class="decide" style="margin-top: 0">
-            <div><dt>Problem</dt><dd>An applicant waits on three offices they never see.</dd></div>
-            <div><dt>I chose</dt><dd><strong>Make the application itself the map: review results, course records, downloadable proof and the next step on one page.</strong></dd></div>
-            <div><dt>Why</dt><dd>Wherever the application is, the applicant can see who has it and what they need to do next.</dd></div>
+            <div><dt>Problem 3</dt><dd>An applicant waits on three offices they never see.</dd></div>
+            <div><dt>What I changed</dt><dd><strong>Make the application itself the map: review results, course records, downloadable proof and the next step on one page.</strong></dd></div>
+            <div><dt>Instead of</dt><dd>Leaving applicants to work out their status and next step from the application's detail tabs.</dd></div>
+            <div><dt>Why this way</dt><dd>Wherever the application is, the applicant can see who has it and what they need to do next.</dd></div>
+            <!-- TODO (Tommy): add a "Trade-off" row once confirmed -->
           </dl>
         </div>
       </section>
 
-      <section class="cs-section" aria-labelledby="wrong-h">
-        <h2 id="wrong-h" class="two-tone"><span>04</span> What the prototype got wrong</h2>
+      <section class="cs-section" aria-labelledby="validate-h">
+        <h2 id="validate-h" class="two-tone"><span>06</span> Validation</h2>
+        <div class="cards">
+          <div class="card">
+            <h3 class="label">Clicked through as every role</h3>
+            <p>I went through each version myself as every role and adjusted it until it did what the documents required.</p>
+          </div>
+          <div class="card">
+            <h3 class="label">Not checked with the agency before the bid</h3>
+            <p>We had PDFs only and no access to users. The rules were checked against the documents, and checking them with the agency came after the win.</p>
+          </div>
+        </div>
+        <h3 class="cs-sub">What that gap missed</h3>
         <div class="prose">
           <p><strong>I assumed a reviewed application locks.</strong> It seemed safe: the training history was part of the application, and the sheriff had already approved it.</p>
           <p>When we started building, the agency told us otherwise. Personal details lock after review, but the training section stays editable. In the interface the fix was small, a change in which fields are read-only. But it was exactly the kind of rule I couldn't confirm in 48 hours, and the prototype gave the agency something concrete to correct.</p>
         </div>
       </section>
 
-      <section class="cs-section" aria-labelledby="result-h">
-        <h2 id="result-h" class="two-tone"><span>05</span> Result</h2>
-        <div class="cards">
-          <div class="card">
-            <h3 class="label">Won, and shipped</h3>
-            <p>The $1.6M+ contract was awarded. After 11 weeks of design and build, the portal is live.</p>
-          </div>
-          <div class="card">
-            <h3 class="label">How −60% was measured</h3>
-            <p>Against our last bid of similar size: 5 days of Figma concept work then, 2 days here.</p>
-          </div>
-          <div class="card">
-            <h3 class="label">Built from the same tokens</h3>
-            <p>Engineers built from the tokens behind the prototype, so the bid's screens became the starting point for delivery.</p>
-          </div>
+      <section class="cs-section" aria-labelledby="outcome-h">
+        <h2 id="outcome-h" class="two-tone"><span>07</span> Outcome</h2>
+        <div class="prose">
+          <p><strong>The contract was awarded, and after 11 weeks of design and build the portal is live.</strong></p>
         </div>
-      </section>
-
-      <section class="cs-section" aria-labelledby="reflect-h">
-        <h2 id="reflect-h" class="two-tone"><span>06</span> Reflection</h2>
+        <dl class="decide">
+          <div><dt>Contract</dt><dd><strong>$1.6M+ awarded,</strong> a first contract with a new state agency.</dd></div>
+          <div><dt>Role map</dt><dd><strong>All four outside roles in one clickable flow,</strong> from applicant to dealer, built from the rules in the agency's documents.</dd></div>
+          <div><dt>Applicant view</dt><dd><strong>One application page</strong> shows who has the application, what happens next and which documents to download.</dd></div>
+          <div><dt>Concept time</dt><dd><strong>−60%, 5 days → 2,</strong> against our last bid of similar size, which used Figma concept work.</dd></div>
+          <div><dt>Delivery</dt><dd><strong>Engineers reused most of the prototype's token file,</strong> the CSS variables for colour, type and spacing, in the production build. The bid's screens became the starting point for delivery.</dd></div>
+        </dl>
+        <h3 class="cs-sub">Reflection</h3>
         <div class="prose">
           <p><strong>Speed moved the risk. It didn't remove it.</strong> AI got me from documents to a working prototype in two days, but some of the rules in it were guesses, and nobody could tell which. The training-record rule was one of them.</p>
-          <p>Next time I'd send an assumption list with the prototype: the rules we weren't sure of, written as questions for the agency. Our guesses would become questions for the client before kickoff, not surprises during the build.</p>
+          <p><strong>Next time I'd send an assumption list with the prototype:</strong> the rules we weren't sure of, written as questions for the agency. Our guesses would become questions for the client before kickoff, not surprises during the build.</p>
         </div>
       </section>
 
@@ -263,7 +277,7 @@
         </a>
         <a href="us-state-gov-public-records-redesign.html" class="cs-next-card">
           <span class="cap">Next case study →</span>
-          <span class="label">Redesigning a US Public Records Search: 6 → 3 Steps, 100% WCAG 2.2 AA</span>
+          <span class="label">Modernizing a State Records Portal: WCAG 2.2 AA and Checkout from 6 Pages to 3</span>
         </a>
       </nav>
     </div>
