@@ -38,8 +38,8 @@
     </div>
 
     <!-- Full-bleed cover band, as on the AI bid case study -->
-    <div style="background: var(--surface-3); min-height: clamp(320px, 52vw, 720px); display: flex; align-items: center; justify-content: center; padding: 48px 24px">
-      <img data-zoom src="assets/us-state-gov-public-records-redesign/cover.png" alt="The redesigned records portal dashboard on laptop and phone: pre-paid balance, search buttons, weekly chart and report list" style="display: block; width: 100%; max-width: 1100px; height: auto">
+    <div class="cs-band">
+      <img data-zoom src="assets/us-state-gov-public-records-redesign/cover.png" alt="The redesigned records portal dashboard on laptop and phone: pre-paid balance, search buttons, weekly chart and report list">
     </div>
 
     <div class="wrap">
@@ -48,7 +48,7 @@
 
       <section class="pt-section" aria-labelledby="overview-h">
         <h2 id="overview-h" class="two-tone"><span>01</span> Overview</h2>
-        <p class="mt-6 text-lead text-muted" style="max-width: 56ch">An existing client's old records portal had to meet WCAG 2.2 AA. Compliance was the brief; I proposed also fixing how hard its main tasks were to use. I redesigned the core flows, and the release passed the client's WCAG 2.2 AA acceptance.</p>
+        <p class="mt-6 text-lead text-muted" style="max-width: 56ch">A US state government's portal where the public and registered organisations search a person's criminal history record, pay, and download the report. The old system had to meet WCAG 2.2 AA. Compliance was the brief; I proposed also fixing how hard its main tasks were to use. I redesigned the core flows, and the release passed the client's WCAG 2.2 AA acceptance.</p>
 
         <!-- Headline numbers: UX, compliance, delivery. 07 Outcome gives every result per challenge -->
         <div class="cards">
@@ -105,43 +105,43 @@
       <section class="cs-section" aria-labelledby="solution-h">
         <h2 id="solution-h" class="two-tone"><span>03</span> Solution</h2>
 
-        <!-- PLACEHOLDER (Tommy): checkout walkthrough video, 10–20s (details → checkout → download).
-             When it's ready, swap this tile for <video autoplay muted loop playsinline poster="assets/us-state-gov-public-records-redesign/name-search-poster.png">
-             plus a pause button, and show the poster only under prefers-reduced-motion. -->
+        <!-- Checkout walkthrough, 28s loop (name search → checkout → report). Muted autoplay with a pause button;
+             under prefers-reduced-motion it stays on the poster (site.js). -->
         <figure class="mt-10">
           <div class="tile shot is-free is-raw" style="margin-top: 0">
-            <img data-no-zoom src="assets/us-state-gov-public-records-redesign/name-search-poster.png" width="2000" height="1119" alt="Name Search, the first of three pages: first name, last name and date of birth required, with optional Social Security and IDT numbers, and Reset and Continue buttons">
-            <div style="position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 16px; text-align: center">
-              <span style="width: 72px; height: 72px; border-radius: 999px; background: var(--ink); color: var(--page); display: flex; align-items: center; justify-content: center; opacity: .9" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </span>
-              <span class="pill pill-grey" style="pointer-events: none">Walkthrough video coming soon · not playable yet</span>
-            </div>
+            <video data-walkthrough autoplay muted loop playsinline preload="metadata" width="1600" height="864" poster="assets/us-state-gov-public-records-redesign/checkout-walkthrough-poster.jpg" aria-label="Walkthrough: Name Search with first name, last name and date of birth, then checkout with the person's details and the amount beside the payment form, then the report">
+              <source src="assets/us-state-gov-public-records-redesign/checkout-walkthrough.mp4" type="video/mp4">
+            </video>
+            <button type="button" class="pill pill-white pill-sm shot-play" data-walkthrough-toggle aria-pressed="false">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path class="i-pause" d="M7 5h3v14H7zM14 5h3v14h-3z"/><path class="i-play" d="M8 5v14l11-7z"/></svg>
+              <span>Pause</span>
+            </button>
           </div>
           <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">Check who you're paying for, while you pay.</span> <span class="muted">Three pages from details to report. On checkout, the person's details sit beside the payment form, with the amount filled in.</span></figcaption>
         </figure>
 
-        <!-- After screens only, full width. Before/after comparisons live under 05 Design -->
-        <figure class="mt-16">
-          <div class="tile shot is-free is-raw" style="margin-top: 0">
-            <img src="assets/us-state-gov-public-records-redesign/signup-mfa.webp" width="2000" height="1104" alt="Sign-up step 2 of 5, multi-factor authentication: email verification selected by default, Microsoft Authenticator as an option with download QR codes, and Previous and Next buttons" loading="lazy">
-          </div>
-          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">Errors at the step, not at the end.</span> <span class="muted">Five steps with progress shown, each checking its fields before Next.</span></figcaption>
-        </figure>
-
-        <figure class="mt-16">
-          <div class="tile shot is-free is-raw" style="margin-top: 0">
-            <img src="assets/us-state-gov-public-records-redesign/dashboard-after.webp" width="2000" height="1303" alt="Account dashboard: pre-paid balance top left, search buttons, three totals, a chart of the week's searches and refunds, and one report list with Paid, Unpaid and Unfinished Batch tabs" loading="lazy">
-          </div>
-          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">One list for every report.</span> <span class="muted">A weekly chart, and every search record in one list marked by status.</span></figcaption>
-        </figure>
-
-        <figure class="mt-16">
-          <div class="tile shot is-free" style="margin-top: 0">
-            <img src="assets/us-state-gov-public-records-redesign/rwd-wcag-design-system.png" alt="Design rules: 8.63:1 colour contrast, button states including focus, and an input error with a text message" loading="lazy">
-          </div>
-          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">WCAG 2.2 AA, on every screen size.</span> <span class="muted">Contrast, focus and error rules, with a layout for phones.</span></figcaption>
-        </figure>
+        <!-- After screens only, as a quick 3-up glance (cropped to 16:10 from the top; click opens the full image).
+             Before/after comparisons live under 05 Design -->
+        <div class="mt-10 grid gap-10 lg:grid-cols-3 lg:gap-4">
+          <figure>
+            <div class="tile shot is-raw" style="margin-top: 0; aspect-ratio: 16 / 10">
+              <img src="assets/us-state-gov-public-records-redesign/signup-mfa.webp" width="2000" height="1104" style="object-position: top" alt="Sign-up step 2 of 5, multi-factor authentication: email verification selected by default, Microsoft Authenticator as an option with download QR codes, and Previous and Next buttons" loading="lazy">
+            </div>
+            <figcaption class="mt-4"><span class="font-semibold">Errors at the step, not at the end.</span> <span class="muted">Five sign-up steps, each checked before Next.</span></figcaption>
+          </figure>
+          <figure>
+            <div class="tile shot is-raw" style="margin-top: 0; aspect-ratio: 16 / 10">
+              <img src="assets/us-state-gov-public-records-redesign/dashboard-after.webp" width="2000" height="1303" style="object-position: top" alt="Account dashboard: pre-paid balance top left, search buttons, three totals, a chart of the week's searches and refunds, and one report list with Paid, Unpaid and Unfinished Batch tabs" loading="lazy">
+            </div>
+            <figcaption class="mt-4"><span class="font-semibold">One list for every report.</span> <span class="muted">A weekly chart and one list marked by status.</span></figcaption>
+          </figure>
+          <figure>
+            <div class="tile shot" style="margin-top: 0; aspect-ratio: 16 / 10">
+              <img src="assets/us-state-gov-public-records-redesign/rwd-wcag-design-system.png" width="3840" height="2856" style="object-position: top" alt="Design rules: 8.63:1 colour contrast, button states including focus, and an input error with a text message" loading="lazy">
+            </div>
+            <figcaption class="mt-4"><span class="font-semibold">WCAG 2.2 AA, on every screen size.</span> <span class="muted">Contrast, focus and error rules, plus phone layouts.</span></figcaption>
+          </figure>
+        </div>
       </section>
 
       <!-- ============ LAYER 2: for readers who want the process ============ -->
@@ -152,25 +152,49 @@
         <div class="prose">
           <p><strong>For the UX, I used the old portal the way its users do.</strong> On the old system's staging, I ran each main task end to end: searching for a person and paying for the report, signing up for an account, and working from the account dashboard. I took a screenshot of every screen along the way and marked where a task slowed down, repeated itself or failed without explanation.</p>
           <p><strong>For accessibility, I checked the old screens against the standard.</strong> I scanned them with Lighthouse and Accessibility Insights, checked by hand the WCAG 2.2 AA criteria those tools can't test, and opened them on a phone, where they had no responsive layout.</p>
-          <p>Together these defined four problems to solve.</p>
         </div>
-        <!-- TODO (Tommy): one de-identified marked-up screenshot from the walkthrough would show the method -->
-        <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr))">
-          <div class="card">
-            <h3 class="label">1 · Paying took six pages</h3>
-            <p>Details, a confirmation page, payment method, amount (plus security code for cards), where to send the result, then download. The confirmation page repeated what people had just typed.</p>
+
+        <!-- TODO (Tommy): add 4 de-identified, marked-up crops (research-1…4.webp, same 4:3 ratio, ~1200px wide), log them in assets/home/SOURCES.md, then uncomment.
+        <figure class="mt-10">
+          <div class="cards insights" style="margin-top: 0">
+            <div class="tile shot is-free is-raw" style="margin-top: 0"><img src="assets/us-state-gov-public-records-redesign/research-1.webp" width="1200" height="900" alt="Old confirmation page, marked where it repeats the details people just typed" loading="lazy"></div>
+            <div class="tile shot is-free is-raw" style="margin-top: 0"><img src="assets/us-state-gov-public-records-redesign/research-2.webp" width="1200" height="900" alt="Old sign-up tabs, marked where errors appear only after Submit" loading="lazy"></div>
+            <div class="tile shot is-free is-raw" style="margin-top: 0"><img src="assets/us-state-gov-public-records-redesign/research-3.webp" width="1200" height="900" alt="Old dashboard, marked where the same kind of record is split across panels" loading="lazy"></div>
+            <div class="tile shot is-free is-raw" style="margin-top: 0"><img src="assets/us-state-gov-public-records-redesign/research-4.webp" width="1200" height="900" alt="Old screen on a phone, marked where the layout doesn't fit the screen" loading="lazy"></div>
           </div>
-          <div class="card">
-            <h3 class="label">2 · Sign-up errors came at the end</h3>
-            <p>People could jump between tabs freely. Missing fields only showed up on submit, without saying which tab or field.</p>
+          <figcaption class="mt-4"><span class="font-semibold">Marked screens from the walkthrough.</span> <span class="muted">Numbers match the insights below.</span></figcaption>
+        </figure>
+        -->
+
+        <div class="prose">
+          <p><strong>The walkthrough turned up more than four problems.</strong> I kept the ones on the tasks the public and account holders do most, on screens the compliance work was going to change anyway. Issues in the admin tools stayed out: this release kept admin to simple management.</p>
+        </div>
+
+        <h3 class="cs-sub">What I found</h3>
+        <div class="cards insights">
+          <div class="card" id="insight-1">
+            <span class="insight-n" aria-hidden="true">01</span>
+            <h3 class="label">People confirmed the same details twice before they could pay.</h3>
+            <p>Six pages from a person's details to the report. The confirmation page repeated what people had just typed.</p>
+            <a class="insight-go" href="#decision-1" aria-label="Solution details for insight 01"><span class="insight-go-text"><span>Solution details</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
           </div>
-          <div class="card">
-            <h3 class="label">3 · The dashboard had no clear order</h3>
-            <p>Balance, reports and batches all sat on one page, but the information had no clear order.</p>
+          <div class="card" id="insight-2">
+            <span class="insight-n" aria-hidden="true">02</span>
+            <h3 class="label">Sign-up only said something was wrong at the very end.</h3>
+            <p>People could jump between tabs freely. Missing fields showed up on Submit, without saying which tab or field.</p>
+            <a class="insight-go" href="#decision-2" aria-label="Solution details for insight 02"><span class="insight-go-text"><span>Solution details</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
           </div>
-          <div class="card">
-            <h3 class="label">4 · Screens failed AA and didn't fit phones</h3>
-            <p>The legacy components and colours failed WCAG 2.2 AA, and the layouts didn't adapt to phone screens.</p>
+          <div class="card" id="insight-3">
+            <span class="insight-n" aria-hidden="true">03</span>
+            <h3 class="label">One kind of record was split across separate panels.</h3>
+            <p>Balance, reports and batches all sat on one dashboard, with no clear order to the information.</p>
+            <a class="insight-go" href="#decision-3" aria-label="Solution details for insight 03"><span class="insight-go-text"><span>Solution details</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
+          </div>
+          <div class="card" id="insight-4">
+            <span class="insight-n" aria-hidden="true">04</span>
+            <h3 class="label">The screens failed AA and didn't fit phones.</h3>
+            <p>Legacy components and colours failed WCAG 2.2 AA, and the layouts didn't adapt to phone screens.</p>
+            <a class="insight-go" href="#decision-4" aria-label="Solution details for insight 04"><span class="insight-go-text"><span>Solution details</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
           </div>
         </div>
       </section>
@@ -178,10 +202,10 @@
       <section class="cs-section" aria-labelledby="design-h">
         <h2 id="design-h" class="two-tone"><span>05</span> Design</h2>
 
-        <h3 class="cs-sub">Key decision 1: Fold confirmation, payment and delivery into one checkout page</h3>
+        <h3 class="cs-sub" id="decision-1"><span class="cs-sub-cap"><a href="#insight-1">Insight 01</a> · People confirmed the same details twice before they could pay</span>Confirm and pay on one checkout page</h3>
         <!-- TODO (Tommy): a 6-page vs 3-page flow diagram (de-identified) would prove this decision -->
         <dl class="decide">
-          <div><dt>Problem 1</dt><dd>Six pages from a person's details to the report, with a confirmation page that repeated the details.</dd></div>
+          <div><dt>What I saw</dt><dd>Six pages from a person's details to the report, with a confirmation page that repeated the details.</dd></div>
           <div><dt>What I changed</dt><dd><strong>Three pages: details, one checkout page, download.</strong> On checkout, the person's details sit beside the payment form, the amount fills in automatically, and sending the result is optional on the same page.</dd></div>
           <div><dt>Why this way</dt><dd>With the details right next to payment, people check who they're paying for while they pay. A separate confirmation page no longer adds anything.</dd></div>
           <div><dt>Trade-off</dt><dd>Removing a confirmation step from a paid search. I agreed it with my manager before designing it out.</dd></div>
@@ -193,9 +217,9 @@
           <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">Two pages became one.</span> <span class="muted">The old confirmation and payment pages, folded into one checkout with the person's details beside payment.</span></figcaption>
         </figure>
 
-        <h3 class="cs-sub">Key decision 2: Turn sign-up tabs into steps that check themselves</h3>
+        <h3 class="cs-sub" id="decision-2"><span class="cs-sub-cap"><a href="#insight-2">Insight 02</a> · Sign-up only said something was wrong at the very end</span>Check each sign-up step before Next, not at the end</h3>
         <dl class="decide">
-          <div><dt>Problem 2</dt><dd>Errors only appeared on submit, and people had to hunt for the tab that caused them.</dd></div>
+          <div><dt>What I saw</dt><dd>Errors only appeared on submit, and people had to hunt for the tab that caused them.</dd></div>
           <div><dt>What I changed</dt><dd><strong>Five linear steps with progress shown, and each step checks its required fields before Next.</strong> Multi-factor setup comes right after login details.</dd></div>
           <div><dt>Why this way</dt><dd>Steps guide people in order and show what's still left to fill in. An error shows up on the step that caused it, not at the end.</dd></div>
           <div><dt>Trade-off</dt><dd>Email is the default verification method and a device is optional. My manager made that call: many existing account holders had no device set up or weren't used to binding one.</dd></div>
@@ -207,9 +231,9 @@
           <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">From tabs to steps.</span> <span class="muted">The old tabs let people skip ahead and only flagged errors on Submit. Each new step checks its own fields.</span></figcaption>
         </figure>
 
-        <h3 class="cs-sub">Key decision 3: Put the dashboard in a clear order</h3>
+        <h3 class="cs-sub" id="decision-3"><span class="cs-sub-cap"><a href="#insight-3">Insight 03</a> · One kind of record was split across separate panels</span>Put every record in one list, marked by status</h3>
         <dl class="decide">
-          <div><dt>Problem 3</dt><dd>Balance, reports and batches all sat on one page with no clear order.</dd></div>
+          <div><dt>What I saw</dt><dd>Balance, reports and batches all sat on one page with no clear order.</dd></div>
           <div><dt>What I changed</dt><dd><strong>A chart of the past week's searches and refunds, and one list for every search record, marked by status: paid, unpaid or unfinished.</strong> The balance sits top left.</dd></div>
           <div><dt>Why this way</dt><dd>The records were all the same kind of data, split across separate panels. One list with status labels puts them in one place, and the chart shows the week at a glance.</dd></div>
           <!-- TODO (Tommy): add a "Trade-off" row once confirmed -->
@@ -221,13 +245,18 @@
           <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">From separate panels to one list.</span> <span class="muted">Five report panels, most of them empty, became one list with status tabs and a chart for the week.</span></figcaption>
         </figure>
 
-        <h3 class="cs-sub">Key decision 4: Let Telerik cover the components, and design the layouts around them</h3>
+        <h3 class="cs-sub" id="decision-4"><span class="cs-sub-cap"><a href="#insight-4">Insight 04</a> · The screens failed AA and didn't fit phones</span>Meet AA with Telerik's components, then design the layouts for phones</h3>
         <dl class="decide">
-          <div><dt>Problem 4</dt><dd>Legacy components and colours failed WCAG 2.2 AA, and the layouts didn't adapt to phones, on a stack that was already set.</dd></div>
+          <div><dt>What I saw</dt><dd>Legacy components and colours failed WCAG 2.2 AA, and the layouts didn't adapt to phones, on a stack that was already set.</dd></div>
           <div><dt>What I changed</dt><dd><strong>Swap in Telerik's components, which already meet AA, then design the layouts, colours and how each screen displays on a phone.</strong></dd></div>
           <div><dt>Why this way</dt><dd>The components came accessible. Contrast, hierarchy and the mobile layout still had to be designed.</dd></div>
           <div><dt>Trade-off</dt><dd>As PM I put flows and functions meeting the requirements first. Some pixel-level details, like alignment, shipped looser than the design.</dd></div>
         </dl>
+        <figure class="mt-10">
+          <div class="tile shot is-free is-raw" style="margin-top: 0">
+            <img src="assets/us-state-gov-public-records-redesign/mobile-before-after.webp" width="2000" height="1125" alt="Home page on a 320px phone, before and after. Before: the desktop page shrunk to fit, with tiny text and small buttons. After: a phone layout with a menu button, a large title, a short intro with Read more, Account User and Individual cards, and an Accessibility link above the footer" loading="lazy">
+          </div>
+        </figure>
       </section>
 
       <section class="cs-section" aria-labelledby="validate-h">

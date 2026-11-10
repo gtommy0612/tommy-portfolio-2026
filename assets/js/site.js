@@ -79,6 +79,28 @@
     });
   }
 
+  // Walkthrough video: muted autoplay loop with a pause button. Under prefers-reduced-motion it stays on the poster.
+  [].forEach.call(document.querySelectorAll('video[data-walkthrough]'), function (vid) {
+    var tog = vid.parentNode.querySelector('[data-walkthrough-toggle]');
+    var label = tog ? tog.querySelector('span') : null;
+    var sync = function () {
+      if (!tog) return;
+      tog.setAttribute('aria-pressed', vid.paused ? 'true' : 'false');
+      label.textContent = vid.paused ? 'Play' : 'Pause';
+      tog.setAttribute('aria-label', (vid.paused ? 'Play' : 'Pause') + ' walkthrough video');
+    };
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      vid.removeAttribute('autoplay');
+      vid.pause();
+    }
+    vid.addEventListener('play', sync);
+    vid.addEventListener('pause', sync);
+    if (tog) tog.addEventListener('click', function () {
+      if (vid.paused) { var p = vid.play(); if (p && p.catch) p.catch(function () {}); } else vid.pause();
+    });
+    sync();
+  });
+
   // Image zoom: figure images (and img[data-zoom]) open in a full-screen <dialog>.
   // Skip linked images and anything marked data-no-zoom (e.g. video posters with an overlay).
   var shots = [].slice.call(document.querySelectorAll('main figure img, img[data-zoom]')).filter(function (img) {

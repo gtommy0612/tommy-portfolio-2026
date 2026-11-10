@@ -109,10 +109,20 @@ a.tile:hover .lift { transform: translateY(-6px); }
 .cs-facts ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .cs-cover { margin-top: 48px; aspect-ratio: 16 / 9; }
 .cs-cover img, .shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* Full-bleed cover band. The cover PNG has wide empty margins, so on phones the image is scaled past the band and its margins are cropped. */
+.cs-band { background: var(--surface-3); min-height: clamp(320px, 52vw, 720px); display: flex; align-items: center; justify-content: center; padding: 48px 24px; overflow: hidden; }
+.cs-band img { display: block; width: 100%; max-width: 1100px; height: auto; }
+@media (max-width: 720px) {
+  .cs-band { min-height: 0; padding: 16px 0; }
+  .cs-band img { flex: none; width: 150%; max-width: none; }
+}
 
 .cs-section { padding-top: 144px; }
 .cs-section > .two-tone { max-width: 26ch; }
 .cs-sub { margin: 72px 0 0; font-size: 24px; font-weight: 600; line-height: 1.2; letter-spacing: -.025em; max-width: 40ch; text-wrap: balance; }
+.cs-sub-cap { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 500; line-height: 1.5; letter-spacing: 0; color: var(--muted); text-wrap: pretty; }
+.cs-sub-cap a { color: var(--ink); text-underline-offset: 3px; }
+.cs-sub-cap a:hover { color: var(--ink-hover); }
 .prose { margin-top: 24px; max-width: 68ch; }
 .prose p { margin: 0 0 16px; }
 .prose p:last-child { margin-bottom: 0; }
@@ -134,6 +144,15 @@ a.tile:hover .lift { transform: translateY(-6px); }
 .cards { margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px; }
 .card { background: var(--surface); border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 8px; }
 .card p { margin: 0; color: var(--muted); }
+.cards.insights { grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
+.insight-n { font-size: 40px; font-weight: 600; line-height: 1; letter-spacing: -.04em; color: var(--quiet); margin-bottom: 16px; }
+.insight-go { margin-top: auto; color: var(--ink); text-decoration: none; }
+.cards.insights .card > p:last-of-type { margin-bottom: 20px; }
+.insight-go-text { display: flex; align-items: center; justify-content: flex-start; gap: 6px; font-size: 16px; font-weight: 600; line-height: 1.4; }
+.insight-go-text span { text-decoration-line: underline; text-decoration-color: var(--hair); text-underline-offset: 4px; text-decoration-thickness: 1.5px; transition: text-decoration-color .2s var(--ease); }
+.insight-go svg { flex: none; color: var(--muted); transition: transform .2s var(--ease), color .2s var(--ease); }
+.insight-go:hover .insight-go-text span { text-decoration-color: currentColor; }
+.insight-go:hover svg { color: var(--ink); transform: translate(2px, -2px); }
 
 .stat { background: var(--surface); border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 12px; }
 .stat-num { font-size: clamp(40px, 4.4vw, 56px); font-weight: 600; line-height: 1; letter-spacing: -.04em; color: var(--accent); }
@@ -145,6 +164,11 @@ a.tile:hover .lift { transform: translateY(-6px); }
 .shot.is-free { aspect-ratio: auto; }
 .shot.is-free img { height: auto; }
 .shot.is-raw img { mix-blend-mode: normal; }
+.shot video { display: block; width: 100%; height: auto; }
+.shot-play { position: absolute; right: 16px; bottom: 16px; z-index: 2; min-height: 44px; color: var(--ink); box-shadow: 0 0 0 1px var(--hair); }
+.shot-play:focus-visible { border-radius: 999px; }
+.shot-play .i-play, .shot-play[aria-pressed="true"] .i-pause { display: none; }
+.shot-play[aria-pressed="true"] .i-play { display: inline; }
 .shot.is-raw::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 1px var(--hair); pointer-events: none; }
 
 /* Back to top: fixed bottom-right, shows after one screen of scroll (site.js). */
