@@ -6,16 +6,15 @@ Senior Product Designer
 
 LinkedIn: [https\://www\.linkedin.com/in/tommychi](https://www.linkedin.com/in/tommychi)｜Portfolio: [https\://tommychi-portfolio.netlify.app/](https://tommychi-portfolio.netlify.app/)
 
-Senior Product Designer with 5 years of experience in enterprise SaaS, government portals, and manufacturing data systems. Won a \$1.6M+ US state government contract through AI-accelerated prototyping and cut front-end development time by 67% with a design system. PMP certified; aligns design, engineering, and business stakeholders.
+Senior Product Designer with 5 years of experience in enterprise SaaS, government portals, and manufacturing data systems. Helped win a \$1.6M+ US state government contract with a clickable prototype built in 48 hours, and cut a login module's front-end build time by 67% with an accessible component library. PMP certified; aligns design, engineering, and business stakeholders.
 
 **WORK EXPERIENCE** 
 
 Product Designer & PM \- Logikco, Taiwan/ US (Remote) \| Feb 2023 \- Present 
 
-* Helped win a **\$1.6M+** US state government contract by delivering a high-fidelity interactive prototype within   
-  **48 hours**. Used Claude to analyze government business documents and generate UI grounded in existing business logic, cutting concept time by **60%**, from 5 days to 2.  
-* Structured Design Tokens in Figma Variables and aligned them precisely with engineering's variable naming conventions, cutting front-end development time by **67%**, from 3 weeks to 1 week per feature module, and making the system reusable across different projects.  
-* Reduced a US public records search flow from 6 steps to 3 (**\-50%**) and achieved **100% WCAG 2.2 AA** compliance by redesigning the flow and rebuilding layouts and components, resolving the duplicate payments and refund workload the old flow caused.  
+* Helped win a **\$1.6M+** US state government contract with a clickable HTML prototype built with Claude Code in **48 hours**. Used Claude to extract every role and rule from the agency's documents, checked them against the source, and turned our shipped design system into tokens, cutting concept time by **60%**, from 5 days to 2. Engineers reused most of the token file, and the product went live 11 weeks after the win.  
+* Redesigned a US state records portal to pass the client's **WCAG 2.2 AA** acceptance, and proposed fixing its core tasks beyond the brief: search-to-report went from 6 pages to 3 (**\-50%**) by merging confirmation into checkout, and sign-up now flags errors on the step that caused them.  
+* Rebuilt the portal's login module on an accessible component library, cutting its front-end build time by **67%**, from 3 weeks on past projects to 1.  
 * Partnered with US-based PMs and engineers to take over a lagging project: re-scoped the work and introduced Agile, halving the development cycle from 4 weeks to 2 (**\-50%**). Delivered the project successfully, turning around client satisfaction and earning strong recognition.
 
 Product Designer \- WormHole Tech, Taiwan \| Nov 2021 \- Feb 2023 
@@ -25,7 +24,7 @@ Product Designer \- WormHole Tech, Taiwan \| Nov 2021 \- Feb 2023
 
 Freelance Product Designer & UX Consultant \| Feb 2023 \- Present 
 
-* Earned **2 consecutive feature commissions** (dating, member rewards) from OFFGRID, a B2C music-social app, by validating direction with competitor analysis before designing.  
+* Earned **2 consecutive feature commissions** (dating, member rewards) from a B2C music-social app by validating direction with competitor analysis before designing.  
 * Strengthened brand consistency for B2B and e-commerce clients through UI/UX design, pitch decks, and intro videos.
 
 **SKILLS**
