@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Geist, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif">
+<title>The applicant's flow, from new application to the sheriff</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#6E6E73" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="1920" height="1080" fill="#FFFFFF"/>
+<text x="111.0" y="275" font-size="22" font-weight="600" fill="#6E6E73" letter-spacing="1">01</text>
+<text x="507.0" y="275" font-size="22" font-weight="600" fill="#6E6E73" letter-spacing="1">02</text>
+<text x="1083.0" y="275" font-size="22" font-weight="600" fill="#6E6E73" letter-spacing="1">03</text>
+<text x="1509.0" y="275" font-size="22" font-weight="600" fill="#6E6E73" letter-spacing="1">04</text>
+<rect x="111.0" y="430.0" width="300" height="150" rx="75.0" fill="#EEF3FA" stroke="#0D47A1" stroke-width="2.5"/>
+<text x="261.0" y="496.5" font-size="30" font-weight="600" fill="#1D1D1F" text-anchor="middle">New</text>
+<text x="261.0" y="534.5" font-size="30" font-weight="600" fill="#1D1D1F" text-anchor="middle">application</text>
+<rect x="507.0" y="305" width="480" height="400" rx="18" fill="#FFFFFF" stroke="#1D1D1F" stroke-width="2.5"/>
+<text x="747.0" y="371.5" font-size="30" font-weight="600" fill="#1D1D1F" text-anchor="middle">Fill in the application</text>
+<rect x="539.0" y="413" width="416" height="112" rx="12" fill="#FFFFFF" stroke="#1D1D1F" stroke-width="2"/>
+<text x="747.0" y="478.1" font-size="26" font-weight="500" fill="#1D1D1F" text-anchor="middle">Personal details</text>
+<rect x="539.0" y="555" width="416" height="112" rx="12" fill="#FFFFFF" stroke="#6E6E73" stroke-width="2" stroke-dasharray="9 7"/>
+<text x="747.0" y="606.1" font-size="26" font-weight="500" fill="#1D1D1F" text-anchor="middle">Course record</text>
+<text x="747.0" y="642.4" font-size="21" font-weight="400" fill="#6E6E73" text-anchor="middle">If they have one</text>
+<rect x="1083.0" y="430.0" width="330" height="150" rx="18" fill="#FFFFFF" stroke="#1D1D1F" stroke-width="2.5"/>
+<text x="1248.0" y="496.5" font-size="30" font-weight="600" fill="#1D1D1F" text-anchor="middle">Agree to the</text>
+<text x="1248.0" y="534.5" font-size="30" font-weight="600" fill="#1D1D1F" text-anchor="middle">rules and sign</text>
+<rect x="1509.0" y="430.0" width="300" height="150" rx="75.0" fill="#EEF3FA" stroke="#0D47A1" stroke-width="2.5"/>
+<text x="1659.0" y="496.5" font-size="30" font-weight="600" fill="#1D1D1F" text-anchor="middle">Submit to</text>
+<text x="1659.0" y="534.5" font-size="30" font-weight="600" fill="#1D1D1F" text-anchor="middle">the sheriff</text>
+<path d="M421.0 505 H495.0" stroke="#6E6E73" stroke-width="3" stroke-linecap="round" marker-end="url(#arr)"/>
+<path d="M997.0 505 H1071.0" stroke="#6E6E73" stroke-width="3" stroke-linecap="round" marker-end="url(#arr)"/>
+<path d="M1423.0 505 H1497.0" stroke="#6E6E73" stroke-width="3" stroke-linecap="round" marker-end="url(#arr)"/>
+<text x="261.0" y="787.7" font-size="22" font-weight="400" fill="#6E6E73" text-anchor="middle">From the</text>
+<text x="261.0" y="817.7" font-size="22" font-weight="400" fill="#6E6E73" text-anchor="middle">application list</text>
+<text x="747.0" y="787.7" font-size="22" font-weight="400" fill="#6E6E73" text-anchor="middle">Sets which course comes</text>
+<text x="747.0" y="817.7" font-size="22" font-weight="400" fill="#6E6E73" text-anchor="middle">after the sheriff approves</text>
+<text x="1248.0" y="787.7" font-size="22" font-weight="400" fill="#6E6E73" text-anchor="middle">Attestations and</text>
+<text x="1248.0" y="817.7" font-size="22" font-weight="400" fill="#6E6E73" text-anchor="middle">an e-signature</text>
+<text x="1659.0" y="787.7" font-size="22" font-weight="400" fill="#6E6E73" text-anchor="middle">Pending the</text>
+<text x="1659.0" y="817.7" font-size="22" font-weight="400" fill="#6E6E73" text-anchor="middle">sheriff’s review</text>
+<path d="M111.0 735 H1809.0" stroke="#D2D2D7" stroke-width="2"/>
+</svg>

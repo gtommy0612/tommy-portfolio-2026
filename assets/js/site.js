@@ -101,6 +101,73 @@
     sync();
   });
 
+  // Role walkthrough: tabs pick a step and play its clip from the start. When a clip ends the next step opens
+  // (the last goes back to the first). The open step's top line fills with the clip's progress.
+  // Clips play only while the walkthrough is on screen; under reduced motion nothing autoplays.
+  [].forEach.call(document.querySelectorAll('[data-roles]'), function (box) {
+    var tabs = [].slice.call(box.querySelectorAll('[role="tab"]'));
+    if (!tabs.length) return;
+    var strip = tabs[0].parentNode;
+    var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var cur = tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0];
+    var seen = false, held = false, raf = 0;
+    var vidOf = function (t) { return document.getElementById(t.getAttribute('aria-controls')).querySelector('video'); };
+    var play = function () {
+      var v = vidOf(cur);
+      if (!v || still || held || !seen) return;
+      var p = v.play(); if (p && p.catch) p.catch(function () {});
+    };
+    var tick = function () {
+      var v = vidOf(cur);
+      if (v && v.duration) cur.style.setProperty('--p', Math.min(v.currentTime / v.duration, 1));
+      raf = v && !v.paused ? requestAnimationFrame(tick) : 0;
+    };
+    var open = function (tab, focus) {
+      cur = tab; held = false;
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        t.style.removeProperty('--p');
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+        var v = vidOf(t);
+        if (v) { v.pause(); if (on) v.currentTime = 0; }
+      });
+      play();
+      if (focus) tab.focus();
+      // Scroll the step row sideways only (never the page), so an auto-advance doesn't move the reader.
+      if (strip.scrollWidth > strip.clientWidth) strip.scrollTo({ left: tab.offsetLeft - tabs[0].offsetLeft, behavior: still ? 'auto' : 'smooth' });
+    };
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { open(tab); });
+      tab.addEventListener('keydown', function (e) {
+        var j = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : null;
+        if (j === null) return;
+        e.preventDefault();
+        open(tabs[(j + tabs.length) % tabs.length], true);
+      });
+      var v = vidOf(tab);
+      if (!v) return;
+      v.loop = false;
+      v.addEventListener('play', function () { if (tab === cur && !raf) raf = requestAnimationFrame(tick); });
+      v.addEventListener('ended', function () {
+        if (tab !== cur) return;
+        tab.style.setProperty('--p', 1);
+        open(tabs[(i + 1) % tabs.length]);
+      });
+      // The Pause/Play pill is the reader's choice: remember it so scrolling back doesn't override it.
+      var tog = v.parentNode.querySelector('[data-walkthrough-toggle]');
+      if (tog) tog.addEventListener('click', function () { setTimeout(function () { held = v.paused; }, 0); });
+    });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        seen = es[0].isIntersecting;
+        var v = vidOf(cur);
+        if (seen) play(); else if (v) v.pause();
+      }, { threshold: 0.25 }).observe(box);
+    } else { seen = true; play(); }
+  });
+
   // Image zoom: figure images (and img[data-zoom]) open in a full-screen <dialog>.
   // Skip linked images and anything marked data-no-zoom (e.g. video posters with an overlay).
   var shots = [].slice.call(document.querySelectorAll('main figure img, img[data-zoom]')).filter(function (img) {

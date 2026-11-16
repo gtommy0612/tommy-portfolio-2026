@@ -13,7 +13,7 @@ Senior Product Designer with 5 years of experience in enterprise SaaS, governmen
 Product Designer & PM \- Logikco, Taiwan/ US (Remote) \| Feb 2023 \- Present 
 
 * Helped win a **\$1.6M+** US state government contract by delivering a high-fidelity interactive prototype within   
-  **48 hours**. Used Claude to analyze government business documents and generate UI grounded in existing business logic, cutting concept time by **60%**, from 5 days to 2\. The workflow became team SOP.  
+  **48 hours**. Used Claude to analyze government business documents and generate UI grounded in existing business logic, cutting concept time by **60%**, from 5 days to 2.  
 * Structured Design Tokens in Figma Variables and aligned them precisely with engineering's variable naming conventions, cutting front-end development time by **67%**, from 3 weeks to 1 week per feature module, and making the system reusable across different projects.  
 * Reduced a US public records search flow from 6 steps to 3 (**\-50%**) and achieved **100% WCAG 2.2 AA** compliance by redesigning the flow and rebuilding layouts and components, resolving the duplicate payments and refund workload the old flow caused.  
 * Partnered with US-based PMs and engineers to take over a lagging project: re-scoped the work and introduced Agile, halving the development cycle from 4 weeks to 2 (**\-50%**). Delivered the project successfully, turning around client satisfaction and earning strong recognition.

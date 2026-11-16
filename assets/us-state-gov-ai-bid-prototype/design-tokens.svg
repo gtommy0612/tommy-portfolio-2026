@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Geist, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif">
+<title>From design system to token file to prototype screen</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#6E6E73" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="1920" height="1080" fill="#FFFFFF"/>
+<text x="60" y="96" font-size="22" font-weight="600" fill="#6E6E73" letter-spacing="1">01</text>
+<text x="60" y="138" font-size="34" font-weight="700" fill="#1D1D1F" letter-spacing="-0.5">Design system</text>
+<text x="560" y="138" font-size="22" fill="#6E6E73" text-anchor="end" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace"></text>
+<rect x="60" y="170" width="500" height="820" rx="16" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="2"/>
+<text x="620" y="96" font-size="22" font-weight="600" fill="#6E6E73" letter-spacing="1">02</text>
+<text x="620" y="138" font-size="34" font-weight="700" fill="#1D1D1F" letter-spacing="-0.5">Token file</text>
+<text x="1320" y="138" font-size="22" fill="#6E6E73" text-anchor="end" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">:root</text>
+<rect x="620" y="170" width="700" height="820" rx="16" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="2"/>
+<text x="1380" y="96" font-size="22" font-weight="600" fill="#6E6E73" letter-spacing="1">03</text>
+<text x="1380" y="138" font-size="34" font-weight="700" fill="#1D1D1F" letter-spacing="-0.5">Prototype screen</text>
+<text x="1860" y="138" font-size="22" fill="#6E6E73" text-anchor="end" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace"></text>
+<rect x="1380" y="170" width="480" height="820" rx="16" fill="#FFFFFF" stroke="#D2D2D7" stroke-width="2"/>
+<path d="M572 580 H608" stroke="#6E6E73" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arr)"/>
+<path d="M1332 580 H1368" stroke="#6E6E73" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arr)"/>
+<text x="96" y="218" font-size="20" font-weight="600" fill="#6E6E73" letter-spacing="1">COLOUR</text>
+<rect x="76" y="230" width="468" height="76" rx="10" fill="#EEF3FA"/>
+<rect x="96" y="236" width="64" height="64" rx="10" fill="#00529B"/>
+<text x="184" y="277" font-size="26" font-weight="600" fill="#1D1D1F">Primary</text>
+<text x="524" y="277" font-size="22" fill="#6E6E73" text-anchor="end" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">#00529B</text>
+<rect x="96" y="320" width="64" height="64" rx="10" fill="#00427D"/>
+<text x="184" y="361" font-size="26" font-weight="600" fill="#1D1D1F">Hover</text>
+<text x="524" y="361" font-size="22" fill="#6E6E73" text-anchor="end" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">#00427D</text>
+<rect x="96" y="404" width="64" height="64" rx="10" fill="#01215A"/>
+<text x="184" y="445" font-size="26" font-weight="600" fill="#1D1D1F">Navy bar</text>
+<text x="524" y="445" font-size="22" fill="#6E6E73" text-anchor="end" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">#01215A</text>
+<text x="96" y="520" font-size="20" font-weight="600" fill="#6E6E73" letter-spacing="1">TYPE · OPEN SANS</text>
+<text x="96" y="578" font-size="40" font-weight="700" fill="#1D1D1F" font-family="'Open Sans', -apple-system, 'Segoe UI', Arial, sans-serif">H1</text>
+<text x="524" y="578" font-size="22" fill="#6E6E73" text-anchor="end" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">32px</text>
+<text x="96" y="638" font-size="20" font-weight="400" fill="#1D1D1F" font-family="'Open Sans', -apple-system, 'Segoe UI', Arial, sans-serif">Body</text>
+<text x="524" y="638" font-size="22" fill="#6E6E73" text-anchor="end" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">16px</text>
+<text x="96" y="698" font-size="18" font-weight="400" fill="#1D1D1F" font-family="'Open Sans', -apple-system, 'Segoe UI', Arial, sans-serif">UI / label</text>
+<text x="524" y="698" font-size="22" fill="#6E6E73" text-anchor="end" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">14px</text>
+<text x="96" y="770" font-size="20" font-weight="600" fill="#6E6E73" letter-spacing="1">SPACING · 8PT BASE</text>
+<rect x="96" y="790" width="40" height="28" rx="4" fill="#1D1D1F" opacity=".85"/>
+<text x="524" y="812" font-size="22" fill="#6E6E73" text-anchor="end" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">8px</text>
+<rect x="96" y="838" width="80" height="28" rx="4" fill="#1D1D1F" opacity=".85"/>
+<text x="524" y="860" font-size="22" fill="#6E6E73" text-anchor="end" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">16px</text>
+<rect x="96" y="886" width="120" height="28" rx="4" fill="#1D1D1F" opacity=".85"/>
+<text x="524" y="908" font-size="22" fill="#6E6E73" text-anchor="end" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">24px</text>
+<text x="652" y="232" font-size="23" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">:root {</text>
+<text x="652" y="271" font-size="23" fill="#6E6E73" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  /* Colour */</text>
+<text x="652" y="310" font-size="23" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  --color-navy: #01215a;</text>
+<rect x="636" y="321" width="668" height="39" rx="6" fill="#EEF3FA"/>
+<text x="652" y="349" font-size="23" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  --color-primary: #00529b;</text>
+<text x="652" y="388" font-size="23" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  --color-primary-hover: #00427d;</text>
+<text x="652" y="427" font-size="23" fill="#6E6E73" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  /* Type */</text>
+<text x="652" y="466" font-size="23" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  --font-size-h1: 32px;</text>
+<text x="652" y="505" font-size="23" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  --font-size-lg: 16px;</text>
+<text x="652" y="544" font-size="23" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  --font-size-base: 14px;</text>
+<text x="652" y="583" font-size="23" fill="#6E6E73" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  /* Spacing (8pt base) */</text>
+<text x="652" y="622" font-size="23" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  --space-8: 8px;</text>
+<text x="652" y="661" font-size="23" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  --space-16: 16px;</text>
+<text x="652" y="700" font-size="23" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  --space-24: 24px;</text>
+<text x="652" y="739" font-size="23" fill="#6E6E73" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  /* Sizes */</text>
+<text x="652" y="778" font-size="23" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  --size-button: 40px;</text>
+<text x="652" y="817" font-size="23" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  --size-input: 42px;</text>
+<text x="652" y="856" font-size="23" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  --radius-sm: 4px;</text>
+<text x="652" y="895" font-size="23" fill="#6E6E73" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">  /* … */</text>
+<text x="652" y="934" font-size="23" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">}</text>
+<text x="1412" y="236" font-size="21" fill="#212121" font-family="'Open Sans', -apple-system, 'Segoe UI', Arial, sans-serif">First name</text>
+<rect x="1412" y="248.0" width="300" height="63.0" rx="6.0" fill="#FFFFFF" stroke="#D6D6D6" stroke-width="2"/>
+<text x="1430.0" y="286.5" font-size="21" fill="#212121" fill-opacity=".45" font-family="'Open Sans', -apple-system, 'Segoe UI', Arial, sans-serif">Jane</text>
+<rect x="1412" y="335.0" width="150" height="60.0" rx="6.0" fill="#00529B"/>
+<text x="1487.0" y="372.0" font-size="21" font-weight="500" fill="#FFFFFF" text-anchor="middle" font-family="'Open Sans', -apple-system, 'Segoe UI', Arial, sans-serif">Submit</text>
+<path d="M1586 311.0 h10 M1591 311.0 V335.0 M1586 335.0 h10" stroke="#6E6E73" stroke-width="2"/>
+<circle cx="1746" cy="230" r="15" fill="#1D1D1F"/><text x="1746" y="237" font-size="19" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<circle cx="1746" cy="279.5" r="15" fill="#1D1D1F"/><text x="1746" y="286.5" font-size="19" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<circle cx="1626" cy="323.0" r="15" fill="#1D1D1F"/><text x="1626" y="330.0" font-size="19" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<circle cx="1692" cy="365.0" r="15" fill="#1D1D1F"/><text x="1692" y="372.0" font-size="19" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+<text x="1412" y="451.0" font-size="20" font-weight="600" fill="#6E6E73" letter-spacing="1">WHICH TOKEN</text>
+<circle cx="1420" cy="496.0" r="15" fill="#1D1D1F"/><text x="1420" y="503.0" font-size="19" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="1448" y="504.0" font-size="21" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">--font-size-base</text>
+<text x="1840" y="504.0" font-size="21" fill="#6E6E73" text-anchor="end" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">14px</text>
+<circle cx="1420" cy="546.0" r="15" fill="#1D1D1F"/><text x="1420" y="553.0" font-size="19" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="1448" y="554.0" font-size="21" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">--size-input</text>
+<text x="1840" y="554.0" font-size="21" fill="#6E6E73" text-anchor="end" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">42px</text>
+<circle cx="1420" cy="596.0" r="15" fill="#1D1D1F"/><text x="1420" y="603.0" font-size="19" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="1448" y="604.0" font-size="21" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">--space-16</text>
+<text x="1840" y="604.0" font-size="21" fill="#6E6E73" text-anchor="end" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">16px</text>
+<rect x="1400" y="625.0" width="456" height="42" rx="6" fill="#EEF3FA"/>
+<circle cx="1420" cy="646.0" r="15" fill="#1D1D1F"/><text x="1420" y="653.0" font-size="19" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+<text x="1448" y="654.0" font-size="21" fill="#1D1D1F" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">--color-primary</text>
+<text x="1840" y="654.0" font-size="21" fill="#6E6E73" text-anchor="end" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">#00529b</text>
+<text x="1412" y="721.0" font-size="20" font-weight="600" fill="#6E6E73" letter-spacing="1">BUTTON STATES</text>
+<rect x="1412" y="741.0" width="120" height="48" rx="6" fill="#00529B"/>
+<text x="1472" y="772.0" font-size="20" font-weight="500" fill="#FFFFFF" text-anchor="middle" font-family="'Open Sans', -apple-system, 'Segoe UI', Arial, sans-serif">Submit</text>
+<text x="1552" y="761.0" font-size="20" font-weight="600" fill="#1D1D1F">Default</text>
+<text x="1552" y="785.0" font-size="18" fill="#6E6E73" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">--color-primary</text>
+<rect x="1412" y="805.0" width="120" height="48" rx="6" fill="#00427D"/>
+<text x="1472" y="836.0" font-size="20" font-weight="500" fill="#FFFFFF" text-anchor="middle" font-family="'Open Sans', -apple-system, 'Segoe UI', Arial, sans-serif">Submit</text>
+<text x="1552" y="825.0" font-size="20" font-weight="600" fill="#1D1D1F">Hover</text>
+<text x="1552" y="849.0" font-size="18" fill="#6E6E73" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">--color-primary-hover</text>
+<rect x="1412" y="869.0" width="120" height="48" rx="6" fill="#D6D6D6"/>
+<text x="1472" y="900.0" font-size="20" font-weight="500" fill="#5F6368" text-anchor="middle" font-family="'Open Sans', -apple-system, 'Segoe UI', Arial, sans-serif">Submit</text>
+<text x="1552" y="889.0" font-size="20" font-weight="600" fill="#1D1D1F">Disabled</text>
+<text x="1552" y="913.0" font-size="18" fill="#6E6E73" font-family="'Geist Mono', 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">--color-border</text>
+</svg>

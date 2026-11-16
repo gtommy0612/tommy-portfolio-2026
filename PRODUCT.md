@@ -20,7 +20,7 @@ Tommy Chi's personal portfolio. Success = a hiring manager understands within on
 
 Recommended from the resume (user asked for a recommendation; confirm before treating as final):
 **A designer who turns ambiguous, regulated problems into shippable systems, fast, by using AI to compress concept time and design tokens to compress build time.**
-The proof chain no neighbouring portfolio can copy: a $1.6M+ US state government bid won with a prototype delivered in 48 hours, concept time −60% (became team SOP), front-end build time −67% via engineering-aligned tokens, a public records flow cut 6 → 3 steps at 100% WCAG 2.2 AA. PMP® adds delivery credibility.
+The proof chain no neighbouring portfolio can copy: a $1.6M+ US state government bid won with a prototype delivered in 48 hours, concept time −60%, front-end build time −67% via engineering-aligned tokens, a public records flow cut 6 → 3 steps at 100% WCAG 2.2 AA. PMP® adds delivery credibility.
 
 ## Operating Context
 

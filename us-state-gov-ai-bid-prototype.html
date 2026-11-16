@@ -36,37 +36,9 @@
       </div>
     </div>
 
-    <!-- PLACEHOLDER hero: swap for a real composite of prototype screens (2880 x 1620), record its source in assets/home/SOURCES.md -->
-    <div style="background: var(--surface-3); min-height: clamp(320px, 52vw, 720px); display: flex; align-items: center; justify-content: center; padding: 48px 24px; position: relative">
-      <div style="width: 100%; max-width: 1100px">
-        <div class="grid gap-3 grid-cols-2 md:grid-cols-4" style="min-height: clamp(200px, 26vw, 380px)" aria-hidden="true">
-          <div style="background: var(--page); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
-            <span class="cap">Applicant</span>
-            <span style="display: block; height: 10px; width: 70%; border-radius: 999px; background: var(--surface-2)"></span>
-            <span style="display: block; height: 10px; width: 45%; border-radius: 999px; background: var(--surface-2)"></span>
-            <span style="display: block; flex: 1; min-height: 64px; border-radius: 10px; background: var(--surface)"></span>
-          </div>
-          <div style="background: var(--page); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
-            <span class="cap">Sheriff</span>
-            <span style="display: block; height: 10px; width: 70%; border-radius: 999px; background: var(--surface-2)"></span>
-            <span style="display: block; height: 10px; width: 45%; border-radius: 999px; background: var(--surface-2)"></span>
-            <span style="display: block; flex: 1; min-height: 64px; border-radius: 10px; background: var(--surface)"></span>
-          </div>
-          <div style="background: var(--page); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
-            <span class="cap">Instructor</span>
-            <span style="display: block; height: 10px; width: 70%; border-radius: 999px; background: var(--surface-2)"></span>
-            <span style="display: block; height: 10px; width: 45%; border-radius: 999px; background: var(--surface-2)"></span>
-            <span style="display: block; flex: 1; min-height: 64px; border-radius: 10px; background: var(--surface)"></span>
-          </div>
-          <div style="background: var(--page); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
-            <span class="cap">Dealer</span>
-            <span style="display: block; height: 10px; width: 70%; border-radius: 999px; background: var(--surface-2)"></span>
-            <span style="display: block; height: 10px; width: 45%; border-radius: 999px; background: var(--surface-2)"></span>
-            <span style="display: block; flex: 1; min-height: 64px; border-radius: 10px; background: var(--surface)"></span>
-          </div>
-        </div>
-        <p class="cap" style="margin-top: 20px; text-align: center">Prototype screens are being prepared. Check back soon.</p>
-      </div>
+    <!-- Cover, shared with the homepage Selected work tile (index.html). Source: assets/home/SOURCES.md. -->
+    <div class="cs-band">
+      <img data-zoom src="assets/us-state-gov-ai-bid-prototype/hero.png" width="2880" height="1620" alt="Permit portal prototype: the applicant's application page, status Pending Sheriff Review, in front of the sheriff's payment and card issuance screen">
     </div>
 
     <div class="wrap">
@@ -85,16 +57,10 @@
             <p>A first contract with a new state agency.</p>
           </div>
           <div class="stat">
-            <span class="cap">Prototype delivered in</span>
-            <span class="stat-num">48h</span>
-            <p>Clickable HTML covering all four outside roles, not static screens.</p>
-          </div>
-          <div class="stat">
             <span class="cap">Concept time</span>
-            <span class="stat-num">−60%</span>
-            <p>5 days → 2, compared with our last bid of similar size.</p>
-          </div>
-        </div>
+            <span class="stat-num">5d → 48h</span>
+            <p>A clickable prototype for all four outside roles. Our last bid of similar size took 5 days of static screens (−60%).</p>
+          </div>        </div>
 
         <dl class="cs-facts" style="margin-top: 48px; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr))">
           <div>
@@ -115,14 +81,14 @@
       <section class="cs-section" aria-labelledby="challenge-h">
         <h2 id="challenge-h" class="two-tone"><span>02</span> Challenge</h2>
         <div class="prose">
-          <p><strong>The agency asked for a design proposal. I wanted ours to be the first draft of the product.</strong> A first contract with a new state agency, and a way into its other departments. I heard about the bid with the deadline already close. The agency sent PDFs, and nobody on the team had worked in this domain.</p>
+          <p><strong>The agency asked for a design proposal. I wanted ours to be the first draft of the product.</strong> A first contract with a new state agency, and a way into its other departments. I heard about the bid with the deadline already close, the agency sent PDFs, and nobody on the team had worked in this domain. Our last bid of similar size was 5 days of static Figma screens, and we lost it. So before reading a single document, I decided this one would be a clickable HTML prototype built with Claude Code: a file that shows the client what we understood, and that we can build from if we win. The company also wanted to adopt an AI development workflow.</p>
         </div>
         <div class="cards">
-          <div class="card">
+          <div class="card" id="challenge-1">
             <h3 class="label">Send a design proposal in 48 hours</h3>
             <p>The agency's brief. It had to show we understood a five-party permit process we had only read about.</p>
           </div>
-          <div class="card">
+          <div class="card" id="challenge-2">
             <h3 class="label">Make it something we could build from</h3>
             <p>Not in the brief; my own aim. A design proposal usually stops mattering once the bid is decided. I wanted a file the agency could click through, and the starting point for delivery if we won.</p>
           </div>
@@ -131,32 +97,69 @@
 
       <section class="cs-section" aria-labelledby="solution-h">
         <h2 id="solution-h" class="two-tone"><span>03</span> Solution</h2>
-
-        <figure class="mt-10">
-          <!-- PLACEHOLDER video: replace with <video autoplay muted loop playsinline poster="...cover.png"> plus a pause button; show the poster only under prefers-reduced-motion -->
-          <div class="tile cs-cover" style="margin-top: 0">
-            <img data-no-zoom src="assets/us-state-gov-ai-bid-prototype/cover.png" alt="Applicant view of the permit portal prototype: application status, PDF download and the applicant's next step">
-            <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px">
-              <span class="pill pill-grey" style="pointer-events: none">Walkthrough video in progress</span>
-            </div>
-          </div>
-          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">One application, five parties.</span> <span class="muted">The applicant's flow passes through three outside offices. One application page shows where it stands, what happens next and which documents to download.</span></figcaption>
-        </figure>
-
-        <div class="mt-10 grid gap-10 md:grid-cols-2 md:gap-4">
-          <figure>
-            <div class="tile shot" style="margin-top: 0">
-              <img src="assets/us-state-gov-ai-bid-prototype/phase02.png" alt="Colour tokens and button states taken from the existing design system" loading="lazy">
-            </div>
-            <figcaption class="mt-4"><span class="font-semibold">Our own design system, as tokens.</span> <span class="muted">Claude turned the system we had already shipped into tokens, so 48 hours of generated screens still looked like one product.</span></figcaption>
-          </figure>
-          <figure>
-            <div class="tile shot" style="margin-top: 0">
-              <img src="assets/us-state-gov-ai-bid-prototype/phase03.png" alt="Sheriff review screen annotated with field rules for engineering" loading="lazy">
-            </div>
-            <figcaption class="mt-4"><span class="font-semibold">From bid to build.</span> <span class="muted">After the win, the same screens carried field rules for engineering: what's read-only, what's auto-filled, when a button turns on.</span></figcaption>
-          </figure>
+        <div class="prose">
+          <p><strong>Two deliverables: a UI prototype the agency could click through, and design tokens that made it buildable.</strong></p>
         </div>
+
+        <!-- Role walkthrough (.roles): the reader picks a step, the clip below shows that role's screen.
+             Clips are screen recordings of the Figma prototype, edges trimmed (2px right, 72px bottom: the recording caught the window edge and shadow), 1600x832, H.264, 30fps, no audio, inset 64px in a 16:9 tile;
+             posters are each clip's first frame. Instructor is trimmed to 1.2–22.3s to drop Figma's toolbar.
+             site.js plays only the open step's clip, from the start; none autoplay under reduced motion. -->
+        <figure class="mt-10 roles" data-roles>
+          <div class="roles-steps" role="tablist" aria-label="Steps in the application, by role">
+            <button type="button" class="roles-step" role="tab" id="role-tab-1" aria-controls="role-panel-1" aria-selected="true">
+              <span class="cap">Step 1</span><span class="roles-who">Applicant</span><span class="roles-what">Applies, with training history</span>
+            </button>
+            <button type="button" class="roles-step" role="tab" id="role-tab-2" aria-controls="role-panel-2" aria-selected="false" tabindex="-1">
+              <span class="cap">Step 2</span><span class="roles-who">Sheriff</span><span class="roles-what">Approves the check</span>
+            </button>
+            <button type="button" class="roles-step" role="tab" id="role-tab-3" aria-controls="role-panel-3" aria-selected="false" tabindex="-1">
+              <span class="cap">Step 3</span><span class="roles-who">Instructor</span><span class="roles-what">Records the course</span>
+            </button>
+            <button type="button" class="roles-step" role="tab" id="role-tab-4" aria-controls="role-panel-4" aria-selected="false" tabindex="-1">
+              <span class="cap">Step 4</span><span class="roles-who">Dealer</span><span class="roles-what">Checks the buyer is cleared</span>
+            </button>
+          </div>
+
+          <div class="tile shot roles-panel" role="tabpanel" id="role-panel-1" aria-labelledby="role-tab-1">
+            <video data-walkthrough muted playsinline preload="metadata" width="1600" height="832" poster="assets/us-state-gov-ai-bid-prototype/step-1-applicant.jpg" aria-label="Applicant: starts a new application, fills in personal details and training history, signs and submits, then sees it pending the sheriff's review">
+              <source src="assets/us-state-gov-ai-bid-prototype/step-1-applicant.mp4" type="video/mp4">
+            </video>
+            <button type="button" class="pill pill-white pill-sm shot-play" data-walkthrough-toggle aria-pressed="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path class="i-pause" d="M7 5h3v14H7zM14 5h3v14h-3z"/><path class="i-play" d="M8 5v14l11-7z"/></svg>
+              <span>Play</span>
+            </button>
+          </div>
+          <div class="tile shot roles-panel" role="tabpanel" id="role-panel-2" aria-labelledby="role-tab-2" hidden>
+            <video data-walkthrough muted playsinline preload="none" width="1600" height="832" poster="assets/us-state-gov-ai-bid-prototype/step-2-sheriff.jpg" aria-label="Sheriff: opens the pending application, checks the details and payment, and approves it, so the applicant's next step becomes the course">
+              <source src="assets/us-state-gov-ai-bid-prototype/step-2-sheriff.mp4" type="video/mp4">
+            </video>
+            <button type="button" class="pill pill-white pill-sm shot-play" data-walkthrough-toggle aria-pressed="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path class="i-pause" d="M7 5h3v14H7zM14 5h3v14h-3z"/><path class="i-play" d="M8 5v14l11-7z"/></svg>
+              <span>Play</span>
+            </button>
+          </div>
+          <div class="tile shot roles-panel" role="tabpanel" id="role-panel-3" aria-labelledby="role-tab-3" hidden>
+            <video data-walkthrough muted playsinline preload="none" width="1600" height="832" poster="assets/us-state-gov-ai-bid-prototype/step-3-instructor.jpg" aria-label="Instructor: finds the applicant, adds them to the course, and records the course type and a passed test">
+              <source src="assets/us-state-gov-ai-bid-prototype/step-3-instructor.mp4" type="video/mp4">
+            </video>
+            <button type="button" class="pill pill-white pill-sm shot-play" data-walkthrough-toggle aria-pressed="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path class="i-pause" d="M7 5h3v14H7zM14 5h3v14h-3z"/><path class="i-play" d="M8 5v14l11-7z"/></svg>
+              <span>Play</span>
+            </button>
+          </div>
+          <div class="tile shot roles-panel" role="tabpanel" id="role-panel-4" aria-labelledby="role-tab-4" hidden>
+            <video data-walkthrough muted playsinline preload="none" width="1600" height="832" poster="assets/us-state-gov-ai-bid-prototype/step-4-dealer.jpg" aria-label="Dealer: enters the application ID, issue date, last name and test date, and gets a passed result before the sale">
+              <source src="assets/us-state-gov-ai-bid-prototype/step-4-dealer.mp4" type="video/mp4">
+            </video>
+            <button type="button" class="pill pill-white pill-sm shot-play" data-walkthrough-toggle aria-pressed="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path class="i-pause" d="M7 5h3v14H7zM14 5h3v14h-3z"/><path class="i-play" d="M8 5v14l11-7z"/></svg>
+              <span>Play</span>
+            </button>
+          </div>
+
+          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">The UI prototype.</span> <span class="muted">One application through all four outside roles, from applicant to dealer. Pick a step to see that role's screen.</span></figcaption>
+        </figure>
       </section>
 
       <!-- ============ LAYER 2: for readers who want the process ============ -->
@@ -165,68 +168,67 @@
       <section class="cs-section" aria-labelledby="research-h">
         <h2 id="research-h" class="two-tone"><span>04</span> Research</h2>
         <div class="prose">
-          <p><strong>No interviews and no process audit: the business rules existed only in the agency's documents.</strong> Claude pulled the roles and rules out of the PDFs. I checked what it produced against the documents myself before drawing any screen.</p>
+          <p><strong>No interviews and no process audit: the business rules existed only in the agency's documents.</strong> I gave Claude the agency's PDFs and had it pull out every role, every step and the rules between them.</p>
+          <p><strong>Then I checked its output against the documents myself, before drawing any screen.</strong> The screens came from rules I had read in the source, not from Claude's summary alone.</p>
         </div>
-        <figure>
-          <div class="tile shot">
-            <!-- TODO (Tommy): swap for the role-relationship map you kept, with agency names removed -->
-            <img src="assets/us-state-gov-ai-bid-prototype/phase01.png" alt="Pipeline from agency files through AI extraction and rule checking to screens for applicant, sheriff, instructor, state admin and dealer" loading="lazy">
+
+        <figure class="mt-10">
+          <div class="tile shot is-free" style="margin-top: 0">
+            <img src="assets/us-state-gov-ai-bid-prototype/role-map.svg" width="1880" height="680" alt="Role map: the applicant submits to the sheriff, the sheriff clears the applicant for a course, the instructor clears them to buy, and the dealer sells. The state admin oversees all four and reviews course eligibility." loading="lazy">
           </div>
-          <figcaption class="mt-4 muted">Agency files → Claude → rules → screens for each role. In the bid, rules were checked against the documents only. Checking them with the agency came after the win.</figcaption>
+          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">What I found: five parties act in a fixed order, written down only in PDFs.</span> <span class="muted">An applicant passes a sheriff's check, then a required course, then buys from a dealer, while the agency oversees and reviews. One step depends on another: after the sheriff approves, the applicant takes a basic or an extended course, depending on the training history they gave when they applied.</span></figcaption>
         </figure>
-        <div class="prose mt-10">
-          <p>Reading the documents this way defined three problems to solve.</p>
-        </div>
-        <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr))">
-          <div class="card">
-            <h3 class="label">1 · Five parties act in a fixed order</h3>
-            <p>An applicant passes a sheriff's check, then a required course, then buys from a dealer, while the agency oversees and reviews. The rules for that order were spread across PDFs.</p>
-          </div>
-          <div class="card">
-            <h3 class="label">2 · Static screens took 5 days and lost</h3>
-            <p>Our last bid of similar size was 5 days of Figma concept work, and we didn't win it. This one was due in 48 hours.</p>
-          </div>
-          <div class="card">
-            <h3 class="label">3 · Applicants wait on offices they never see</h3>
-            <p>An application passes through three outside offices, and the applicant has to work out where it is and what to do next.</p>
-          </div>
-        </div>
       </section>
 
       <section class="cs-section" aria-labelledby="design-h">
         <h2 id="design-h" class="two-tone"><span>05</span> Design</h2>
+        <div class="prose">
+          <p><strong>Three steps, each feeding the next:</strong> the agency's documents into a UI flow, our design system into tokens, then the flow and the tokens into a clickable prototype.</p>
+        </div>
 
-        <h3 class="cs-sub">Key decision 1: Map how the five parties connect before drawing any screen</h3>
+        <h3 class="cs-sub" id="decision-1"><span class="cs-sub-cap">Step 1</span>Turn the agency's documents into a UI flow before drawing any screen</h3>
         <dl class="decide">
-          <div><dt>Problem 1</dt><dd>Five parties act in a fixed order, and the rules for that order existed only in PDFs.</dd></div>
-          <div><dt>What I changed</dt><dd><strong>Lay out how the roles relate and the applicant's full path first, then split it into each role's screens.</strong> Only once the role map and the order held up did I plan each role's detailed flow.</dd></div>
-          <div><dt>Instead of</dt><dd>Drawing each role's screens straight from the documents.</dd></div>
-          <div><dt>Why this way</dt><dd>One step depends on another. After the sheriff approves, the applicant takes a basic or an extended course, depending on the training history they gave when they applied.</dd></div>
+          <div><dt>What I saw</dt><dd>One step depends on another, and the rules for that order were spread across PDFs.</dd></div>
+          <div><dt>What I changed</dt><dd><strong>Lay out how the roles relate and the applicant's full path first, then split it into each role's flow,</strong> instead of drawing each role's screens straight from the documents.</dd></div>
+          <div><dt>Why this way</dt><dd>The order decides what each screen shows, including which course comes after the sheriff's approval.</dd></div>
+          <!-- TODO (Tommy): add a "Trade-off" row once confirmed -->
+        </dl>
+        <figure class="mt-8">
+          <div class="tile shot" style="margin-top: 0">
+            <img src="assets/us-state-gov-ai-bid-prototype/design-flow.svg" width="1920" height="1080" alt="The applicant's flow in four steps: start a new application; fill in the application, with personal details and, if they have one, a course record; agree to the rules and sign; submit to the sheriff. Notes underneath: the course record sets which course comes after the sheriff approves, and signing means attestations and an e-signature."" loading="lazy">
+          </div>
+          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">The applicant's flow.</span> <span class="muted">One of the four role flows, redrawn and simplified. It ends where the sheriff's flow begins.</span></figcaption>
+        </figure>
+
+        <h3 class="cs-sub" id="decision-2"><span class="cs-sub-cap">Step 2</span>Turn our shipped design system into tokens, so the prototype could be built fast</h3>
+        <dl class="decide">
+          <div><dt>What I saw</dt><dd>Every role's flow still had to become screens, and there were 48 hours for all of it.</dd></div>
+          <div><dt>What I changed</dt><dd><strong>Before building any screen, Claude turned the design system we had already shipped into tokens, CSS variables for colour, type and spacing.</strong></dd></div>
+          <div><dt>Why this way</dt><dd>With the visual rules settled once, building each screen was a matter of applying them, not redesigning. 48 hours of generated screens still looked like one product, and engineers could later take the same file into production.</dd></div>
           <!-- TODO (Tommy): add a "Trade-off" row once confirmed -->
         </dl>
 
-        <h3 class="cs-sub">Key decision 2: Send clickable HTML, not static Figma screens</h3>
-        <!-- TODO (Tommy): a 10–20s screen recording of the prototype (applicant submits → sheriff approves → next step updates) would go here -->
+        <figure class="mt-8">
+          <div class="tile shot" style="margin-top: 0">
+            <img src="assets/us-state-gov-ai-bid-prototype/design-tokens.svg" width="1920" height="1080" alt="Three panels. Design system values: primary blue #00529B, hover #00427D and a navy bar #01215A, an Open Sans type scale and an 8pt spacing scale. The same values as CSS variables in a token file, such as --color-primary: #00529b and --space-16: 16px. A form field and Submit button built on them, each part labelled with its token, with default, hover and disabled button states." loading="lazy">
+          </div>
+          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">From design system to tokens to screen.</span> <span class="muted">Shown with the tokens of the demo in Step 3, rebuilt from the recorded prototype screens.</span></figcaption>
+        </figure>
+
+        <h3 class="cs-sub" id="decision-3"><span class="cs-sub-cap">Step 3</span>Build the clickable prototype from the flow, on the tokens</h3>
         <dl class="decide">
-          <div><dt>Problem 2</dt><dd>Static screens took 5 days last time and didn't win. This proposal, for a domain we had just met, was due in 48 hours.</dd></div>
-          <div><dt>What I changed</dt><dd><strong>A clickable HTML prototype built with Claude Code from my flows, on tokens generated from our existing design system.</strong></dd></div>
-          <div><dt>Why this way</dt><dd>A working file shows the client what we understood, and it is something we can build from if we win. The company also wanted to adopt an AI development workflow.</dd></div>
+          <div><dt>What I saw</dt><dd>A flow for every outside role and a token file, and a proposal the agency should be able to click through.</dd></div>
+          <div><dt>What I changed</dt><dd><strong>A clickable HTML prototype built with Claude Code from my flows, on the tokens.</strong> I clicked through each version as every role and adjusted it until it did what the documents required.</dd></div>
+          <div><dt>Why this way</dt><dd>A working file shows the client what we understood, and it is something we can build from if we win.</dd></div>
           <div><dt>Trade-off</dt><dd>Happy path only, for every outside role from applicant to dealer. Left out: the sheriff withdrawing an approval, the agency's review of training records, reports and settings. I agreed that scope with our US PM and leadership before building.</dd></div>
         </dl>
-
-        <h3 class="cs-sub">Key decision 3: Give the applicant one page that answers "where am I?"</h3>
-        <div class="mt-10 grid gap-10 md:grid-cols-2 md:gap-12 md:items-center">
-          <div class="tile shot is-free" style="margin-top: 0">
-            <img src="assets/home/bid-application-card.png" alt="Application summary card: status, PDF download and the applicant's next step" loading="lazy">
+        <figure class="mt-8">
+          <div class="tile shot is-embed">
+            <iframe src="us-state-gov-ai-bid-prototype-demo.html?embed" title="Clickable demo of the applicant flow: new application in two steps, basic information, then attestation and e-signature, submitted to the sheriff" loading="lazy"></iframe>
           </div>
-          <dl class="decide" style="margin-top: 0">
-            <div><dt>Problem 3</dt><dd>An applicant waits on three offices they never see.</dd></div>
-            <div><dt>What I changed</dt><dd><strong>Make the application itself the map: review results, course records, downloadable proof and the next step on one page.</strong></dd></div>
-            <div><dt>Instead of</dt><dd>Leaving applicants to work out their status and next step from the application's detail tabs.</dd></div>
-            <div><dt>Why this way</dt><dd>Wherever the application is, the applicant can see who has it and what they need to do next.</dd></div>
-            <!-- TODO (Tommy): add a "Trade-off" row once confirmed -->
-          </dl>
-        </div>
+          <figcaption class="mt-4" style="max-width: 68ch"><span class="font-semibold">Try the applicant flow.</span> <span class="muted">A short demo rebuilt from the recorded prototype, on the tokens above. Sample data; nothing is stored or sent.</span></figcaption>
+          <p class="mt-4"><a href="us-state-gov-ai-bid-prototype-demo.html" target="_blank" rel="noopener" class="flink">Open full screen <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></p>
+        </figure>
       </section>
 
       <section class="cs-section" aria-labelledby="validate-h">
@@ -243,22 +245,26 @@
         </div>
         <h3 class="cs-sub">What that gap missed</h3>
         <div class="prose">
-          <p><strong>I assumed a reviewed application locks.</strong> It seemed safe: the training history was part of the application, and the sheriff had already approved it.</p>
-          <p>When we started building, the agency told us otherwise. Personal details lock after review, but the training section stays editable. In the interface the fix was small, a change in which fields are read-only. But it was exactly the kind of rule I couldn't confirm in 48 hours, and the prototype gave the agency something concrete to correct.</p>
+          <p><strong>I assumed the whole application locks after review.</strong> The sheriff had approved it, so it seemed safe.</p>
+        </div>
+        <dl class="decide">
+          <div><dt>Personal details</dt><dd class="muted">Locks after review, as I assumed.</dd></div>
+          <div><dt>Training history</dt><dd><s class="muted">Locks after review.</s> <strong>Stays editable.</strong></dd></div>
+        </dl>
+        <div class="prose mt-8">
+          <p>The agency corrected it when we started building. The fix was small, just which fields are read-only. But I couldn't have confirmed this rule in 48 hours. The prototype gave the agency something concrete to correct.</p>
         </div>
       </section>
 
       <section class="cs-section" aria-labelledby="outcome-h">
         <h2 id="outcome-h" class="two-tone"><span>07</span> Outcome</h2>
         <div class="prose">
-          <p><strong>The contract was awarded, and after 11 weeks of design and build the portal is live.</strong></p>
+          <p><strong>The prototype won the contract, then became the starting point for delivery.</strong></p>
         </div>
         <dl class="decide">
-          <div><dt>Contract</dt><dd><strong>$1.6M+ awarded,</strong> a first contract with a new state agency.</dd></div>
-          <div><dt>Role map</dt><dd><strong>All four outside roles in one clickable flow,</strong> from applicant to dealer, built from the rules in the agency's documents.</dd></div>
-          <div><dt>Applicant view</dt><dd><strong>One application page</strong> shows who has the application, what happens next and which documents to download.</dd></div>
-          <div><dt>Concept time</dt><dd><strong>−60%, 5 days → 2,</strong> against our last bid of similar size, which used Figma concept work.</dd></div>
-          <div><dt>Delivery</dt><dd><strong>Engineers reused most of the prototype's token file,</strong> the CSS variables for colour, type and spacing, in the production build. The bid's screens became the starting point for delivery.</dd></div>
+          <div><dt>Business</dt><dd><strong><span class="proof">$1.6M+</span> awarded,</strong> a first contract with a new state agency. The agency could click through all four outside roles instead of reading static screens.</dd></div>
+          <div><dt>Delivery</dt><dd><strong>Live in <span class="proof">11 weeks</span>.</strong> Engineers built from the bid's screens and reused most of the prototype's token file, the CSS variables for colour, type and spacing, so delivery didn't start from zero.</dd></div>
+          <div><dt>Speed</dt><dd><strong><span class="proof">5 days → 48 hours</span> of concept work,</strong> against our last bid of similar size, which used static Figma screens.</dd></div>
         </dl>
         <h3 class="cs-sub">Reflection</h3>
         <div class="prose">
@@ -281,6 +287,10 @@
   </main>
 
   <site-footer></site-footer>
+
+  <button type="button" class="to-top" data-to-top aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
 
   <script src="assets/js/site.js"></script>
 </body>

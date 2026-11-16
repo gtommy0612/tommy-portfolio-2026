@@ -25,7 +25,7 @@ Static HTML + Tailwind CSS (CDN). No build step.
 ## Two audiences
 
 - **Portfolio** (`/`, case studies): for hiring teams. English only. CTAs: resume, email.
-- **Services** (`/services/`, `/services/zh/`): for freelance clients. English + Traditional Chinese, with a language switch in the header. CTAs: book a call (cal.com), email. The portfolio links to it only from a small footer link, not the main nav.
+- **Services** (`/services/`, `/services/zh/`): for freelance clients. English + Traditional Chinese, with a language switch in the header. CTAs: book a call (cal.com), email. Unlisted: nothing in the portfolio links to it, and both pages are `noindex`. Reach it by URL only.
 
 The services pages reuse the case-study pages as proof — they link to `../us-state-gov-*.html`.
 

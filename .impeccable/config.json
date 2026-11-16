@@ -53,6 +53,12 @@
         ],
         "createdAt": "2026-11-10T09:23:34.463Z",
         "reason": "Static scan false positive: .tile.shot wraps a full-bleed screenshot image with no text; the rendered-page scan at localhost:8005 reports no cramped padding"
+      },
+      {
+        "rule": "overused-font",
+        "value": "open sans",
+        "createdAt": "2026-11-16T10:14:58.172Z",
+        "reason": "Claude: the demo replicates the client prototype, whose token file (assets/us-state-gov-ai-bid-prototype/design-tokens.svg) specifies Open Sans"
       }
     ]
   }

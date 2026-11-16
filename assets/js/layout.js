@@ -78,7 +78,6 @@
           '</div>' +
           '<div class="mt-section flex flex-wrap items-baseline justify-between gap-3 text-caption text-muted">' +
             '<p>© 2026 Tommy Chi Design</p>' +
-            '<a href="' + o.base + 'services/" target="_blank" rel="noopener" class="text-muted no-underline hover:text-ink">Freelance / 接案合作 ↗</a>' +
           '</div>' +
         '</div>' +
       '</footer>';

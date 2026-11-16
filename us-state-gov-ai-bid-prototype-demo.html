@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bid Prototype Demo | Tommy Chi</title>
+  <meta name="description" content="A short clickable demo of the bid prototype's applicant flow: new application in two steps, basic information, then attestation and signature, submitted to the sheriff. Rebuilt for this portfolio with sample data.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
+  <!-- Demo of the bid prototype, rebuilt for the portfolio from the walkthrough clips and the
+       applicant screens (New Application: Basic Information, Attestation & Signature).
+       It is an exhibit, not portfolio UI, so it uses its own tokens (below) instead of E3.
+       Applicant flow only. Sample data; nothing is stored or sent. -->
+  <style>
+    :root {
+      /* Colour (sampled from the prototype screens) */
+      --color-navy: #01215a;
+      --color-primary: #00529b;
+      --color-primary-hover: #00427d;
+      --color-primary-tint: #e8f1fa;
+      --color-alert: #b8501f;
+      --color-alert-tint: #fbe9e1;
+      --color-required: #c4361c;
+      --color-success: #1e6b3a;
+      --color-success-tint: #e3f2e8;
+      --color-text: #212121;
+      --color-text-muted: #5f6368;
+      --color-border: #d6d6d6;
+      --color-bg: #f5f5f5;
+      --color-icon-bg: #ebebeb;
+      --color-surface: #ffffff;
+      --color-frame: #1d1d1f;
+      /* Type */
+      --font: "Open Sans", -apple-system, "Segoe UI", Arial, sans-serif;
+      --font-sign: "Caveat", "Brush Script MT", cursive;
+      --font-size-h1: 32px;
+      --font-size-h2: 16px;
+      --font-size-lg: 16px;
+      --font-size-base: 14px;
+      /* Spacing (8pt base) */
+      --space-4: 4px; --space-8: 8px; --space-12: 12px; --space-16: 16px; --space-24: 24px; --space-32: 32px; --space-48: 48px;
+      /* Sizes */
+      --size-button: 40px;
+      --size-input: 42px;
+      --size-step: 28px;
+      --size-icon-btn: 44px;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-pill: 999px;
+      --width-form: 934px;
+    }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    .embed .frame { display: none; }
+    body { margin: 0; font-family: var(--font); font-size: var(--font-size-lg); color: var(--color-text); background: var(--color-bg); min-height: 100vh; display: flex; flex-direction: column; }
+    button, input, select { font: inherit; color: inherit; }
+    :focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
+    .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+    /* Demo frame and guide (portfolio context, not part of the prototype) */
+    .frame { background: var(--color-frame); color: #fff; padding: var(--space-12) var(--space-32); }
+    .frame-in { display: flex; flex-wrap: wrap; gap: var(--space-12) var(--space-24); align-items: center; justify-content: space-between; }
+    .frame a { color: #fff; font-size: var(--font-size-base); font-weight: 600; }
+    .frame p { margin: 0; font-size: var(--font-size-base); color: #d2d2d7; }
+    .guide { width: 100%; max-width: var(--width-form); margin: 0 auto var(--space-16); }
+    .guide-in { display: flex; flex-wrap: wrap; gap: var(--space-8) var(--space-24); align-items: center; justify-content: space-between; border: 1px dashed var(--color-text-muted); border-radius: var(--radius-md); padding: var(--space-12) var(--space-16); font-size: var(--font-size-base); background: var(--color-surface); }
+    .guide-in strong { font-weight: 600; }
+
+    /* Prototype shell */
+    .top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-16); padding: var(--space-24) var(--space-32); background: var(--color-surface); }
+    .brand { display: flex; align-items: center; gap: var(--space-12); font-weight: 700; font-size: 24px; line-height: 1; letter-spacing: .01em; color: var(--color-text); border: 0; background: none; padding: 0; text-align: left; cursor: pointer; }
+    .brand i { width: 40px; height: 40px; border-radius: 50%; background: var(--color-navy); display: block; flex: none; }
+    .tools { display: flex; align-items: center; gap: var(--space-16); }
+    .icon-btn { width: var(--size-icon-btn); height: var(--size-icon-btn); border-radius: 50%; border: 0; background: var(--color-icon-bg); display: grid; place-items: center; cursor: pointer; color: var(--color-text); }
+    .icon-btn:hover { background: var(--color-border); }
+    .icon-btn svg, .logout svg, .bar svg { width: 20px; height: 20px; }
+    .logout { height: var(--size-icon-btn); padding: 0 var(--space-12); border-radius: var(--radius-pill); border: 1px solid #f0c3ae; background: var(--color-alert-tint); display: inline-flex; align-items: center; gap: var(--space-8); font-size: var(--font-size-base); color: var(--color-text-muted); cursor: pointer; }
+    .bar { background: var(--color-navy); color: #fff; display: flex; justify-content: flex-end; padding: 0 var(--space-16); }
+    .bar span { padding: var(--space-12) var(--space-16); font-size: var(--font-size-lg); display: inline-flex; align-items: center; gap: var(--space-8); }
+    .bar .on { background: var(--color-surface); color: var(--color-primary); }
+    .sub { padding: var(--space-8) var(--space-32); display: flex; justify-content: space-between; gap: var(--space-16); font-size: var(--font-size-base); color: var(--color-text-muted); }
+    main { flex: 1; width: 100%; padding: var(--space-32) var(--space-24) var(--space-48); }
+    main:focus { outline: none; }
+    h1 { text-align: center; color: var(--color-navy); font-size: var(--font-size-h1); font-weight: 600; margin: 0 0 var(--space-24); }
+    h2 { font-size: var(--font-size-h2); font-weight: 600; margin: 0 0 var(--space-12); color: var(--color-text); }
+    .foot { background: var(--color-navy); color: #fff; padding: var(--space-16) var(--space-32); font-size: var(--font-size-lg); line-height: 1.8; }
+    .foot u { text-underline-offset: 3px; }
+
+    /* Buttons */
+    .btn { min-height: var(--size-button); min-width: 120px; padding: 0 var(--space-16); border-radius: var(--radius-sm); border: 1px solid var(--color-primary); background: var(--color-primary); color: #fff; font-size: var(--font-size-base); font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: var(--space-8); }
+    .btn:hover { background: var(--color-primary-hover); border-color: var(--color-primary-hover); }
+    .btn:disabled { background: var(--color-border); border-color: var(--color-border); color: var(--color-text-muted); cursor: not-allowed; }
+    .btn.ghost { background: var(--color-surface); color: var(--color-primary); }
+    .btn.ghost:hover { background: var(--color-primary-tint); }
+    .link { border: 0; background: none; padding: var(--space-8); color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; font-size: var(--font-size-lg); }
+    .actions { width: 100%; max-width: var(--width-form); margin: var(--space-24) auto 0; display: flex; gap: var(--space-16); flex-wrap: wrap; }
+    .actions .end { margin-left: auto; display: flex; gap: var(--space-16); flex-wrap: wrap; }
+
+    /* Steps component: numbered circles joined by a rule.
+       States: upcoming (outline), current (filled + ring), done (filled + check). */
+    .steps { display: flex; justify-content: center; list-style: none; padding: 0; margin: 0 auto var(--space-24); max-width: 420px; }
+    .steps li { flex: 1 1 0; position: relative; display: flex; flex-direction: column; align-items: center; gap: var(--space-8); text-align: center; font-size: var(--font-size-lg); color: var(--color-text); }
+    .steps li + li::before { content: ""; position: absolute; top: calc(var(--size-step) / 2); right: calc(50% + var(--size-step) / 2 + 4px); width: calc(100% - var(--size-step) - 8px); height: 1px; background: var(--color-border); }
+    .steps li.done + li::before { background: var(--color-primary); }
+    .steps .dot { width: var(--size-step); height: var(--size-step); border-radius: 50%; display: grid; place-items: center; font-size: var(--font-size-base); border: 1px solid var(--color-text-muted); background: var(--color-surface); color: var(--color-text); position: relative; z-index: 1; }
+    .steps li[aria-current] .dot { background: var(--color-primary); border-color: var(--color-primary); color: #fff; box-shadow: 0 0 0 2px var(--color-surface), 0 0 0 3px var(--color-primary); }
+    .steps li.done .dot { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
+    .steps li.done .dot svg { width: 14px; height: 14px; }
+
+    /* Form */
+    .card { width: 100%; max-width: var(--width-form); margin: 0 auto; background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-24); }
+    .card section + section { margin-top: var(--space-24); }
+    .card section.gap { margin-top: var(--space-48); }
+    .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-16); }
+    .s2 { grid-column: span 2; }
+    .s4 { grid-column: 1 / -1; }
+    label, .lbl { display: block; font-size: var(--font-size-base); margin-bottom: var(--space-8); }
+    .req::before { content: "* "; color: var(--color-required); }
+    input[type=text], input[type=email], input[type=tel], select { width: 100%; height: var(--size-input); padding: 0 var(--space-16); border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-surface); font-size: var(--font-size-lg); color: var(--color-text); }
+    select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0h12L6 7z' fill='%23212121'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+    input:disabled, select:disabled { background-color: var(--color-bg); color: var(--color-text-muted); }
+    input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--color-required); }
+    .err { color: var(--color-required); font-size: var(--font-size-base); margin: var(--space-4) 0 0; }
+    .head-row { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-8) var(--space-16); margin-bottom: var(--space-12); }
+    .head-row h2 { margin: 0; }
+    .check { display: inline-flex; gap: var(--space-12); align-items: center; font-size: var(--font-size-base); margin: 0; cursor: pointer; }
+    .check.lg { font-size: var(--font-size-lg); }
+    .check input { width: 20px; height: 20px; margin: 0; flex: none; accent-color: var(--color-primary); cursor: pointer; }
+    .office { align-self: center; font-size: var(--font-size-base); margin: var(--space-24) 0 0; }
+    .hint { font-size: var(--font-size-lg); margin: 0; }
+
+    /* Attestation & signature */
+    .attest { background: var(--color-bg); padding: var(--space-8) var(--space-16); display: grid; }
+    .attest .check { padding: var(--space-12) 0; font-size: var(--font-size-lg); }
+    .sign-row { display: flex; align-items: center; gap: var(--space-16); flex-wrap: wrap; margin-bottom: var(--space-16); }
+    .sign-in { display: flex; flex: 0 1 440px; min-width: 0; }
+    .sign-in input { border-radius: var(--radius-sm) 0 0 var(--radius-sm); flex: 1; min-width: 0; }
+    .sign-in .btn { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; min-width: 0; font-size: var(--font-size-lg); flex: none; }
+    .sign-row .link { margin-left: auto; }
+    .pad { position: relative; background: var(--color-bg); height: 200px; border-radius: var(--radius-sm); touch-action: none; }
+    .pad canvas { display: block; width: 100%; height: 100%; cursor: crosshair; }
+    .pad p { position: absolute; inset: 0; margin: 0; display: grid; place-items: center; padding: var(--space-16); text-align: center; color: var(--color-text-muted); font-size: var(--font-size-base); pointer-events: none; }
+
+    /* List and result */
+    .wrap { max-width: var(--width-form); margin: 0 auto; }
+    .row-end { display: flex; justify-content: flex-end; margin-bottom: var(--space-16); }
+    body.is-list, body.is-list .sub { background: var(--color-surface); }
+    .tbl-wrap { overflow-x: auto; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+    table { width: 100%; border-collapse: collapse; font-size: var(--font-size-base); min-width: 600px; }
+    th { text-align: left; font-weight: 600; background: var(--color-bg); padding: var(--space-16); border-bottom: 1px solid var(--color-border); }
+    td { padding: var(--space-16); border-bottom: 1px solid var(--color-border); }
+    tr:last-child td { border-bottom: 0; }
+    .empty { text-align: center; color: var(--color-text-muted); font-size: var(--font-size-lg); padding: var(--space-48) 0; }
+    .badge { display: inline-block; padding: 2px var(--space-8); border-radius: 12px; font-size: var(--font-size-base); font-weight: 600; }
+    .badge.wait { background: var(--color-icon-bg); color: var(--color-text-muted); }
+    .badge.draft { background: var(--color-primary-tint); color: var(--color-primary); }
+    .done-screen { text-align: center; padding: var(--space-48) var(--space-24); }
+    .done-screen .ok { width: 56px; height: 56px; border-radius: 50%; background: var(--color-success-tint); color: var(--color-success); display: grid; place-items: center; margin: 0 auto var(--space-16); }
+    .done-screen h2 { font-size: 20px; }
+    .done-screen p { margin: 0 auto var(--space-24); max-width: 52ch; color: var(--color-text-muted); }
+    .toast { position: fixed; left: 50%; bottom: var(--space-24); transform: translateX(-50%); background: var(--color-text); color: #fff; padding: var(--space-12) var(--space-16); border-radius: var(--radius-sm); font-size: var(--font-size-base); z-index: 5; }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .office { margin-top: 0; }
+      .top { padding: var(--space-16) var(--space-24); }
+      .frame { padding: var(--space-12) var(--space-24); }
+      .tools .icon-btn:not(.keep) { display: none; }
+      .sub { padding: var(--space-8) var(--space-24); }
+    }
+    @media (max-width: 560px) {
+      .grid { grid-template-columns: 1fr; }
+      .s2 { grid-column: auto; }
+      .top { padding: var(--space-12) var(--space-16); }
+      .frame { padding: var(--space-12) var(--space-16); }
+      .brand { font-size: 18px; }
+      .brand i { width: 32px; height: 32px; }
+      .logout span { display: none; }
+      .bar span { padding: var(--space-8) var(--space-16); }
+      .sub { padding: var(--space-8) var(--space-16); flex-direction: column; gap: 0; }
+      main { padding: var(--space-24) var(--space-16) var(--space-48); }
+      h1 { font-size: 26px; }
+      .steps li { font-size: var(--font-size-base); }
+      .card { padding: var(--space-16); }
+      /* Full-width buttons, primary on top */
+      .actions, .actions .end { flex-direction: column-reverse; gap: var(--space-12); }
+      .actions .end { margin-left: 0; width: 100%; }
+      .actions .btn, .row-end .btn, .done-screen .btn { width: 100%; min-width: 0; }
+      .foot { padding: var(--space-16); font-size: var(--font-size-base); }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="frame-in">
+      <a href="us-state-gov-ai-bid-prototype.html#decision-3">← Back to the case study</a>
+      <p>Demo of the applicant flow, rebuilt for this portfolio. Sample data.</p>
+    </div>
+  </div>
+
+  <header>
+    <div class="top">
+      <button type="button" class="brand" data-list aria-label="State Agency Portal: go to Application"><i aria-hidden="true"></i><span>STATE AGENCY<br>PORTAL</span></button>
+      <div class="tools">
+        <button type="button" class="icon-btn" aria-label="Notifications" data-noop><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></button>
+        <button type="button" class="icon-btn" aria-label="Contact" data-noop><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2 1.5a11 11 0 0 0 5.5 5.5L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></button>
+        <button type="button" class="icon-btn" aria-label="Help" data-noop><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5V14"/><path d="M12 17h.01"/></svg></button>
+        <button type="button" class="icon-btn" aria-label="Documents" data-noop><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h5"/><path d="M14 3v5h5M19 8v5"/><path d="M17 15v6m-2.5-2.5L17 21l2.5-2.5"/></svg></button>
+        <button type="button" class="logout" data-noop><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4H5v16h5"/><path d="M14 8l4 4-4 4M18 12H9"/></svg><span>Log out</span></button>
+      </div>
+    </div>
+    <div class="bar"><span class="on">Application</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M6.5 18.5a6.5 6.5 0 0 1 11 0"/></svg>John Doe</span></div>
+    <div class="sub"><span>Last successful login: <span id="last-login"></span>, Last login browser: Chrome</span><span>Applicant</span></div>
+  </header>
+
+  <main id="main" tabindex="-1"></main>
+
+  <footer class="foot">(c) Copyright - All rights reserved 2026 | <u>Privacy Policy</u> | <u>Accessibility</u> | <u>Nondiscrimination</u> | <u>Version Information</u></footer>
+
+  <div class="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+(() => {
+  if (new URLSearchParams(location.search).has('embed')) document.documentElement.classList.add('embed');
+  const ID = 'A-20418';
+  const fmtDate = d => d.toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const $ = s => document.querySelector(s);
+  const $$ = s => [...document.querySelectorAll(s)];
+  const main = $('#main');
+  $('#last-login').textContent = `${fmtDate(new Date(Date.now() - 864e5))} 10:03:33 PM`;
+
+  const STATES = ['State', 'AL', 'AZ', 'CA', 'CO', 'NM', 'NV', 'OR', 'TX', 'UT', 'WA', 'WY'];
+  const OFFICES = {
+    '': '',
+    north: '100 Main St, Springfield, ST 00001',
+    central: '250 Court Ave, Riverton, ST 00002',
+    south: '18 Mesa Rd, Lakeview, ST 00003',
+  };
+  const OFFICE_NAMES = { '': 'County', north: 'North County Sheriff', central: 'Central County Sheriff', south: 'South County Sheriff' };
+  const RULES = [
+    'The information I gave is true and complete.',
+    'I have read the program rules.',
+    'I understand a false statement can end my application.',
+  ];
+
+  const blank = () => ({
+    first: 'John', middle: '', last: 'Doe', dob: '01/01/1990', phone: '1234567890', email: 'john.doe@example.com',
+    pCountry: 'USA', pCity: 'Springfield', pState: 'CO', pZip: '00001', pAddr: '100 Main St',
+    sameMail: true, mCountry: 'USA', mCity: '', mState: 'State', mZip: '', mAddr: '',
+    office: 'north',
+    cSame: false, cFirst: '', cMiddle: '', cLast: '', cId: '', cState: '', cCard: '', cDate: '', cType: '',
+    rules: [false, false, false], sigName: '', sigData: '',
+  });
+  let app = blank();
+  let status = '';        // '', 'draft', 'submitted'
+  let submitted = '';
+  let view = 'list';      // list | form | sent
+  let step = 1;
+
+  /* ---------- Views ---------- */
+  function render(focus) {
+    main.innerHTML = view === 'form' ? form() : view === 'sent' ? sent() : list();
+    document.body.classList.toggle('is-list', view === 'list');
+    if (view === 'form' && step === 1) syncMail();
+    if (view === 'form' && step === 2) initPad();
+    if (focus) { main.focus({ preventScroll: true }); window.scrollTo(0, 0); }
+  }
+
+  const guide = html => `<div class="guide"><div class="guide-in">${html}</div></div>`;
+
+  function list() {
+    const row = !status
+      ? `<tr><td colspan="4" class="empty">No application</td></tr>`
+      : `<tr><td>${ID}</td><td>${status === 'submitted' ? submitted : '—'}</td><td>${esc(app.first)} ${esc(app.last)}</td><td><span class="badge ${status === 'submitted' ? 'wait' : 'draft'}">${status === 'submitted' ? 'Pending sheriff review' : 'Draft'}</span></td></tr>`;
+    const tip = status === 'submitted'
+      ? guide(`<span>Submitted. In the prototype, the <strong>sheriff</strong> reviews it next.</span><button type="button" class="btn ghost" data-reset>Start over</button>`)
+      : guide(`<span>Start here: click <strong>New Application</strong>. Sample values are filled in.</span>`);
+    return `${tip}<div class="wrap"><h1>Application</h1>
+      <div class="row-end"><button type="button" class="btn" data-new ${status === 'submitted' ? 'disabled' : ''}>${status === 'draft' ? 'Continue Draft' : '+ New Application'}</button></div>
+      <div class="tbl-wrap"><table><thead><tr><th>ID</th><th>Submit date</th><th>Applicant</th><th>Status</th></tr></thead><tbody>${row}</tbody></table></div></div>`;
+  }
+
+  function sent() {
+    return `<div class="card done-screen">
+      <div class="ok" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <h2>Application submitted</h2>
+      <p>Application ${ID} is with ${esc(OFFICE_NAMES[app.office])}'s office for review. Visit the office with your ID; you'll be notified when it's approved.</p>
+      <button type="button" class="btn ghost" data-list>Back to applications</button></div>`;
+  }
+
+  function stepsBar() {
+    const tick = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+    return `<ol class="steps" aria-label="Application steps">${['Basic Information', 'Attestation &amp; Signature'].map((t, i) => {
+      const n = i + 1, done = n < step, cur = n === step;
+      return `<li class="${done ? 'done' : ''}" ${cur ? 'aria-current="step"' : ''}><span class="dot">${done ? tick : n}</span><span>${t}${done ? '<span class="sr"> (completed)</span>' : ''}</span></li>`;
+    }).join('')}</ol>`;
+  }
+
+  const field = (id, label, opts = {}) => {
+    const { req, type = 'text', span = '', ph = '', key = id } = opts;
+    return `<div class="${span}"><label for="f-${id}" class="${req ? 'req' : ''}">${label}</label>
+      <input type="${type}" id="f-${id}" data-k="${key}" value="${esc(app[key])}" placeholder="${ph}" ${req ? 'required aria-required="true"' : ''} autocomplete="off"></div>`;
+  };
+  const select = (id, label, options, opts = {}) => {
+    const { req, span = '', key = id } = opts;
+    return `<div class="${span}"><label for="f-${id}" class="${req ? 'req' : ''}">${label}</label>
+      <select id="f-${id}" data-k="${key}" ${req ? 'required aria-required="true"' : ''}>${options.map(([v, t]) => `<option value="${esc(v)}" ${app[key] === v ? 'selected' : ''}>${esc(t)}</option>`).join('')}</select></div>`;
+  };
+  const stateOpts = STATES.map(s => [s === 'State' ? '' : s, s]);
+  const address = (p, legend) => `
+    ${select(p + 'Country', 'Country', [['USA', 'USA'], ['Canada', 'Canada'], ['Mexico', 'Mexico']], { req: true, span: 's2', key: p + 'Country' })}
+    ${field(p + 'City', 'City', { req: true, ph: 'City' })}
+    ${select(p + 'State', 'State', stateOpts, { req: true })}
+    ${field(p + 'Addr', 'Address', { req: true, span: 's2', ph: 'Address' })}
+    ${field(p + 'Zip', 'Zipcode', { req: true, ph: '12345' })}`;
+
+  function form() {
+    let body = '', buttons = '';
+    if (step === 1) {
+      body = `
+      <section aria-labelledby="h-app"><h2 id="h-app">Applicant’s information</h2><div class="grid">
+        ${field('first', 'Full legal first name', { req: true })}
+        ${field('middle', 'Middle name', { ph: '-' })}
+        ${field('last', 'Full legal last name', { req: true })}
+        ${field('dob', 'Date of birth', { req: true, ph: 'MM/DD/YYYY' })}
+        ${field('phone', 'Phone number', { req: true, type: 'tel', span: 's2' })}
+        ${field('email', 'Email', { req: true, type: 'email', span: 's2' })}
+      </div></section>
+      <section aria-labelledby="h-phys"><h2 id="h-phys">Physical Address</h2><div class="grid">${address('p')}</div></section>
+      <section aria-labelledby="h-mail"><div class="head-row"><h2 id="h-mail">Mailing Address</h2>
+        <label class="check"><input type="checkbox" id="same-mail" ${app.sameMail ? 'checked' : ''}> Same as Physical Address</label></div>
+        <div class="grid" id="mail-grid">${address('m')}</div></section>
+      <section aria-labelledby="h-office"><h2 id="h-office">Application Processing Sheriff Office</h2><div class="grid">
+        ${select('office', 'Application processing sheriff office', Object.keys(OFFICE_NAMES).map(k => [k, OFFICE_NAMES[k]]), { req: true, span: 's2' })}
+        <p class="office s2" id="office-addr" aria-live="polite">${app.office ? 'Address: ' + OFFICES[app.office] : ''}</p>
+      </div></section>
+      <section class="gap" aria-labelledby="h-course"><h2 id="h-course">Safety Course Certification (Optional)</h2>
+        <div class="head-row"><p class="hint">Your full name at the time you took the safety course.</p>
+        <label class="check lg"><input type="checkbox" id="same-app" ${app.cSame ? 'checked' : ''}> Same as applicant’s information</label></div>
+        <div class="grid">
+        ${field('cFirst', 'Full legal first name', { ph: '-' })}
+        ${field('cMiddle', 'Middle name', { ph: '-' })}
+        ${field('cLast', 'Full legal last name', { ph: '-' })}
+        ${field('cId', 'Agency ID (Optional)', { ph: '-' })}
+        ${select('cState', 'State when the card was issued', [['', 'Select State'], ...STATES.slice(1).map(s => [s, s])])}
+        ${field('cCard', 'Card number', { ph: '-' })}
+        ${field('cDate', 'Course date', { ph: 'MM/DD/YYYY' })}
+        ${select('cType', 'Course type (Optional)', [['', 'Select Type'], ['in-person', 'In person'], ['online', 'Online'], ['field-day', 'Online + field day']])}
+      </div></section>`;
+      buttons = `<button type="button" class="btn ghost" data-list>Cancel</button>
+        <div class="end"><button type="button" class="btn ghost" data-draft>Save Draft</button><button type="button" class="btn" data-next>Next</button></div>`;
+    } else {
+      body = `
+      <section aria-labelledby="h-att"><h2 id="h-att">Attestation</h2>
+        <div class="attest">${RULES.map((r, i) => `<label class="check"><input type="checkbox" class="att" data-i="${i}" ${app.rules[i] ? 'checked' : ''}> ${r}</label>`).join('')}</div>
+      </section>
+      <section class="gap" aria-labelledby="h-sig"><h2 id="h-sig">E-signature</h2>
+        <div class="sign-row"><div class="sign-in"><label for="f-sig" class="sr">Type your full name to sign</label>
+          <input type="text" id="f-sig" placeholder="Enter your name" value="${esc(app.sigName)}" autocomplete="off">
+          <button type="button" class="btn" data-type-sign>Type to Sign</button></div>
+          <button type="button" class="link" data-clear>Clear</button></div>
+        <div class="pad" id="pad"><canvas aria-label="Signature pad: draw your signature, or type your name and click Type to Sign" role="img"></canvas><p id="pad-hint">Sign here, or type your name and click Type to Sign</p></div>
+      </section>`;
+      buttons = `<button type="button" class="btn ghost" data-list>Cancel</button>
+        <div class="end"><button type="button" class="btn ghost" data-draft>Save Draft</button><button type="button" class="btn ghost" data-back>Back</button><button type="button" class="btn" data-submit>Submit</button></div>`;
+    }
+    const tip = step === 1
+      ? guide(`<span>Step 1 of 2. Sample values are filled in; edit anything, then <strong>Next</strong>.</span>`)
+      : guide(`<span>Step 2 of 2. Tick all three, sign (draw or type), then <strong>Submit</strong>.</span>`);
+    return `${tip}<h1>New Application</h1>${stepsBar()}<form class="card" novalidate onsubmit="return false">${body}</form><div class="actions">${buttons}</div>`;
+  }
+
+  /* ---------- Step 1 behaviour ---------- */
+  function syncMail() {
+    const same = $('#same-mail')?.checked;
+    if (same == null) return;
+    ['Country', 'City', 'State', 'Addr', 'Zip'].forEach(f => {
+      const m = document.getElementById('f-m' + f);
+      if (same) m.value = document.getElementById('f-p' + f).value;
+      else if (m.disabled) m.value = app['m' + f] && !app.sameMail ? app['m' + f] : (f === 'Country' ? 'USA' : '');
+      m.disabled = same;
+      m.removeAttribute('aria-invalid');
+    });
+    $$('#mail-grid .err').forEach(e => e.remove());
+  }
+
+  function saveFields() {
+    $$('[data-k]').forEach(el => { app[el.dataset.k] = el.value; });
+    const sm = $('#same-mail'); if (sm) app.sameMail = sm.checked;
+    const sa = $('#same-app'); if (sa) app.cSame = sa.checked;
+    const sg = $('#f-sig'); if (sg) app.sigName = sg.value;
+  }
+
+  function validate() {
+    $$('.err').forEach(e => e.remove());
+    let first = null;
+    $$('[required]').forEach(el => {
+      if (el.disabled) return;
+      let msg = !el.value.trim() ? 'Required' : '';
+      if (!msg && el.type === 'email' && !/^\S+@\S+\.\S+$/.test(el.value)) msg = 'Enter a valid email';
+      if (!msg && el.id === 'f-dob' && !/^\d{2}\/\d{2}\/\d{4}$/.test(el.value)) msg = 'Use MM/DD/YYYY';
+      if (msg) {
+        el.setAttribute('aria-invalid', 'true');
+        el.setAttribute('aria-describedby', el.id + '-err');
+        el.insertAdjacentHTML('afterend', `<p class="err" id="${el.id}-err">${msg}</p>`);
+        first ||= el;
+      } else el.removeAttribute('aria-describedby');
+    });
+    if (first) { first.focus(); toast('Fill in the required fields marked *'); }
+    return !first;
+  }
+
+  /* ---------- Step 2: signature pad ---------- */
+  let pad, ctx, drawing = false;
+  function initPad() {
+    const box = $('#pad'); pad = box.querySelector('canvas'); ctx = pad.getContext('2d');
+    const size = () => {
+      const r = box.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+      pad.width = r.width * dpr; pad.height = r.height * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.lineWidth = 2.2; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#212121';
+      if (app.sigData) { const img = new Image(); img.onload = () => ctx.drawImage(img, 0, 0, r.width, r.height); img.src = app.sigData; }
+    };
+    size();
+    padHint();
+    const pt = e => { const r = pad.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+    pad.addEventListener('pointerdown', e => { drawing = true; pad.setPointerCapture(e.pointerId); const [x, y] = pt(e); ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + .1, y + .1); ctx.stroke(); });
+    pad.addEventListener('pointermove', e => { if (!drawing) return; const [x, y] = pt(e); ctx.lineTo(x, y); ctx.stroke(); });
+    const end = () => { if (!drawing) return; drawing = false; app.sigData = pad.toDataURL(); padHint(); };
+    pad.addEventListener('pointerup', end); pad.addEventListener('pointercancel', end);
+  }
+  function padHint() { const h = $('#pad-hint'); if (h) h.hidden = !!app.sigData; }
+  function clearPad() { if (!pad) return; ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, pad.width, pad.height); ctx.restore(); app.sigData = ''; padHint(); }
+  async function typeSign() {
+    const name = $('#f-sig').value.trim();
+    if (!name) { $('#f-sig').focus(); return toast('Type your name first'); }
+    try { await document.fonts.load('48px Caveat'); } catch (_) {}
+    clearPad();
+    const r = pad.getBoundingClientRect();
+    const fs = Math.min(64, r.width / Math.max(4, name.length * 0.55));
+    ctx.fillStyle = '#212121'; ctx.font = `500 ${fs}px ${getComputedStyle(document.documentElement).getPropertyValue('--font-sign')}`;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText(name, r.width / 2, r.height / 2);
+    app.sigData = pad.toDataURL(); padHint();
+  }
+
+  function submit() {
+    saveFields();
+    app.rules = $$('.att').map(c => c.checked);
+    if (!app.rules.every(Boolean)) { $$('.att').find(c => !c.checked).focus(); return toast('Tick all three attestation boxes'); }
+    if (!app.sigData) { $('#f-sig').focus(); return toast('Add your signature'); }
+    status = 'submitted'; submitted = fmtDate(new Date()); view = 'sent'; render(true);
+  }
+
+  /* ---------- Toast ---------- */
+  let tt;
+  function toast(msg) { const t = $('.toast'); t.textContent = msg; t.hidden = false; clearTimeout(tt); tt = setTimeout(() => { t.hidden = true; }, 2600); }
+
+  /* ---------- Events ---------- */
+  document.addEventListener('click', e => {
+    const t = e.target.closest('button'); if (!t) return;
+    if (t.hasAttribute('data-noop')) return toast('Not part of this demo');
+    if (t.hasAttribute('data-reset')) { app = blank(); status = ''; view = 'list'; return render(true); }
+    if (t.hasAttribute('data-list')) { if (view === 'form') saveFields(); view = 'list'; return render(true); }
+    if (t.hasAttribute('data-new')) { view = 'form'; step = 1; return render(true); }
+    if (t.hasAttribute('data-draft')) { saveFields(); if (step === 2) app.rules = $$('.att').map(c => c.checked); status = 'draft'; return toast('Draft saved (demo only, nothing is stored)'); }
+    if (t.hasAttribute('data-next')) { if (!validate()) return; saveFields(); step = 2; return render(true); }
+    if (t.hasAttribute('data-back')) { saveFields(); app.rules = $$('.att').map(c => c.checked); step = 1; return render(true); }
+    if (t.hasAttribute('data-submit')) return submit();
+    if (t.hasAttribute('data-clear')) { clearPad(); $('#f-sig').value = ''; app.sigName = ''; return; }
+    if (t.hasAttribute('data-type-sign')) return typeSign();
+  });
+
+  document.addEventListener('change', e => {
+    const el = e.target;
+    if (el.id === 'same-mail') syncMail();
+    if (el.id === 'f-office') $('#office-addr').textContent = el.value ? 'Address: ' + OFFICES[el.value] : '';
+    if (el.id === 'same-app') {
+      [['cFirst', 'first'], ['cMiddle', 'middle'], ['cLast', 'last']].forEach(([c, a]) => {
+        const f = document.getElementById('f-' + c);
+        f.value = el.checked ? document.getElementById('f-' + a).value : ''; f.disabled = el.checked;
+      });
+    }
+    if (el.matches('[aria-invalid="true"]') && el.value.trim()) { el.removeAttribute('aria-invalid'); el.nextElementSibling?.classList.contains('err') && el.nextElementSibling.remove(); }
+  });
+
+  document.addEventListener('input', e => {
+    const el = e.target;
+    if (/^f-p/.test(el.id) && $('#same-mail')?.checked) syncMail();
+    if (el.matches('[aria-invalid="true"]') && el.value.trim()) { el.removeAttribute('aria-invalid'); el.nextElementSibling?.classList.contains('err') && el.nextElementSibling.remove(); }
+    if (el.id === 'f-sig') app.sigName = el.value;
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.id === 'f-sig') { e.preventDefault(); typeSign(); } });
+
+  render();
+})();
+</script>
+</body>
+</html>

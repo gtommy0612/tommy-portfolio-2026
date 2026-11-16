@@ -59,29 +59,29 @@
         <div class="mt-12 grid gap-x-6 gap-y-12" style="grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr))">
           <div class="flex flex-col gap-5">
             <div class="tile aspect-[5/4]">
-              <img src="assets/home/bid-application-card.png" alt="Application info card with status and next step, from the bid prototype" loading="lazy" class="absolute left-1/2 top-9 w-[62%] rounded-xl" style="transform: translateX(-50%) rotate(-2deg); box-shadow: 0 20px 40px -22px rgb(29 29 31 / .3)">
+              <img src="assets/home/bid-application-card.png" alt="Application info card with status and next step, from the bid prototype" loading="lazy" class="absolute inset-0 m-auto w-auto h-auto max-w-[72%] max-h-[84%] rounded-xl" style="transform: rotate(-2deg); box-shadow: 0 20px 40px -22px rgb(29 29 31 / .3)">
             </div>
             <div class="flex flex-col gap-1.5">
-              <h3 class="label">Prototypes that win contracts</h3>
-              <p class="text-muted">A 48-hour clickable prototype helped win a <strong class="proof">$1.6M+</strong> US state contract. AI reads the agency rules first; the workflow is now team SOP.</p>
+              <h3 class="label">Clickable prototypes in 48 hours</h3>
+              <p class="text-muted">Clients click through a working idea in 2 days, not 5. One 48-hour prototype helped win a <strong class="proof">$1.6M+</strong> US state contract.</p>
             </div>
           </div>
           <div class="flex flex-col gap-5">
             <div class="tile aspect-[5/4]">
-              <img src="assets/home/records-button-states.png" alt="Button states from the design system: normal, hover, focus, disabled" loading="lazy" class="block w-full h-full object-cover mix-blend-multiply">
+              <img src="assets/home/records-button-states.png" alt="Button states from the design system: normal, hover, focus, disabled" loading="lazy" class="absolute inset-0 w-full h-full object-contain p-6 mix-blend-multiply">
             </div>
             <div class="flex flex-col gap-1.5">
-              <h3 class="label">Design systems engineers build on</h3>
-              <p class="text-muted">Tokens in Figma Variables, named the way engineers code them. Front-end build time <strong class="proof">−67%</strong>, reused across projects.</p>
+              <h3 class="label">Design that speeds up front-end builds</h3>
+              <p class="text-muted">Engineers ship features faster. Tokens use the same names as the code, cutting front-end build time by <strong class="proof">67%</strong>, from 3 weeks to 1.</p>
             </div>
           </div>
           <div class="flex flex-col gap-5">
             <div class="tile aspect-[5/4]">
-              <img src="assets/home/records-contrast-check.png" alt="Color contrast check showing an 8.63 to 1 ratio" loading="lazy" class="block w-full h-full object-cover mix-blend-multiply">
+              <img src="assets/home/records-contrast-check.png" alt="Color contrast check showing an 8.63 to 1 ratio" loading="lazy" class="absolute inset-0 w-full h-full object-contain p-6 mix-blend-multiply">
             </div>
             <div class="flex flex-col gap-1.5">
-              <h3 class="label">Flows people finish</h3>
-              <p class="text-muted">A public records checkout cut from <strong class="proof">6 pages to 3</strong>, passing the client&rsquo;s WCAG 2.2 AA acceptance.</p>
+              <h3 class="label">Good UX that meets WCAG 2.2 AA</h3>
+              <p class="text-muted">Fewer steps, each one clear, on any device. A public records search and payment went from <strong class="proof">6 pages to 3</strong>: details, payment and amount on one page. It passed the client&rsquo;s WCAG 2.2 AA acceptance.</p>
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@
         <div class="mt-12 grid gap-x-6 gap-y-14" style="grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr))">
           <article class="flex flex-col gap-4">
             <a href="us-state-gov-ai-bid-prototype.html" class="tile aspect-[6/5]" tabindex="-1" aria-hidden="true">
-              <span class="lift"><img src="assets/us-state-gov-ai-bid-prototype/phase01.png" alt="" loading="lazy" class="block w-full h-full object-contain mix-blend-multiply scale-[1.08]"></span>
+              <span class="lift"><img src="assets/us-state-gov-ai-bid-prototype/hero.png" alt="" loading="lazy" class="absolute inset-x-0 top-1/2 -translate-y-1/2 scale-[1.05] w-full h-auto"></span>
             </a>
             <div class="flex flex-col gap-1">
               <h3 class="text-h3">Winning a $1.6M+ State Contract with a Clickable Prototype Built in 48 Hours</h3>
@@ -105,7 +105,7 @@
           </article>
           <article class="flex flex-col gap-4">
             <a href="us-state-gov-public-records-redesign.html" class="tile aspect-[6/5]" tabindex="-1" aria-hidden="true">
-              <span class="lift"><img src="assets/us-state-gov-public-records-redesign/cover.png" alt="" loading="lazy" class="block w-full h-full object-cover mix-blend-multiply scale-[1.04]"></span>
+              <span class="lift"><img src="assets/us-state-gov-public-records-redesign/cover.png" alt="" loading="lazy" class="absolute inset-x-0 top-1/2 -translate-y-1/2 scale-[1.05] w-full h-auto mix-blend-multiply"></span>
             </a>
             <div class="flex flex-col gap-1">
               <h3 class="text-h3">Modernizing a State Records Portal: WCAG 2.2 AA and Checkout from 6 Pages to 3</h3>
@@ -122,7 +122,10 @@
       <section id="about" aria-labelledby="about-h" class="pt-section-xl flex flex-wrap gap-x-[72px] gap-y-12">
         <div class="flex flex-col gap-6" style="flex: 1 1 340px">
           <h2 id="about-h" class="two-tone">About. <span>Five years, three domains.</span></h2>
-          <p class="text-muted max-w-[42ch]">I work end to end, from research and information architecture to prototypes and handoff. PMP training keeps scope honest: I once took over a lagging project and cut its cycle from <strong class="text-ink font-semibold">4 weeks to 2</strong>.</p>
+          <div class="flex flex-col gap-4 max-w-[42ch]">
+            <p class="text-muted">Government portals, enterprise SaaS, manufacturing dashboards: I've designed across all three, from research to handoff.</p>
+            <p class="text-muted">What I add is delivery. As a PMP, I took over a lagging project, re-scoped it and halved its development cycle, from <strong class="text-ink font-semibold">four weeks to two</strong>.</p>
+          </div>
         </div>
         <div class="min-w-0 flex flex-col gap-12" style="flex: 1.5 1 min(520px, 100%)">
           <div>
